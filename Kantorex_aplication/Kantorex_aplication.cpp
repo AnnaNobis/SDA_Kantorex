@@ -1,15 +1,10 @@
 #include <iostream>
-//#include "framework.h"  przykładowy
-#include "Kantorex.hpp"
-#include "tabulate.hpp"
-
-using namespace tabulate;
-
+#include "JSONReader.h"
 
 int main()
 {
-    Kantorex session;
-    ApplicationRole appRole = session.userAuthorization();
-    std::shared_ptr<ICurrentUser> currentUser = session.creatCurrentUser(appRole);
-    currentUser->displayStartScreen();
+    JSONReader dataReader;
+    dataReader.readCurrencies("JSONTabelaA.json");
+    dataReader.wypisz();
 }
+
