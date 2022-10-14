@@ -3,7 +3,7 @@
 
 using json = nlohmann::ordered_json;
 
-std::vector<Currency> JSONReader::readCurrencies(std::string file)
+std::vector<Currency> JsonReader::readCurrencies(std::string file)
 {
 	std::ifstream ifs(file);
 	json j;
@@ -31,7 +31,7 @@ std::vector<Currency> JSONReader::readCurrencies(std::string file)
 	return dataBaseCurrencies;
 }
 
-void JSONReader::wypisz()
+void JsonReader::wypisz()
 {
 	std::vector<Currency> temp = readCurrencies("JSONTabelaA.json");
 	std::for_each(temp.begin(), temp.end(), [](Currency c) { std::cout << c.getName() << " " << c.getCode() << " " << c.getRate() << std::endl; });

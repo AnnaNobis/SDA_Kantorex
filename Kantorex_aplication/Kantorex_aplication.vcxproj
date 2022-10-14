@@ -140,6 +140,7 @@
     <ClCompile Include="Kantorex_aplication.cpp" />
     <ClCompile Include="mapOfRateAndCurrency.cpp" />
     <ClCompile Include="RawData.cpp" />
+    <ClCompile Include="Sell.cpp" />
     <ClCompile Include="Transaction.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +155,7 @@
     <ClInclude Include="Currency.h" />
     <ClInclude Include="mapOfRateAndCurrency.h" />
     <ClInclude Include="RawData.h" />
+    <ClInclude Include="Sell.h" />
     <ClInclude Include="Transaction.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

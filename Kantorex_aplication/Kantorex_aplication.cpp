@@ -6,9 +6,9 @@
 
 int main()
 {
-    CalculatorCurrency exchangeOne(100.10f, "eur", "pln");
-   auto result= exchangeOne.Exchange();
+    CalculatorCurrency exchangeOne("buy");
+   //auto result= exchangeOne.Exchange();
 
-    std::cout << result;
+  //  std::cout << result;
 }
 

@@ -7,7 +7,7 @@
 #include <algorithm>
 #include "../Kantorex_aplication/Currency.h"
 
-class JSONReader
+class JsonReader
 {
 public:
 	std::vector<Currency> readCurrencies(std::string file = "JSONTabelaA.json");

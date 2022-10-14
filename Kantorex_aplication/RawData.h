@@ -5,7 +5,7 @@
 
 class RawData
 {
-	JSONReader dataFromFile;
+	JsonReader dataFromFile;
 	std::vector<Currency> rawDataVector;
 public:
 	RawData() {

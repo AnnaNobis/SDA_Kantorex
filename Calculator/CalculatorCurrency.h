@@ -3,26 +3,24 @@
 #include <iostream>
 #include <map>
 #include <algorithm>
+#include "../Kantorex_aplication/Transaction.h"
 #include "../Kantorex_aplication/RawData.h"
+#include "../Kantorex_aplication/Buy.h"
+#include "../Kantorex_aplication/Sell.h"
+#include <memory>
+
+
+
 //mapa z vectora raw data dodaj
 class CalculatorCurrency 
 {
 
 public:
-	CalculatorCurrency(std::string transaction);
-	std::map<std::string, float> createMapCodeRate();
-	float getRate();
+	CalculatorCurrency(std::string buyOrSell);
+	
 	void insertAmount();
-	//void chooseDesiredCurrency();
 	float Exchange();
-
-	float getSpread();
-	void setSpread(float spread=1.05);
-
-	float setCurrency(float currency);
-
 	float& UpdateBalace();
-	std::string txtBase();
 
 private:
 	

@@ -1,18 +1,4 @@
-//#pragma once
-//#include "Cash.h"
-//#include <map>
-//#include <string>
-//
-//class Currency : public Cash
-//{
-//private: 	
-//	std::map <std::string, float> _curriencyAndRate;
-//
-//public:
-//	Currency();
-//	
-//};
-//
+
 #pragma once
 #include <string>
 class Currency

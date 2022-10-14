@@ -3,6 +3,7 @@
 
 class mapOfRateAndCurrency
 {
+public:
 	std::map<std::string, float> createMapCodeRate();
 
 };

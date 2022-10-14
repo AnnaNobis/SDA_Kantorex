@@ -2,15 +2,12 @@
 #include "mapOfRateAndCurrency.h"
 #include "Transaction.h"
 
-class Buy :Transaction
+class Buy : public ITransaction
 {
-private:
-	float _spread;
-	float _currency;
+
 public: 
-	void setSpread(float spread=1.05);
-
-	float getRate() //zwracam value czyli mnoznik 
-	
+	Buy();
+	void setSpread(float spread=1.05) override;
+	float getRate(); //zwracam value czyli mnoznik 
+	float calculateExchangeValue() override;
 };
-

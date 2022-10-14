@@ -1,4 +1,10 @@
-#include "Buy.h"
+#include "Buy.h" 
+
+Buy::Buy() : ITransaction()
+{
+
+};
+
 
 void Buy::setSpread(float spread)
 {
@@ -7,8 +13,13 @@ void Buy::setSpread(float spread)
 
 float Buy::getRate()
 {
-	auto getRate = createMapCodeRate();
-	
-	float rate = getRate[_currency];
+	mapOfRateAndCurrency objTemp;
+	auto RateAndCurrency = objTemp.createMapCodeRate();
+	float rate = RateAndCurrency[_currency];
 	return rate;
+}
+
+float Buy::calculateExchangeValue()
+{
+	return _spread* getRate()* _amount;
 }

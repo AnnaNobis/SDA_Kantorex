@@ -6,11 +6,7 @@ CashBalance::CashBalance()
 		{"PLN", 1000},
 		{"USD", 5000},
 		{"EUR", 1000},
-		},
+		
 	};
 
 }
-void CashBalance::updateBalance()
-{
-
-};

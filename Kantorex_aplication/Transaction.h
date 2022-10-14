@@ -1,10 +1,17 @@
 #pragma once
-class Transaction
+#include <string>
+class ITransaction
 {
+protected: 
+	float _spread;
+	std::string _currency;
+	float _amount;
 
 public: 
-	virtual void setSpread(float spread)=0;
-
+	ITransaction();
+	virtual void setSpread(float spread) = 0;
+	virtual float getRate(); //zwracam value czyli mnoznik 
+	virtual float calculateExchangeValue();
 
 };
 
