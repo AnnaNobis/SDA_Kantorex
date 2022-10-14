@@ -104,10 +104,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Klaudia\Desktop\cpp\SDA_Kantorex\Calculator;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Klaudia\Desktop\cpp\SDA_Kantorex\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Calculator.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -127,7 +130,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Calculator\CalculatorCurrency.cpp" />
+    <ClCompile Include="..\JasonReader\JasonReader.cpp" />
+    <ClCompile Include="..\JasonReader\JsonReader.cpp" />
+    <ClCompile Include="Buy.cpp" />
+    <ClCompile Include="Cash.cpp" />
+    <ClCompile Include="CashBalance.cpp" />
+    <ClCompile Include="Currency.cpp" />
     <ClCompile Include="Kantorex_aplication.cpp" />
+    <ClCompile Include="mapOfRateAndCurrency.cpp" />
+    <ClCompile Include="RawData.cpp" />
+    <ClCompile Include="Transaction.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Calculator\CalculatorCurrency.h" />
+    <ClInclude Include="..\JasonReader\json.hpp" />
+    <ClInclude Include="..\JasonReader\JsonReader.h" />
+    <ClInclude Include="Buy.h" />
+    <ClInclude Include="Cash.h" />
+    <ClInclude Include="CashBalance.h">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+    </ClInclude>
+    <ClInclude Include="Currency.h" />
+    <ClInclude Include="mapOfRateAndCurrency.h" />
+    <ClInclude Include="RawData.h" />
+    <ClInclude Include="Transaction.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
