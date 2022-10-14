@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\madaz\source\repos\KANTOREX\SDA_Kantorex\Kantorex_login;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\madaz\source\repos\KANTOREX\SDA_Kantorex\Kantorex_login;C:\Users\madaz\source\repos\KANTOREX\SDA_Kantorex\include_libraries;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -121,7 +121,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\madaz\source\repos\KANTOREX\SDA_Kantorex\Kantorex_login;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\madaz\source\repos\KANTOREX\SDA_Kantorex\Kantorex_login;C:\Users\madaz\source\repos\KANTOREX\SDA_Kantorex\include_libraries;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -134,6 +134,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Kantorex_aplication.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include_libraries\tabulate.hpp" />
+    <ClInclude Include="..\Kantorex_login\Display.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

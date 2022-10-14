@@ -42,22 +42,24 @@ ApplicationRole Kantorex::userAuthorization()
 	}
 }
 
-ICurrentUser* Kantorex::creatCurrentUser(ApplicationRole appRole)
+std::shared_ptr<ICurrentUser> Kantorex::creatCurrentUser(ApplicationRole appRole)
 {
-	ICurrentUser* currentUser = nullptr;
+	//std::shared_ptr<ICurrentUser> currentUser = std::make_shared<ICurrentUser>(currentUser);
+	std::shared_ptr<ICurrentUser> currentUser;
 	if (appRole == ApplicationRole::ADMINISTRATOR)
 	{
-		currentUser = new Administrator();
+		currentUser = std::make_shared<Administrator>();
+		//currentUser = new Administrator();
 		return currentUser;
 	}
 	else if (appRole == ApplicationRole::CASHIER)
 	{
-		currentUser = new Cashier();
+		currentUser = std::make_shared<Cashier>();
 		return currentUser;
 	}
 	else
 	{
-		currentUser = new Guest();
+		currentUser = std::make_shared<Guest>();
 		return currentUser;
 	}
 }
