@@ -153,7 +153,6 @@
   <ItemGroup>
     <ClInclude Include="Authorization.hpp" />
     <ClInclude Include="Cashier.hpp" />
-    <ClInclude Include="Display.hpp" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Guest.hpp" />
     <ClInclude Include="ICurrentUser.hpp" />
