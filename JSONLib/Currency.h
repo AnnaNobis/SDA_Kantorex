@@ -3,20 +3,10 @@
 class Currency
 {
 public:
-	Currency(std::string name, std::string code, double rate)
-		:
-		_name(name),
-		_code(code),
-		_rate(rate) {};
-	std::string getName() {
-		return _name;
-	};
-	std::string getCode() {
-		return _code;
-	};
-	double getRate() {
-		return _rate;
-	};
+	Currency(std::string name, std::string code, double rate);
+	std::string getName();
+	std::string getCode();
+	double getRate();
 private:
 	std::string _name;
 	std::string _code;

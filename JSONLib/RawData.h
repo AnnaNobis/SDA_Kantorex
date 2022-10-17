@@ -7,11 +7,7 @@ class RawData
 	JSONReader dataFromFile;
 	std::vector<Currency> rawDataVector;
 public:
-	RawData() {
-		rawDataVector = dataFromFile.readCurrencies();
-	}
-	std::vector<Currency> getRawData() {
-		return rawDataVector;
-	};
+	RawData();
+	std::vector<Currency> getRawData();
 };
 
