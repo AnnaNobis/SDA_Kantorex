@@ -1,13 +1,14 @@
 #include "pch.h"
 #include "IKantorDisplay.h"
+#include "../Kantorex_login/LogInManager.hpp"
 #include <iostream>
 
 void IKantorDisplay::displayLogin()
 {
-	Kantorex session;
-	ApplicationRole appRole = session.userAuthorization();
-	std::shared_ptr<ICurrentUser> currentUser = session.creatCurrentUser(appRole);
-	currentUser->displayStartScreen();
+	//Kantorex session;
+	//ApplicationRole appRole = session.userAuthorization();
+	//std::shared_ptr<LogInManager> currentUser = session.creatLoggedUser(appRole)
+	//currentUser->displayLoggedUserInfo();
 	
 }
 

@@ -6,8 +6,8 @@
 
 UsersList::UsersList()
 {
-    JSONfilesManager jsonFile;
-    _usersList = std::make_shared<std::vector<User>>(jsonFile.read());
+   // JSONfilesManager jsonFile;
+   // _usersList = std::make_shared<std::vector<User>>(jsonFile.read());
 }
 
 
