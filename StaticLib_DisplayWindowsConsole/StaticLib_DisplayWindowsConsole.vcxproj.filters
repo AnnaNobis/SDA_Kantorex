@@ -24,6 +24,9 @@
     <ClInclude Include="IKantorDisplay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Menu_Operations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="StaticLib_DisplayWindowsConsole.cpp">
@@ -33,6 +36,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="IKantorDisplay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu_Operations.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
