@@ -21,42 +21,36 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="User.hpp">
+    <ClInclude Include="..\Kantorex_login\Administrator.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Authorization.hpp">
+    <ClInclude Include="..\Kantorex_login\Cashier.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UsersList.hpp">
+    <ClInclude Include="..\Kantorex_login\Guest.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\include_libraries\json.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="LogInManager.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include_libraries\tabulate.hpp">
+    <ClInclude Include="..\Kantorex_login\ILoggedUser.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Kantorex_login.cpp">
+    <ClCompile Include="Kantorex_UsersRoles.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="User.cpp">
+    <ClCompile Include="..\Kantorex_login\Administrator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Authorization.cpp">
+    <ClCompile Include="..\Kantorex_login\Cashier.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="UsersList.cpp">
+    <ClCompile Include="..\Kantorex_login\Guest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LogInManager.cpp">
+    <ClCompile Include="..\Kantorex_login\ILoggedUser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

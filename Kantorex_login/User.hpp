@@ -1,10 +1,13 @@
 #pragma once
 #include <string>
+//#include "../include_libraries/json.hpp"
+
 
 class User
 {
 private:
-	static int _id;
+	static int _counter;
+	std::string _id;
 	std::string _firstname;
 	std::string _lastname;
 public:
@@ -12,18 +15,13 @@ public:
 		: _firstname(firstname)
 		, _lastname(lastname)
 	{
-		_id++;
+		_id = std::to_string(++_counter);
 	}
-
-	User()
-		: User("ND", "ND")
-	{}
-
-	int getUserId();
-	std::string getUserFirstname();
-	std::string getUserLastname();
+	User() {}
+	std::string getUserId() const;
+	std::string getUserFirstname() const;
+	std::string getUserLastname() const;
 	void setUserFirstname(std::string firstname);
 	void setUserLastname(std::string lastname);
 
 };
-

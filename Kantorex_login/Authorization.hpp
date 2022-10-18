@@ -37,5 +37,6 @@ public:
 	ApplicationRole getAppRole();
 	std::string getLogin(int id);
 	std::string getPassword(int id);
+	int getId();
 };
 

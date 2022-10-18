@@ -3,8 +3,16 @@
 #include <iostream>
 
 
-void Cashier::displayStartScreen()
+Cashier::Cashier()
 {
-	std::cout << "Cashier display" << std::endl;
-	//display.displayStartScreen();
+	_operations._canBalance = true;
+	_operations._canReport = true;
+	_operations._canExit = true;
+	_operations._canBuy = true;
+	_operations._canSell = true;
+}
+
+ILoggedUser::AllowedOperations Cashier::getAllowedOperations()
+{
+	return _operations;
 }
