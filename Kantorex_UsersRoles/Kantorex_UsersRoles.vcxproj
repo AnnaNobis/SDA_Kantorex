@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{23187958-7bd4-471b-9816-4a0b70f67441}</ProjectGuid>
-    <RootNamespace>Kantorexlogin</RootNamespace>
+    <ProjectGuid>{64bfbf5f-eeb0-4c3f-a3a8-577437db96fb}</ProjectGuid>
+    <RootNamespace>KantorexUsersRoles</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -151,27 +151,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\include_libraries\json.hpp" />
-    <ClInclude Include="..\include_libraries\tabulate.hpp" />
-    <ClInclude Include="Authorization.hpp" />
+    <ClInclude Include="..\Kantorex_login\Administrator.hpp" />
+    <ClInclude Include="..\Kantorex_login\Cashier.hpp" />
+    <ClInclude Include="..\Kantorex_login\Guest.hpp" />
+    <ClInclude Include="..\Kantorex_login\ILoggedUser.hpp" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="LogInManager.hpp" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="User.hpp" />
-    <ClInclude Include="UsersList.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Authorization.cpp" />
-    <ClCompile Include="Kantorex_login.cpp" />
-    <ClCompile Include="LogInManager.cpp" />
+    <ClCompile Include="..\Kantorex_login\Administrator.cpp" />
+    <ClCompile Include="..\Kantorex_login\Cashier.cpp" />
+    <ClCompile Include="..\Kantorex_login\Guest.cpp" />
+    <ClCompile Include="..\Kantorex_login\ILoggedUser.cpp" />
+    <ClCompile Include="Kantorex_UsersRoles.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="User.cpp" />
-    <ClCompile Include="UsersList.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

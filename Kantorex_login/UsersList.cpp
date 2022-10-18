@@ -2,41 +2,62 @@
 #include "UsersList.hpp"
 #include <iostream>
 
-std::vector<User>& UsersList::getUsersList()
+
+
+UsersList::UsersList()
+{
+    JSONfilesManager jsonFile;
+    _usersList = std::make_shared<std::vector<User>>(jsonFile.read());
+}
+
+
+std::shared_ptr<std::vector<User>> UsersList::getUsersList()
 {
     return _usersList;
 }
 
 User UsersList::getUser(int id)
 {
-    for (auto& user : _usersList)
-        if (user.getUserId() == id)
+    for (auto it = _usersList->begin(); it != _usersList->end(); ++it)
+    {
+        if ((*it).getUserId() == std::to_string(id))
         {
-            return user;
+            return (*it);
         }
-        else
-        {
-            std::cout << "not found" << std::endl;
-            return User();
-        }
+    }
+      
+     std::cout << "not found" << std::endl;
+     return User();
+       
 }
 
 User UsersList::getUser(std::string lastName)
 {
-    for (auto& user : _usersList)
-        if (user.getUserLastname() == lastName)
+    for (auto it = _usersList->begin(); it != _usersList->end(); ++it)
+    {
+        if ((*it).getUserLastname() == lastName)
         {
-            return user;
+            return (*it);
         }
-        else
-        {
+    }
             std::cout << "not found" << std::endl;
             return User();
-        }
 }
 
 void UsersList::addUser(std::string firstname, std::string lastname)
 {
     User newUser(firstname, lastname);
-    _usersList.push_back(newUser);
+    _usersList->push_back(newUser);
+}
+void UsersList::addUser(User user)
+{
+    _usersList->push_back(user);
+}
+
+void UsersList::displayUsers()
+{
+    for (auto it = _usersList->begin(); it != _usersList->end(); ++it)
+{
+    std::cout << (*it).getUserId() << ", " << (*it).getUserFirstname() << ", " << (*it).getUserLastname() << std::endl;
+}
 }

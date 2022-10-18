@@ -1,13 +1,14 @@
 #pragma once
-#include "ICurrentUser.hpp"
+#include "ILoggedUser.hpp"
 //#include "Display.hpp"
 
-class Cashier : public ICurrentUser
+class Cashier : public ILoggedUser
 {
 private:
-	//Display display;
+	//AllowedOperations _allowedOperations;
 public:
-	void displayStartScreen() override;
+	Cashier();
+	ILoggedUser::AllowedOperations getAllowedOperations();
 	virtual ~Cashier() {}
 };
 

@@ -1,0 +1,57 @@
+{
+"users": [
+{
+	"firstname": "Maja",
+	"lastname": "Kaleta"
+},
+{
+	"firstname": "Lili",
+	"lastname": "Sobieski"
+},
+{
+	"firstname": "Tom",
+	"lastname": "Tomski"
+}
+]
+}	
+
+
+
+{
+	"id":"1",
+	"firstname": "Maja",
+	"lastname": "Kaleta"
+},
+{
+	"id":"2",
+	"firstname": "Lili",
+	"lastname": "Sobieski"
+},
+{
+	"id":"3",
+	"firstname": "Tom",
+	"lastname": "Tomski"
+}	
+
+
+
+
+{
+"users": [
+{
+	"id":"1",
+	"firstname": "Maja",
+	"lastname": "Kaleta"
+},
+{
+	"id":"2",
+	"firstname": "Lili",
+	"lastname": "Sobieski"
+},
+{
+	"id":"3",
+	"firstname": "Tom",
+	"lastname": "Tomski"
+}	
+]
+}

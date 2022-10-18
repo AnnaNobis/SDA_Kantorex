@@ -1,13 +1,14 @@
 #pragma once
-#include "ICurrentUser.hpp"
-//#include "Display.hpp"
+#include "ILoggedUser.hpp"
 
-class Guest : public ICurrentUser
+
+class Guest : public ILoggedUser
 {
 private:
-	//Display display;
+	//AllowedOperations _allowedOperations;
 public:
-	void displayStartScreen() override;
+	Guest();
+	ILoggedUser::AllowedOperations getAllowedOperations();
 	virtual ~Guest() {}
 };
 

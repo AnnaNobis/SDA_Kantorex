@@ -113,3 +113,8 @@ std::string Authorization::getPassword(int id)
 		return "there is no user with given id";
 	}
 }
+
+int Authorization::getId()
+{
+	return checkedUser._id;
+}
