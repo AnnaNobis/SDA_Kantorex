@@ -62,11 +62,7 @@ void Menu_Operations::displayMenuOperations()
 
 }
 
-void Menu_Operations::drawingPartMenuOperations()
-{
-    HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE); // tutaj uchwyt do standardowego wyjœcia konsoli pozyskujê
-
-    void gotoxy(int x, int y)
+void Menu_Operations::gotoxy(int x, int y)
     {
         COORD c; // struktura stosowana do pozycjonowania
         c.X = x - 1; // x i y to numery wiersza i kolumny, gdzie numeracja jest od 1 a w systemie od 0 wiêc odejmujê jeden
@@ -76,7 +72,7 @@ void Menu_Operations::drawingPartMenuOperations()
 
 
 
-    void WriteMenuPos(std::string & str, int id, int idset)
+void Menu_Operations::WriteMenuPos(std::string & str, int id, int idset)
     {
         if (id == idset) { // gdy pozycja jest wybrana
             SetConsoleTextAttribute(handle, 240); // to trzeba j¹ podœwietliæ
@@ -88,14 +84,15 @@ void Menu_Operations::drawingPartMenuOperations()
         }
     }
 
-    void WriteLine(unsigned int width)
+void Menu_Operations::WriteLine(unsigned int width)
     {
-        for (unsigned int i = 0; i < width; i++) {
+        for (unsigned int i = 0; i < width; i++)
+        {
             std::cout << "="; // width razy wypisujê =
         }
         std::cout << std::endl;
     }
-}
+
 
 int Menu_Operations::menu(std::string title, std::vector<std::string>& tMenu, int& id)
 {
