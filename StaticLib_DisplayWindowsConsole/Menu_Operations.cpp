@@ -30,7 +30,7 @@ void Menu_Operations::displayMenuOperations()
        
             //tutaj kod od Klaudii
 
-            //else - "nie masz dostêpu do tej opcji"
+            //else - "nie masz dostï¿½pu do tej opcji"
 
 
             break;
