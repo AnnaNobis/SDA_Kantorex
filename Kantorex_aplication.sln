@@ -9,6 +9,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Kantorex_aplication", "Kantorex_aplication\Kantorex_aplication.vcxproj", "{2510344A-CD0B-4C28-80DB-9B8AD6BF7007}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JSONLib", "JSONLib\JSONLib.vcxproj", "{EC88062B-A056-427A-B880-67F836E077D9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Kantorex_login", "Kantorex_login\Kantorex_login.vcxproj", "{23187958-7BD4-471B-9816-4A0B70F67441}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StaticLib_DisplayWindowsConsole", "StaticLib_DisplayWindowsConsole\StaticLib_DisplayWindowsConsole.vcxproj", "{C0E94B94-A897-4C58-9C62-744D433F4FA4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExhangerStaticLib", "ExhangerStaticLib\ExhangerStaticLib.vcxproj", "{0804D17B-A210-40E0-ACC7-5F12D8E8F96C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Kantorex_UsersRoles", "Kantorex_UsersRoles\Kantorex_UsersRoles.vcxproj", "{64BFBF5F-EEB0-4C3F-A3A8-577437DB96FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -33,6 +43,9 @@ Global
 		{2510344A-CD0B-4C28-80DB-9B8AD6BF7007}.Release|x64.Build.0 = Release|x64
 		{2510344A-CD0B-4C28-80DB-9B8AD6BF7007}.Release|x86.ActiveCfg = Release|Win32
 		{2510344A-CD0B-4C28-80DB-9B8AD6BF7007}.Release|x86.Build.0 = Release|Win32
+
+
+main
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
