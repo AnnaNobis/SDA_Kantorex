@@ -151,14 +151,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\include_libraries\json.hpp" />
     <ClInclude Include="..\include_libraries\tabulate.hpp" />
     <ClInclude Include="Authorization.hpp" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="LogInManager.hpp" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="ReadJSONfile.hpp" />
     <ClInclude Include="User.hpp" />
     <ClInclude Include="UsersList.hpp" />
+    <ClInclude Include="WriteJSONfile.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Authorization.cpp" />
@@ -170,8 +171,10 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="ReadJSONfile.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="UsersList.cpp" />
+    <ClCompile Include="WriteJSONfile.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -6,8 +6,8 @@
 
 UsersList::UsersList()
 {
-   // JSONfilesManager jsonFile;
-   // _usersList = std::make_shared<std::vector<User>>(jsonFile.read());
+    ReadJSONfile jsonFile;
+    _usersList = std::make_shared<std::vector<User>>(jsonFile.read());
 }
 
 
@@ -60,4 +60,11 @@ void UsersList::displayUsers()
 {
     std::cout << (*it).getUserId() << ", " << (*it).getUserFirstname() << ", " << (*it).getUserLastname() << std::endl;
 }
+}
+
+UsersList::~UsersList()
+{
+    WriteJSONfile file;
+    file.write(getUsersList());
+    std::cout << "Wywołanie destruktora. Zapis do pliku." << std::endl;
 }

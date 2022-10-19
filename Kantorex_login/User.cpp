@@ -24,6 +24,16 @@ void User::setUserLastname(std::string lastname)
     _lastname = lastname;
 }
 
+void User::setUserId(std::string id)
+{
+    _id = id;
+}
+
+//User::~User()
+//{
+//    --_counter;
+//}
+
 std::string User::getUserFirstname() const
 {
     return _firstname;
