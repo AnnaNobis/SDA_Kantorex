@@ -2,8 +2,10 @@
 #include <vector>
 #include <string>
 #include "UsersList.hpp"
+#include <iostream>
+#include <algorithm>
 
-class UsersList;
+//class UsersList;
 
 enum class ApplicationRole
 {

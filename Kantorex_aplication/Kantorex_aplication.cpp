@@ -4,15 +4,21 @@
 #include "StaticLib_DisplayWindowsConsole/Menu_Operations.h"
 #include "../include_libraries/tabulate.hpp"
 #include "../Kantorex_login/Kantorex.hpp"
+#include "Kantorex_login/LogInManager.hpp"
+#include "Kantorex_login/WriteJSONfile.hpp"
 
 using namespace tabulate;
 
 int main()
 {
 
+	//LogInManager login;
+	//login.checkUser();
+	//std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+
 	IKantorDisplay window;
 	window.displayLogin();
-	system("cls"); //czyœci ekran logowania
+	system("cls"); //czyï¿½ci ekran logowania
 
 	// IKantorDisplay window;
    //window.displayCurrencyTable();

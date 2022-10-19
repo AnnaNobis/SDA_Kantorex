@@ -23,5 +23,6 @@ public:
 	std::string getUserLastname() const;
 	void setUserFirstname(std::string firstname);
 	void setUserLastname(std::string lastname);
-
+	void setUserId(std::string id);
+	//virtual~User();
 };
