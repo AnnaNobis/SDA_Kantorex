@@ -9,7 +9,11 @@ class Menu_Operations
 {
 
 public:
+<<<<<<< HEAD
     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE); // tutaj uchwyt do standardowego wyjï¿½cia konsoli pozyskujï¿½
+=======
+    HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE); // tutaj uchwyt do standardowego wyjœcia konsoli 
+>>>>>>> 493d46e (drobne zmiany display)
 
 
     void drawingPartMenuOperations();
