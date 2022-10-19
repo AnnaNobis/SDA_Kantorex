@@ -5,12 +5,15 @@
 
 void IKantorDisplay::displayLogin()
 {
+<<<<<<< HEAD
 	
 	//Kantorex session;
 	//ApplicationRole appRole = session.userAuthorization();
 	//std::shared_ptr<LogInManager> currentUser = session.creatLoggedUser(appRole)
 	//currentUser->displayLoggedUserInfo();
 
+=======
+>>>>>>> 8da8043 (drobne zmiany main i IKantorDisplay bez zakomentowanych linii)
 	LogInManager login;
 	login.checkUser();
 	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
