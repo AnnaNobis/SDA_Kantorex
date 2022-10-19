@@ -2,8 +2,13 @@
 #include "Menu_Operations.h"
 #include "IKantorDisplay.h"
 #include "../ExhangerStaticLib/ITransaction.h"
+#include "../Kantorex_login/LogInManager.hpp"
+#include "../Kantorex_login/ILoggedUser.hpp"
+#include "../Kantorex_login/Administrator.hpp"
+#include "../ExhangerStaticLib/Exchanger.h"
 
-void Menu_Operations::displayMenuOperations()
+
+void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedUser)
 { 
    // IKantorDisplay window;
    //window.displayCurrencyTable();
@@ -19,31 +24,57 @@ void Menu_Operations::displayMenuOperations()
 
     int id = 0; // id wyboru
 
+
     do {
         menu("SELECT OPERATION:", tMenuGl, id); // wywo�anie funkcji menu, kt�ra wy�wietli i wykona niezb�dne instrukcje zwi�zane z rysowaniem i zmian� pozycji w menu
         system("cls"); // czyszczenie ekranu, gdy funkcja menu g��wnego zostanie wykonana
         switch (id)  // tutaj zachowanie programu w zale�no�ci od wyboru opcji
-        {
+        { 
         case 1:  // BUY OPERATION
-          //if(_) - funkcja na obiekcie tworzonym dynamicznie
-       //X.get_canBuy
-       
-            //tutaj kod od Klaudii
-
-            //else - "nie masz dost�pu do tej opcji"
-
-
+            if (loggedUser->getCanBuy())
+            {
+//tutaj kod od Klaudii
+                 auto buy = OperationSellBuy::BUY;
+                 Exchanger transactionBuy(buy);
+               
+          }
+            //else  - napis że nie masz dostępu albo jakieś info   
+            else 
+            std::cout << "Sorry, access to this option denied!" << std::endl;
             break;
+
         case 2: // SELL OPERATION
-           
-            std::cout << std::endl;
+            if (loggedUser->getCanSell())
+            {
+                //tutaj kod od Klaudii
+                auto sell = OperationSellBuy::SELL;
+               // Exchanger transactionSell(sell);
+
+            }
+            else  //- napis że nie masz dostępu albo jakieś info  
+            std::cout << "Sorry, access to this option denied!" << std::endl;
             break;
+
         case 3: // BALANCE
-
+            if (loggedUser->getCanSell()) //zmienić 
+            {
+                //tutaj kod od Marty
+              
+            }
+            else  //- napis że nie masz dostępu albo jakieś info  
+            std::cout << "Sorry, access to this option denied!" << std::endl;
             break;
+
         case 4: //REPORTS
+            if (loggedUser->getCanSell()) //zmienić
+            {
+                //tutaj kod od Mileny
 
+            }
+            else  //- napis że nie masz dostępu albo jakieś info  
+                std::cout << "Sorry, access to this option denied!" << std::endl;
             break;
+
         case 0: // dla wyj�cia z programu
         {
             std::cout << "Press y, if you want to exit...";
@@ -66,6 +97,7 @@ void Menu_Operations::displayMenuOperations()
     std::cin.get();
 
 }
+
 
 void Menu_Operations::gotoxy(int x, int y)
     {

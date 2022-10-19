@@ -6,6 +6,10 @@
 #include "../Kantorex_login/Kantorex.hpp"
 #include "Kantorex_login/LogInManager.hpp"
 #include "Kantorex_login/WriteJSONfile.hpp"
+#include "Kantorex_login/Administrator.hpp"
+
+
+
 
 using namespace tabulate;
 
@@ -23,7 +27,7 @@ int main()
    //window.displayCurrencyTable();
 
 	Menu_Operations screen;
-	screen.displayMenuOperations();
+	screen.displayMenuOperations(loggedUser);
 
     JSONReader dataReader;
     dataReader.readCurrencies("JSONTabelaA.json");
