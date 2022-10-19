@@ -4,6 +4,7 @@
 #include <string>
 #include <windows.h>
 #include <conio.h>
+#include "../Kantorex_login/ILoggedUser.hpp"
 
 class Menu_Operations
 {
@@ -26,7 +27,7 @@ public:
 
     int menu(std::string title, std::vector<std::string>& tMenu, int& id);// a tu menu rysuj�
 
-    void displayMenuOperations();
+    void displayMenuOperations(std::shared_ptr<ILoggedUser> loggedUser);
 
 
 

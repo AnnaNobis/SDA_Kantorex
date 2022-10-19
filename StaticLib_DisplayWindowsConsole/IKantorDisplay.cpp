@@ -3,12 +3,12 @@
 #include "../Kantorex_login/LogInManager.hpp"
 #include <iostream>
 
-void IKantorDisplay::displayLogin()
-{
-    LogInManager login;
-	login.checkUser();
-	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
-}
+//void IKantorDisplay::displayLogin()
+//{
+//    LogInManager login;
+//	login.checkUser();
+//	//std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+//}
 
 void IKantorDisplay::displayCurrencyTable()
 {

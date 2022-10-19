@@ -7,7 +7,7 @@ using namespace tabulate;
 class IKantorDisplay
 {
 public:
-	void displayLogin();
+	//void displayLogin();
 	
 	void displayCurrencyTable();
 
