@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Menu_Operations.h"
 #include "IKantorDisplay.h"
+#include "../ExhangerStaticLib/ITransaction.h"
 
 void Menu_Operations::displayMenuOperations()
 { 
@@ -24,8 +25,14 @@ void Menu_Operations::displayMenuOperations()
         switch (id)  // tutaj zachowanie programu w zaleï¿½noï¿½ci od wyboru opcji
         {
         case 1:  // BUY OPERATION
-          
-          
+          //if(_) - funkcja na obiekcie tworzonym dynamicznie
+       //X.get_canBuy
+       
+            //tutaj kod od Klaudii
+
+            //else - "nie masz dostêpu do tej opcji"
+
+
             break;
         case 2: // SELL OPERATION
            
@@ -58,8 +65,6 @@ void Menu_Operations::displayMenuOperations()
     std::cout << "Press enter to end session...";
     std::cin.get();
 
-   
-
 }
 
 void Menu_Operations::gotoxy(int x, int y)
@@ -69,7 +74,6 @@ void Menu_Operations::gotoxy(int x, int y)
         c.Y = y - 1; // to samo co powyï¿½ej
         SetConsoleCursorPosition(handle, c); // ustaw pozycjï¿½ karetki
     }
-
 
 
 void Menu_Operations::WriteMenuPos(std::string & str, int id, int idset)
