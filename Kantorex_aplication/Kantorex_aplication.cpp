@@ -12,12 +12,11 @@ using namespace tabulate;
 int main()
 {
 
-	//LogInManager login;
-	//login.checkUser();
-	//std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+	LogInManager login;
+	login.checkUser();
+	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
 
-	IKantorDisplay window;
-	window.displayLogin();
+	
 	system("cls"); //czy�ci ekran logowania
 
 	// IKantorDisplay window;
