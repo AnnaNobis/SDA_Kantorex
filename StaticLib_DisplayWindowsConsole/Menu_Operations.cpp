@@ -50,6 +50,7 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                 auto sell = OperationSellBuy::SELL;
                 //Exchanger transactionSell(sell);
 
+                //Exchanger transactionSell (sell, _inputCurrencyFrom, _inputAmount, _inputCurrencyTo);
                 //tutaj kod Klaudii
                 
 
