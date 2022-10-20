@@ -6,8 +6,8 @@
 
 UsersList::UsersList()
 {
-   // JSONfilesManager jsonFile;
-   // _usersList = std::make_shared<std::vector<User>>(jsonFile.read());
+    ReadJSONfile jsonFile;
+    _usersList = std::make_shared<std::vector<User>>(jsonFile.read());
 }
 
 
@@ -44,15 +44,20 @@ User UsersList::getUser(std::string lastName)
             return User();
 }
 
-void UsersList::addUser(std::string firstname, std::string lastname)
-{
-    User newUser(firstname, lastname);
-    _usersList->push_back(newUser);
-}
-void UsersList::addUser(User user)
-{
-    _usersList->push_back(user);
-}
+//void UsersList::addUser(std::string firstname, std::string lastname, std::string login, std::string password, ApplicationRole applicationRole)
+//{
+//    User newUser(firstname, lastname, login, password, applicationRole);
+//    _usersList->push_back(newUser);
+//}
+//void UsersList::addUser(std::string firstname, std::string lastname)
+//{
+//    User newUser(firstname, lastname);
+//    _usersList->push_back(newUser);
+//}
+//void UsersList::addUser(User user)
+//{
+//    _usersList->push_back(user);
+//}
 
 void UsersList::displayUsers()
 {
@@ -60,4 +65,11 @@ void UsersList::displayUsers()
 {
     std::cout << (*it).getUserId() << ", " << (*it).getUserFirstname() << ", " << (*it).getUserLastname() << std::endl;
 }
+}
+
+UsersList::~UsersList()
+{
+    WriteJSONfile file;
+    file.write(getUsersList());
+    std::cout << std::endl << "Wywołanie destruktora. Zapis do pliku." << std::endl;
 }

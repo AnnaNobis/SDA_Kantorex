@@ -1,13 +1,13 @@
 ﻿#pragma once
 #include "../include_libraries/tabulate.hpp"
-#include "../Kantorex_login/Kantorex.hpp"
+//#include "../Kantorex_login/Kantorex.hpp"
 
 using namespace tabulate;
 
 class IKantorDisplay
 {
 public:
-	void displayLogin();
+	//void displayLogin();
 	
 	void displayCurrencyTable();
 
