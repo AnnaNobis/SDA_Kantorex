@@ -81,6 +81,17 @@ void LogInManager::setPassword()
 {
 	std::cout << "Enter password" << std::endl;
 	std::string password;
-	std::cin >> password;
-	_password = password;
+	//std::cin >> password;
+	_password = hidePassword(password);
+}
+
+std::string LogInManager::hidePassword(std::string & password)
+{
+	char c;
+	while ((c = _getch()) != 13)
+	{
+		std::cout << "*";
+		password += c;
+	}
+	return password;
 }
