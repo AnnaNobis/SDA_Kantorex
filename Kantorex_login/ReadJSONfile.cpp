@@ -52,8 +52,7 @@ std::vector<User> ReadJSONfile::read()
 		login = elem["login"];
 		password = elem["password"];
 		appRole = elem["appRole"];
-		
-		std::cout << elem;
+
 
 		listaU.emplace_back(name, surname, login, password, User::stringToEnum(appRole));
 		

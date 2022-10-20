@@ -57,6 +57,7 @@ bool Authorization::checkPassword(std::string userPassword)
 	}
 
 }
+
 User Authorization::getCheckedUser()
 {
 	return _checkedUser;
