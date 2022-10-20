@@ -30,27 +30,59 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
         system("cls"); // czyszczenie ekranu, gdy funkcja menu g��wnego zostanie wykonana
         switch (id)  // tutaj zachowanie programu w zale�no�ci od wyboru opcji
         { 
-        case 1:  // BUY OPERATION
-            if (loggedUser->getCanBuy())
+           
+        case 1:  // SELL OPERATION
+            if (loggedUser->getCanSell())
             {
-//tutaj kod od Klaudii
-                 auto buy = OperationSellBuy::BUY;
-                 Exchanger transactionBuy(buy);
-               
-          }
+                std::string _inputCurrencyFrom= "pln";
+                std::string _inputCurrencyTo;
+                float _inputAmount;
+
+                std::cout << "      " << "SELL OPERATION MODE" << "        " << std::endl;
+          
+                std::cout << "Enter currency to exchange/sell : " << std::endl;
+                std::cin >> _inputCurrencyTo;
+                std::cout << "You are exchanging from : " << _inputCurrencyFrom  << " to : " << _inputCurrencyTo << std::endl;
+
+                std::cout << "Enter amount in: " << _inputCurrencyFrom << std::endl;
+                std::cin >> _inputAmount;
+
+                auto sell = OperationSellBuy::SELL;
+                Exchanger transactionSell(sell);
+
+                //tutaj kod Klaudii
+                
+
+            }
             //else  - napis że nie masz dostępu albo jakieś info   
             else 
             std::cout << "Sorry, access to this option denied!" << std::endl;
             break;
 
-        case 2: // SELL OPERATION
-            if (loggedUser->getCanSell())
-            {
-                //tutaj kod od Klaudii
-                auto sell = OperationSellBuy::SELL;
-               // Exchanger transactionSell(sell);
+        case 2: // BUY OPERATION
+            
+            if (loggedUser->getCanBuy())
+            { 
+                std::string _inputCurrencyFrom;
+                 std::string _inputCurrencyTo = "pln";
+                 float _inputAmount;
 
-            }
+                std::cout << "      " << "BUY OPERATION MODE" << "        " << std::endl;
+
+                std::cout << "Enter currency to exchange/buy : " << std::endl;
+                std::cin >> _inputCurrencyFrom;
+                std::cout << "You are exchanging to : " << _inputCurrencyTo << std::endl;
+
+                std::cout << "Enter amount in: " << _inputCurrencyFrom << std::endl;
+                std::cin >> _inputAmount;
+
+//tutaj kod od Klaudii
+                 auto buy = OperationSellBuy::BUY;
+                 Exchanger transactionBuy(buy);
+               
+         
+          }
+           
             else  //- napis że nie masz dostępu albo jakieś info  
             std::cout << "Sorry, access to this option denied!" << std::endl;
             break;
