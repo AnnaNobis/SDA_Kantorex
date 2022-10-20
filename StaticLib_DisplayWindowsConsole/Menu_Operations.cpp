@@ -49,7 +49,9 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
 
                 auto sell = OperationSellBuy::SELL;
                 Exchanger transactionSell(sell, _inputCurrencyFrom, _inputAmount, _inputCurrencyTo);
+                //Exchanger transactionSell(sell);
 
+                //Exchanger transactionSell (sell, _inputCurrencyFrom, _inputAmount, _inputCurrencyTo);
                 //tutaj kod Klaudii
                 
 
@@ -79,7 +81,8 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
 //tutaj kod od Klaudii
                  auto buy = OperationSellBuy::BUY;
                  Exchanger transactionBuy(buy, _inputCurrencyFrom, _inputAmount, _inputCurrencyTo);
-               
+                 //Exchanger transactionBuy(buy);
+             
          
           }
            
