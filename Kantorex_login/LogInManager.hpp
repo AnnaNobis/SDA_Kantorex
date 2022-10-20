@@ -6,6 +6,7 @@
 #include "Cashier.hpp"
 #include "Administrator.hpp"
 #include "Guest.hpp"
+#include <conio.h>
 
 class LogInManager
 {
@@ -20,5 +21,6 @@ public:
 	void displayLoggedUserInfo();
 	void setUsername();
 	void setPassword();
+	std::string hidePassword(std::string & password);
 };
 

@@ -19,7 +19,8 @@ public:
 	virtual void setCurrencyFrom(std::string  currencyFrom)=0;
 	virtual void setAmount(float amount) = 0;
 	virtual void setCurrencyTo(std::string  currencyTo) = 0;
-	virtual void  printCalculatedValue();
+	virtual void printCalculatedValue()=0;
+	virtual bool checkAmount()=0;
 
 	virtual float calculateExchangeValue() = 0;
 

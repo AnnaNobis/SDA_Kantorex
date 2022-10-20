@@ -45,6 +45,6 @@ int main()
 	//auto buy = OperationSellBuy::BUY;
 	//auto sell = OperationSellBuy::SELL;
 
-	//Exchanger firstBuy(buy);
+
 }
 

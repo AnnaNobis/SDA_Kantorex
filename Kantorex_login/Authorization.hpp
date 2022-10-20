@@ -36,23 +36,11 @@
 class Authorization
 {
 private:
-	//std::shared_ptr<std::vector<User>> _authorizationData;
-	//std::vector<AuthorizationData> authorizationData
-	//{
-	//	{1,"cashier","1234", ApplicationRole::CASHIER},
-	//	{2,"admin","8888", ApplicationRole::ADMINISTRATOR},
-	//	{3,"guest","9999", ApplicationRole::GUEST}
-	//};
 	User _checkedUser;
 	UsersList _users;
 public:
-	//Authorization();
 	bool checkLogin(std::string userLogin);
 	bool checkPassword(std::string userPassword);
 	User getCheckedUser();
-	//ApplicationRole getAppRole();
-	//std::string getLogin(int id);
-	//std::string getPassword(int id);
-	//int getId();
 };
 

@@ -30,6 +30,14 @@ std::string Buy::checkCurrencyFrom(std::string currencyFrom)
 	return answer;
 }
 
+bool Buy::checkAmount()
+{
+	if (_amount > 0)
+	{
+		return true;
+	}
+}
+
 float Buy::calculateExchangeValue()
 {
 	float result = _spread * getRate() * _amount;
