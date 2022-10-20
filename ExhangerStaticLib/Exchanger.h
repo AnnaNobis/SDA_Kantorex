@@ -16,6 +16,8 @@ public:
 
 	Exchanger(OperationSellBuy& chooseOperation, std::string& inputCurrencyFrom, float& inputAmount,
 		std::string& inputCurrencyTo);
+	void startTransaction();
+
 	//void getCurrency(std::string inputCurrency);
 	//void print(int i);
 	//void setSpread(float inputSpread);

@@ -14,9 +14,9 @@ float Sell::getSpread()
 
 float Sell::getRate()
 {
-	RateCurrencyMap objTemp;
-	auto RateAndCurrency = objTemp.createMapCodeRate();
-	float rate = RateAndCurrency[_currencyTo];
+	ReadBuyRates objTemp;
+	auto ReadBuyRates = objTemp.read();
+	float rate = ReadBuyRates[_currencyFrom];
 	return rate;
 }
 
@@ -46,6 +46,7 @@ void Sell::printCalculatedValue()
 {
 	std::cout << calculateExchangeValue();
 }
+
 void Sell::setCurrencyFrom(std::string currencyFrom)
 {
 	currencyFrom = "PLN";

@@ -14,9 +14,9 @@ float Buy::getSpread()
 
 float Buy::getRate()
 {
-	RateCurrencyMap objTemp;
-	auto RateAndCurrency = objTemp.createMapCodeRate();
-	float rate = RateAndCurrency[_currencyFrom];
+	ReadBuyRates objTemp;
+	auto ReadBuyRates = objTemp.read();
+	float rate = ReadBuyRates[_currencyFrom];
 	return rate;
 }
 

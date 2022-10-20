@@ -4,11 +4,11 @@
 #include <iostream>
 using json = nlohmann::ordered_json;
 
-//std::string ReadSellRates::filePath = "TabelaC.json";
+std::string ReadSellRates::filePath = "TabelaC.json";
 
-std::map<std::string, double> ReadSellRates::read(std::string path)
+std::map<std::string, double> ReadSellRates::read()
 {
-	std::ifstream ifs(path);
+	std::ifstream ifs(filePath);
 	json j;
 
 	if (!ifs.is_open())
@@ -30,14 +30,10 @@ std::map<std::string, double> ReadSellRates::read(std::string path)
 		}
 	}
 
-	for (auto& el : sellRates) {
-		std::cout << "Kod: " << el.first << "  |  Cena: " << el.second << std::endl;
-	}
+	//for (auto& el : sellRates) {
+	//	std::cout << "Kod: " << el.first << "  |  Cena: " << el.second << std::endl;
+	//}
 	return sellRates;
 
 }
-
-ReadSellRates::ReadSellRates() {
-}
-
 

@@ -36,8 +36,8 @@ int main()
 
 
 
-	//Menu_Operations screen;
-	//screen.displayMenuOperations();
+	Menu_Operations screen;
+	screen.displayMenuOperations(loggedUser);
 
     //JSONReader dataReader;
     //dataReader.readCurrencies("JSONTabelaA.json");

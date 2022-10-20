@@ -1,5 +1,6 @@
 #pragma once
-#include "RateCurrrencyMap.h"
+#include <iostream>
+#include "../JSONLib/ReadBuyRates.h"
 #include "ITransaction.h"
 
 class Sell : public ITransaction

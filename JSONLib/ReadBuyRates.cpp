@@ -30,12 +30,10 @@ std::map<std::string, double> ReadBuyRates::read()
 		}
 	}
 
-	for (auto& el : buyRates) {
-		std::cout << "Kod: " << el.first << "  |  Cena: " << el.second << std::endl;
-	}
+	//for (auto& el : buyRates) {
+	//	std::cout << "Kod: " << el.first << "  |  Cena: " << el.second << std::endl;
+	//}
 	return buyRates;
 
 }
 
-ReadBuyRates::ReadBuyRates() {
-}
