@@ -79,10 +79,15 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                 std::cin >> _inputAmount;
 
 //tutaj kod od Klaudii
+
+                 //auto buy = OperationSellBuy::BUY;
+                // Exchanger transactionBuy(buy);
+
                  auto buy = OperationSellBuy::BUY;
                  Exchanger transactionBuy(buy, _inputCurrencyFrom, _inputAmount, _inputCurrencyTo);
                  //Exchanger transactionBuy(buy);
              
+
          
           }
            

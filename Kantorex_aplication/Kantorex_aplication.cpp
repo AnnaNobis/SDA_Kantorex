@@ -15,7 +15,7 @@
 #include "Kantorex_login/Administrator.hpp"
 
 
-
+//using json = nlohmann::ordered_json;
 
 
 using namespace tabulate;
@@ -42,8 +42,9 @@ int main()
     //JSONReader dataReader;
     //dataReader.readCurrencies("JSONTabelaA.json");
     //dataReader.wypisz();
-	auto buy = OperationSellBuy::BUY;
-	auto sell = OperationSellBuy::SELL;
+	//auto buy = OperationSellBuy::BUY;
+	//auto sell = OperationSellBuy::SELL;
+
 
 }
 

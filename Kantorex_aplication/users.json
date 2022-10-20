@@ -1,5 +1,20 @@
 [
     {
+
+        "firstname": "Maja",
+        "id": "1",
+        "lastname": "Kaleta"
+    },
+    {
+        "firstname": "Lili",
+        "id": "2",
+        "lastname": "Sobieski"
+    },
+    {
+        "firstname": "Tom",
+        "id": "3",
+        "lastname": "Tomski"
+},
         "appRole": "cashier",
         "firstname": "Maja",
         "id": "2",
@@ -22,5 +37,6 @@
         "lastname": "Tomski",
         "login": "guest",
         "password": "9999"
+
     }
 ]
