@@ -15,10 +15,11 @@ public:
 	virtual void setSpread(float spread) = 0;
 	virtual float getSpread() = 0;
 	virtual float getRate() = 0; //zwracam value czyli mnoznik
-
+	virtual std::string checkCurrencyFrom(std::string currencyFrom)=0;
 	virtual void setCurrencyFrom(std::string  currencyFrom)=0;
 	virtual void setAmount(float amount) = 0;
 	virtual void setCurrencyTo(std::string  currencyTo) = 0;
+	virtual void  printCalculatedValue();
 
 	virtual float calculateExchangeValue() = 0;
 

@@ -2,9 +2,9 @@
 #include <vector>
 #include "Currency.h"
 #include "JSONReader.h"
+
 class RawData
-{
-	JSONReader dataFromFile;
+{private:
 	std::vector<Currency> rawDataVector;
 public:
 	RawData();

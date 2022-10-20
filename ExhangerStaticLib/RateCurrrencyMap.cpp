@@ -1,6 +1,5 @@
 #include "pch.h"
 #include "RateCurrrencyMap.h"
-#include "Currency.h"
 
 std::map<std::string, float> RateCurrencyMap::createMapCodeRate()
 {

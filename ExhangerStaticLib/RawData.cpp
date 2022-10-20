@@ -3,10 +3,11 @@
 
 RawData::RawData()
 {
-	rawDataVector = dataFromFile.readCurrencies();
+	JSONReader dataFromFile;
+	rawDataVector = dataFromFile.readCurrencies("JSONTabelaA.json");
 }
 
 std::vector<Currency> RawData::getRawData()
 {
 	return rawDataVector;
-};
+}
