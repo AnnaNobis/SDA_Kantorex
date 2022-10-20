@@ -118,6 +118,9 @@
       </SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -152,6 +155,23 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExhangerStaticLib\ExhangerStaticLib.vcxproj">
+      <Project>{0804d17b-a210-40e0-acc7-5f12d8e8f96c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\JSONLib\JSONLib.vcxproj">
+      <Project>{ec88062b-a056-427a-b880-67f836e077d9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Kantorex_login\Kantorex_login.vcxproj">
+      <Project>{23187958-7bd4-471b-9816-4a0b70f67441}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Kantorex_UsersRoles\Kantorex_UsersRoles.vcxproj">
+      <Project>{64bfbf5f-eeb0-4c3f-a3a8-577437db96fb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\StaticLib_DisplayWindowsConsole\StaticLib_DisplayWindowsConsole.vcxproj">
+      <Project>{c0e94b94-a897-4c58-9c62-744d433f4fa4}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
