@@ -3,14 +3,12 @@
 #include "../Kantorex_login/LogInManager.hpp"
 #include <iostream>
 
-void IKantorDisplay::displayLogin()
-{
-	//Kantorex session;
-	//ApplicationRole appRole = session.userAuthorization();
-	//std::shared_ptr<LogInManager> currentUser = session.creatLoggedUser(appRole)
-	//currentUser->displayLoggedUserInfo();
-	
-}
+//void IKantorDisplay::displayLogin()
+//{
+//    LogInManager login;
+//	login.checkUser();
+//	//std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+//}
 
 void IKantorDisplay::displayCurrencyTable()
 {
@@ -49,7 +47,7 @@ void IKantorDisplay::displayCurrencyTable()
 
 void IKantorDisplay::displayMenu()
 {
-	// struktura która przyjmuje
+	// struktura ktï¿½ra przyjmuje
 	{
 		Table choiceTable;
 
@@ -85,6 +83,6 @@ void IKantorDisplay::displayBuyOperation()
 
 void IKantorDisplay::displayExitScreen()
 {
-	//tutaj powinien byæ balance table
+	//tutaj powinien byï¿½ balance table
 
 }

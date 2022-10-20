@@ -4,7 +4,8 @@
 #include <memory>
 #include <vector>
 //#include "../include_libraries/json.hpp"
-//#include "../Kantorex_fileReader_Writer/JSONfilesManager.hpp"
+#include "ReadJSONfile.hpp"
+#include "WriteJSONfile.hpp"
 
 class UsersList
 {
@@ -18,5 +19,7 @@ public:
 	void addUser(std::string firstname, std::string lastname);
 	void addUser(User user);
 	void displayUsers();
+	
+	virtual~UsersList();
 };
 

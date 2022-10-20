@@ -4,12 +4,15 @@
 #include <string>
 #include <windows.h>
 #include <conio.h>
+#include "../Kantorex_login/ILoggedUser.hpp"
 
 class Menu_Operations
 {
 
 public:
-    HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE); // tutaj uchwyt do standardowego wyjœcia konsoli pozyskujê
+
+    HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE); // tutaj uchwyt do standardowego wyjï¿½cia konsoli 
+
 
 
     void drawingPartMenuOperations();
@@ -19,12 +22,12 @@ public:
     // rysowanie pojedynczej pozycji w menu
     void WriteMenuPos(std::string& str, int id, int idset);
 
-    // rysowanie linii sk³adaj¹cej siê z znaków = a ich liczba okreœla d³ugoœæ linii
+    // rysowanie linii skï¿½adajï¿½cej siï¿½ z znakï¿½w = a ich liczba okreï¿½la dï¿½ugoï¿½ï¿½ linii
     void WriteLine(unsigned int width);
 
-    int menu(std::string title, std::vector<std::string>& tMenu, int& id);// a tu menu rysujê
+    int menu(std::string title, std::vector<std::string>& tMenu, int& id);// a tu menu rysujï¿½
 
-    void displayMenuOperations();
+    void displayMenuOperations(std::shared_ptr<ILoggedUser> loggedUser);
 
 
 

@@ -1,0 +1,37 @@
+[
+    {
+        "firstname": "Maja",
+        "id": "1",
+        "lastname": "Kaleta"
+    },
+    {
+        "firstname": "Lili",
+        "id": "2",
+        "lastname": "Sobieski"
+    },
+    {
+        "firstname": "Tom",
+        "id": "3",
+        "lastname": "Tomski"
+    },
+    {
+        "firstname": "August",
+        "id": "4",
+        "lastname": "Poniatowski"
+    },
+    {
+        "firstname": "Gabriel",
+        "id": "5",
+        "lastname": "Narutowicz"
+    },
+    {
+        "firstname": "August",
+        "id": "6",
+        "lastname": "Poniatowski"
+    },
+    {
+        "firstname": "Gabriel",
+        "id": "7",
+        "lastname": "Narutowicz"
+    }
+]
