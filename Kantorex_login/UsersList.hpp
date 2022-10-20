@@ -16,8 +16,9 @@ public:
 	std::shared_ptr<std::vector<User>> getUsersList();
 	User getUser(int id);
 	User getUser(std::string lastName);
-	void addUser(std::string firstname, std::string lastname);
-	void addUser(User user);
+	//void addUser(std::string firstname, std::string lastname, std::string login, std::string password, ApplicationRole applicationRole);
+	//void addUser(std::string firstname, std::string lastname);
+	//void addUser(User user);
 	void displayUsers();
 	
 	virtual~UsersList();

@@ -20,35 +20,27 @@ int main()
 {
 
 
+
 	//IKantorDisplay window;
 	//window.displayLogin();
 	//system("cls"); //czy�ci ekran logowania
+
 
 	LogInManager login;
 	login.checkUser();
 	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
 
 	
-	system("cls"); //czy�ci ekran logowania
+	//system("cls"); //czy�ci ekran logowania
 
-
-	//// IKantorDisplay window;
- //  //window.displayCurrencyTable();
 
 
 	//Menu_Operations screen;
 	//screen.displayMenuOperations();
 
-	Menu_Operations screen;
-	screen.displayMenuOperations(loggedUser);
+    //JSONReader dataReader;
+    //dataReader.readCurrencies("JSONTabelaA.json");
+    //dataReader.wypisz();
 
- //   JSONReader dataReader;
- //   dataReader.readCurrencies("JSONTabelaA.json");
- //   dataReader.wypisz();
-	//ReadSellRates r;
-	//r.read("TabelaC.json");
-	//std::cout << "---------------------------------" << std::endl;
-	//ReadBuyRates b;
-	//b.read();
 }
 

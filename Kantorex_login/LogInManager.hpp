@@ -7,10 +7,11 @@
 #include "Administrator.hpp"
 #include "Guest.hpp"
 
-class LogInManager : public Authorization
+class LogInManager
 {
 	std::string _username;
 	std::string _password;
+	Authorization _authorization;
 	ApplicationRole _role;
 public:
 	LogInManager();

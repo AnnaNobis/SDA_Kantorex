@@ -44,15 +44,20 @@ User UsersList::getUser(std::string lastName)
             return User();
 }
 
-void UsersList::addUser(std::string firstname, std::string lastname)
-{
-    User newUser(firstname, lastname);
-    _usersList->push_back(newUser);
-}
-void UsersList::addUser(User user)
-{
-    _usersList->push_back(user);
-}
+//void UsersList::addUser(std::string firstname, std::string lastname, std::string login, std::string password, ApplicationRole applicationRole)
+//{
+//    User newUser(firstname, lastname, login, password, applicationRole);
+//    _usersList->push_back(newUser);
+//}
+//void UsersList::addUser(std::string firstname, std::string lastname)
+//{
+//    User newUser(firstname, lastname);
+//    _usersList->push_back(newUser);
+//}
+//void UsersList::addUser(User user)
+//{
+//    _usersList->push_back(user);
+//}
 
 void UsersList::displayUsers()
 {
@@ -66,5 +71,5 @@ UsersList::~UsersList()
 {
     WriteJSONfile file;
     file.write(getUsersList());
-    std::cout << "Wywołanie destruktora. Zapis do pliku." << std::endl;
+    std::cout << std::endl << "Wywołanie destruktora. Zapis do pliku." << std::endl;
 }
