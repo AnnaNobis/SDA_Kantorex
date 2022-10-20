@@ -4,18 +4,27 @@
 #include "StaticLib_DisplayWindowsConsole/Menu_Operations.h"
 #include "../include_libraries/tabulate.hpp"
 #include "../Kantorex_login/Kantorex.hpp"
+#include "JSONLib/ReadBuyRates.h"
+#include "JSONLib/ReadSellRates.h"
 #include "Kantorex_login/LogInManager.hpp"
 #include "Kantorex_login/WriteJSONfile.hpp"
+#include "Kantorex_login/Administrator.hpp"
+
+
+
+
 
 using namespace tabulate;
 
 int main()
 {
 
-	//UsersList lista;
-	//lista.displayUsers();
-	////lista.addUser("Gabriel", "Narutowicz","nowy","1111",ApplicationRole::GUEST);
-	//lista.displayUsers();
+
+
+	//IKantorDisplay window;
+	//window.displayLogin();
+	//system("cls"); //czy�ci ekran logowania
+
 
 	LogInManager login;
 	login.checkUser();
@@ -24,8 +33,7 @@ int main()
 	
 	//system("cls"); //czy�ci ekran logowania
 
-	// IKantorDisplay window;
-   //window.displayCurrencyTable();
+
 
 	//Menu_Operations screen;
 	//screen.displayMenuOperations();
@@ -33,5 +41,6 @@ int main()
     //JSONReader dataReader;
     //dataReader.readCurrencies("JSONTabelaA.json");
     //dataReader.wypisz();
+
 }
 
