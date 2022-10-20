@@ -46,5 +46,3 @@ private:
 //
 //transaction->calculateExchangeValue();
 };
-
-

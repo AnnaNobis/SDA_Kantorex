@@ -157,6 +157,8 @@
     <ClInclude Include="json\json.hpp" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="RawData.h" />
+    <ClInclude Include="ReadBuyRates.h" />
+    <ClInclude Include="ReadSellRates.h" />
     <ClInclude Include="ReportData.h" />
     <ClInclude Include="ReportReader.h" />
     <ClInclude Include="ReportWriter.h" />
@@ -172,6 +174,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="RawData.cpp" />
+    <ClCompile Include="ReadBuyRates.cpp" />
+    <ClCompile Include="ReadSellRates.cpp" />
     <ClCompile Include="ReportData.cpp" />
     <ClCompile Include="ReportReader.cpp" />
     <ClCompile Include="ReportWriter.cpp" />

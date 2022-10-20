@@ -42,6 +42,12 @@
     <ClInclude Include="ReportWriter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ReadBuyRates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadSellRates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="JSONLib.cpp">
@@ -66,6 +72,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ReportWriter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadBuyRates.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadSellRates.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -17,6 +17,11 @@ Exchanger::Exchanger(OperationSellBuy& chooseOperation, std::string& inputCurren
 		transaction = std::make_shared<Sell>();
 	}
 
+	if (transaction->checkAmount() == true)
+	{
+		transaction->calculateExchangeValue();
+		transaction->printCalculatedValue();
+	}
 
 	//transaction->setCurrencyFrom(_inputCurrencyFrom);
 	//transaction->setCurrencyTo(_inputCurrencyTo);
@@ -24,8 +29,7 @@ Exchanger::Exchanger(OperationSellBuy& chooseOperation, std::string& inputCurren
 	//transaction->getRate();
 	//transaction->getSpread();
 	//transaction->setSpread(_spread);
-	transaction->calculateExchangeValue();
-	transaction->printCalculatedValue();
+
 };
 
 //void Exchanger::print(int i)
