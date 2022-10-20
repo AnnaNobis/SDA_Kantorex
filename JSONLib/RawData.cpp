@@ -3,6 +3,7 @@
 
 RawData::RawData() {
 
+	JSONReader dataFromFile;
 	rawDataVector = dataFromFile.readCurrencies();
 }
 

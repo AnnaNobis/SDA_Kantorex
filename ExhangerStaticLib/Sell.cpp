@@ -20,14 +20,29 @@ float Sell::getRate()
 	return rate;
 }
 
-float Sell::calculateExchangeValue()
+std::string Sell::checkCurrencyFrom(std::string currencyFrom)
 {
-	return _spread * _amount / getRate();
+		std::string answer;
+		if (currencyFrom != "PLN")
+		{
+			std::string answer = "Powinieneœ wybraæ opcje Buy";
+		}
+		return answer;
 }
 
+float Sell::calculateExchangeValue()
+{
+	float result = _spread * getRate() * _amount;
+	return result;
+}
+
+void Sell::printCalculatedValue()
+{
+	std::cout << calculateExchangeValue();
+}
 void Sell::setCurrencyFrom(std::string currencyFrom)
 {
-	currencyFrom = _currencyFrom;
+	currencyFrom = "PLN";
 }
 
 void Sell::setAmount(float amount)
