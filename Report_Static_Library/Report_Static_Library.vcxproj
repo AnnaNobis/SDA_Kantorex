@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ec88062b-a056-427a-b880-67f836e077d9}</ProjectGuid>
-    <RootNamespace>JSONLib</RootNamespace>
+    <ProjectGuid>{d778e8a2-5f78-412e-9508-03718a54b5bf}</ProjectGuid>
+    <RootNamespace>ReportStaticLibrary</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -122,7 +122,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
@@ -151,34 +151,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Currency.h" />
+    <ClInclude Include="Date.hpp" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="JSONReader.h" />
+    <ClInclude Include="JSONReportReader.hpp" />
+    <ClInclude Include="JSONReportWriter.hpp" />
     <ClInclude Include="json\json.hpp" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="RawData.h" />
-    <ClInclude Include="ReadBuyRates.h" />
-    <ClInclude Include="ReadSellRates.h" />
-    <ClInclude Include="ReportData.h" />
-    <ClInclude Include="ReportReader.h" />
-    <ClInclude Include="ReportWriter.h" />
+    <ClInclude Include="RawDate.hpp" />
+    <ClInclude Include="ReportData.hpp" />
+    <ClInclude Include="ReportPrinter.hpp" />
+    <ClInclude Include="Time.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Currency.cpp" />
-    <ClCompile Include="JSONLib.cpp" />
-    <ClCompile Include="JSONReader.cpp" />
+    <ClCompile Include="Date.cpp" />
+    <ClCompile Include="JSONReportReader.cpp" />
+    <ClCompile Include="JSONReportWriter.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="RawData.cpp" />
-    <ClCompile Include="ReadBuyRates.cpp" />
-    <ClCompile Include="ReadSellRates.cpp" />
+    <ClCompile Include="RawDate.cpp" />
     <ClCompile Include="ReportData.cpp" />
-    <ClCompile Include="ReportReader.cpp" />
-    <ClCompile Include="ReportWriter.cpp" />
+    <ClCompile Include="ReportPrinter.cpp" />
+    <ClCompile Include="Report_Static_Library.cpp" />
+    <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -16,6 +16,10 @@
 
 
 
+
+//using json = nlohmann::ordered_json;
+
+
 using namespace tabulate;
 
 int main()
@@ -25,9 +29,13 @@ int main()
 	//system("cls"); //czy�ci ekran logowania
 
 
-	LogInManager login;
-	login.checkUser();
-	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+
+	//LogInManager login;
+	//login.checkUser();
+	//std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+
+
+
 	
 	//system("cls"); //czy�ci ekran logowania
 
@@ -41,6 +49,7 @@ int main()
     //dataReader.wypisz();
 	//auto buy = OperationSellBuy::BUY;
 	//auto sell = OperationSellBuy::SELL;
+
 
 	//
 	//system("cls"); //czy�ci ekran logowania

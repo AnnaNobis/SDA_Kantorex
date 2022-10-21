@@ -136,9 +136,6 @@
     <ProjectReference Include="..\ExhangerStaticLib\ExhangerStaticLib.vcxproj">
       <Project>{0804d17b-a210-40e0-acc7-5f12d8e8f96c}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\JSONLib\JSONLib.vcxproj">
-      <Project>{ec88062b-a056-427a-b880-67f836e077d9}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\Kantorex_login\Kantorex_login.vcxproj">
       <Project>{23187958-7bd4-471b-9816-4a0b70f67441}</Project>
     </ProjectReference>
