@@ -6,7 +6,7 @@ using json = nlohmann::ordered_json;
 //TODO podac ostateczna sciezke pliku
 std::string ReadSellRates::filePath = "TabelaC.json";
 
-std::map<std::string, double> ReadSellRates::read()
+std::map<std::string, float> ReadSellRates::read()
 {
 	std::ifstream ifs(filePath);
 	json j;
@@ -18,7 +18,7 @@ std::map<std::string, double> ReadSellRates::read()
 	ifs >> j;
 	ifs.close();
 
-	std::map<std::string, double> sellRates;
+	std::map<std::string, float> sellRates;
 	std::string code;
 	double rate;
 
