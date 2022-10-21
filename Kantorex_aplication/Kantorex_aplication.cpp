@@ -16,6 +16,7 @@
 
 
 
+
 //using json = nlohmann::ordered_json;
 
 
@@ -28,9 +29,11 @@ int main()
 	//system("cls"); //czy�ci ekran logowania
 
 
+
 	//LogInManager login;
 	//login.checkUser();
 	//std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+
 
 
 	
