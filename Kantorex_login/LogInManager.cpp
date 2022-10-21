@@ -11,26 +11,29 @@ LogInManager::LogInManager()
 
 void LogInManager::checkUser()
 {
-	if (checkLogin(_username))
+	if (_authorization.checkLogin(_username))
+	//if (checkLogin(_username))
 	{
-		if (checkPassword(_password))
+		if (_authorization.checkPassword(_password))
 		{
 			std::cout << std::endl;
 			std::cout << std::endl;
 			std::cout << "Authorization" << std::endl;
 			displayLoggedUserInfo();
-			_role = getAppRole();
+			_role = (_authorization.getCheckedUser()).getAppRole_enum();
 		} 
 		else
 		{
 			std::cout << "Invalid password" << std::endl;
-			_role = ApplicationRole::GUEST;// na razie, do przemyślenia
+			_role = (_authorization.getCheckedUser()).getAppRole_enum();
+			//_role = ApplicationRole::GUEST;// na razie, do przemyślenia
 		}
 	}
 	else
 	{
 		std::cout << "Invalid login" << std::endl;
-		_role = ApplicationRole::GUEST;// na razie, do przemyślenia
+		_role = (_authorization.getCheckedUser()).getAppRole_enum();
+		//_role = ApplicationRole::GUEST;// na razie, do przemyślenia
 	}
 }
 
@@ -57,14 +60,11 @@ std::shared_ptr<ILoggedUser> LogInManager::creatLoggedUser()
 
 void LogInManager::displayLoggedUserInfo()
 {
-	UsersList usersList;
-	User u = usersList.getUser(getId());
-	std::string firstname = u.getUserFirstname();
-	std::string lastname = u.getUserLastname();
-	std::cout << "Logged user: " << lastname << ", " << firstname << std::endl;
+	std::cout << "Logged user: " 
+		<< (_authorization.getCheckedUser()).getUserLastname() 
+		<< ", " << (_authorization.getCheckedUser()).getUserFirstname() 
+		<< std::endl;
 	std::cout << std::endl;
-	std::cout << "All users:" << std::endl;
-	usersList.displayUsers();
 	std::cout << std::endl;
 }
 
@@ -81,6 +81,17 @@ void LogInManager::setPassword()
 {
 	std::cout << "Enter password" << std::endl;
 	std::string password;
-	std::cin >> password;
-	_password = password;
+	//std::cin >> password;
+	_password = hidePassword(password);
+}
+
+std::string LogInManager::hidePassword(std::string & password)
+{
+	char c;
+	while ((c = _getch()) != 13)
+	{
+		std::cout << "*";
+		password += c;
+	}
+	return password;
 }

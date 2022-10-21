@@ -6,13 +6,11 @@
 class ReportWriter
 {
 	static std::string filePath;
-	static bool checkIfFileExist(std::string filePath);
-public:
-	ReportWriter(std::string filePath = "report.json");
-	void setFilePath(std::string filePath);
-	static void writeReport(ReportData data);
+	static bool checkIfFileExist();
 	static void writeNewReport(ReportData data);
 	static void writeToExistingReport(ReportData data);
+public:
+	void changePath(std::string newPath);
+	static void writeReport(ReportData data);
 };
 
-//dorobic interfejs

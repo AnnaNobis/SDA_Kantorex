@@ -7,38 +7,40 @@
 
 //class UsersList;
 
-enum class ApplicationRole
-{
-	ADMINISTRATOR,
-	CASHIER,
-	GUEST
-};
+//enum class ApplicationRole
+//{
+//	ADMINISTRATOR,
+//	CASHIER,
+//	GUEST
+//};
 
-struct AuthorizationDataStructure
-{
-	int _id;
-	std::string _login;
-	std::string _password;
-	ApplicationRole _applicationRole = ApplicationRole::GUEST;
-};
+//class AuthorizationData
+//{
+//private:
+//	//int _id;
+//	std::string _id;
+//	std::string _login;
+//	std::string _password;
+//	ApplicationRole _applicationRole = ApplicationRole::GUEST;
+//public:
+//	//c-tor
+//	void setId(std::string id);
+//	void setLogin(std::string login);
+//	void setPassword(std::string password);
+//	void setApplicationRole(ApplicationRole applicatioRole);
+//	ApplicationRole getAppRole();
+//	std::string getLogin(int id);
+//	std::string getPassword(int id);
+//	int getId();
+//};
 class Authorization
 {
 private:
-	std::vector<AuthorizationDataStructure> authorizationData
-	{
-		{1,"cashier","1234", ApplicationRole::CASHIER},
-		{2,"admin","8888", ApplicationRole::ADMINISTRATOR},
-		{3,"guest","9999", ApplicationRole::GUEST}
-	};
-	AuthorizationDataStructure checkedUser;
-
+	User _checkedUser;
+	UsersList _users;
 public:
-	Authorization();
 	bool checkLogin(std::string userLogin);
 	bool checkPassword(std::string userPassword);
-	ApplicationRole getAppRole();
-	std::string getLogin(int id);
-	std::string getPassword(int id);
-	int getId();
+	User getCheckedUser();
 };
 

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
@@ -42,6 +42,12 @@
     <ClInclude Include="ReportWriter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ReadBuyRates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadSellRates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="JSONLib.cpp">
@@ -68,5 +74,15 @@
     <ClCompile Include="ReportWriter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ReadBuyRates.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadSellRates.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 74e3bf6 (Poprawione readery i writery)
   </ItemGroup>
 </Project>

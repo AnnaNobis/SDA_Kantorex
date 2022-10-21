@@ -20,9 +20,33 @@ float Buy::getRate()
 	return rate;
 }
 
+std::string Buy::checkCurrencyFrom(std::string currencyFrom)
+{
+	std::string answer;
+	if (currencyFrom == "PLN")
+	{
+		std::string answer = "Powinieneœ wybraæ opcje Sell";
+	}
+	return answer;
+}
+
+bool Buy::checkAmount()
+{
+	if (_amount > 0)
+	{
+		return true;
+	}
+}
+
 float Buy::calculateExchangeValue()
 {
-	return _spread * getRate() * _amount;
+	float result = _spread * getRate() * _amount;
+	return result;
+}
+
+void Buy::printCalculatedValue()
+{
+	std::cout << calculateExchangeValue();
 }
 
 void Buy::setCurrencyFrom(std::string  currencyFrom)

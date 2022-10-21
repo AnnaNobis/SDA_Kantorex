@@ -1,12 +1,12 @@
 #pragma once
-#include <vector>
+#include <map>
 #include <string>
-#include "ReportData.h"
-class ReportReader
+class ReadSellRates
 {
 	static std::string filePath;
 public:
-	static std::vector<ReportData>readReport();
+	std::map<std::string, double> read();
 	void changePath(std::string newPath);
+
 };
 

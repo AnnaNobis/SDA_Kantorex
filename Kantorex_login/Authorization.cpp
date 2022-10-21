@@ -7,19 +7,22 @@
 
 
 
-Authorization::Authorization()
-{
-	checkedUser._id = 0;
-	checkedUser._login = "";
-	checkedUser._password = "";
-}
+//Authorization::Authorization()
+//{
+//	//checkedUser._id = 0;
+//	//checkedUser._login = "";
+//	//checkedUser._password = "";
+//	ReadJSONfile jsonFile;
+//	_authorizationData = std::make_shared<std::vector<User>>(jsonFile.read());
+//}
 
 bool Authorization::checkLogin(std::string userLogin)
 {
-	auto findUserLogin = [userLogin](AuthorizationDataStructure user)
+
+	auto findUserLogin = [userLogin](User user)
 	{
 
-		if (userLogin == user._login)
+		if (userLogin == user.getLogin())
 		{
 			return true;
 		}
@@ -29,10 +32,10 @@ bool Authorization::checkLogin(std::string userLogin)
 		}
 
 	};
-	auto it = std::find_if(authorizationData.begin(), authorizationData.end(), findUserLogin);
-	if (it != authorizationData.end())
+	auto it = std::find_if((_users.getUsersList())->begin(), (_users.getUsersList())->end(), findUserLogin);
+	if (it != (_users.getUsersList())->end())
 	{
-		checkedUser = (*it);
+		_checkedUser = (*it);
 		return true;
 	}
 	else
@@ -44,7 +47,7 @@ bool Authorization::checkLogin(std::string userLogin)
 bool Authorization::checkPassword(std::string userPassword)
 {
 
-	if (userPassword == checkedUser._password)
+	if (userPassword == _checkedUser.getPassword())
 	{
 		return true;
 	}
@@ -55,65 +58,65 @@ bool Authorization::checkPassword(std::string userPassword)
 
 }
 
-ApplicationRole Authorization::getAppRole()
+User Authorization::getCheckedUser()
 {
-	return checkedUser._applicationRole;
+	return _checkedUser;
 }
-
-
-std::string Authorization::getLogin(int id)
-{
-	auto findUserLogin = [id](AuthorizationDataStructure user)
-	{
-
-		if (id == user._id)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-
-	};
-	auto it = std::find_if(authorizationData.begin(), authorizationData.end(), findUserLogin);
-	if (it != authorizationData.end())
-	{
-		return (*it)._login;
-	}
-	else
-	{
-		return "there is no user with given id";
-	}
-}
-
-std::string Authorization::getPassword(int id)
-{
-	auto findUserLogin = [id](AuthorizationDataStructure user)
-	{
-
-		if (id == user._id)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-
-	};
-	auto checkedUser = std::find_if(authorizationData.begin(), authorizationData.end(), findUserLogin);
-	if (checkedUser != authorizationData.end())
-	{
-		return (*checkedUser)._password;
-	}
-	else
-	{
-		return "there is no user with given id";
-	}
-}
-
-int Authorization::getId()
-{
-	return checkedUser._id;
-}
+//
+//ApplicationRole Authorization::getAppRole()
+//{
+//	return checkedUser._applicationRole;
+//}
+//
+//
+//std::string Authorization::getLogin(int id)
+//{
+//	auto findUserLogin = [id](AuthorizationDataStructure user)
+//	{
+//
+//		if (id == user._id)
+//		{
+//			return true;
+//		}
+//		else
+//		{
+//			return false;
+//		}
+//
+//	};
+//	auto it = std::find_if(authorizationData.begin(), authorizationData.end(), findUserLogin);
+//	if (it != authorizationData.end())
+//	{
+//		return (*it)._login;
+//	}
+//	else
+//	{
+//		return "there is no user with given id";
+//	}
+//}
+//
+//std::string Authorization::getPassword(int id)
+//{
+//	auto findUserLogin = [id](AuthorizationDataStructure user)
+//	{
+//
+//		if (id == user._id)
+//		{
+//			return true;
+//		}
+//		else
+//		{
+//			return false;
+//		}
+//
+//	};
+//	auto checkedUser = std::find_if(authorizationData.begin(), authorizationData.end(), findUserLogin);
+//	if (checkedUser != authorizationData.end())
+//	{
+//		return (*checkedUser)._password;
+//	}
+//	else
+//	{
+//		return "there is no user with given id";
+//	}
+//}

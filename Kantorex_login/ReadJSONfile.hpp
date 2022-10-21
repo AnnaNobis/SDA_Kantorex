@@ -12,21 +12,19 @@ using json = nlohmann::json;
 
 static void from_json(const json& j, User& data)
 {
+	data.setUserId(j.at("id"));
 	data.setUserFirstname(j.at("firstname"));
 	data.setUserLastname(j.at("lastname"));
-	data.setUserId(j.at("id"));
+	data.setLogin(j.at("login"));
+	data.setPassword(j.at("password"));
+	data.stringToEnum(j.at("appRole"));
 }
-
 
 class ReadJSONfile
 {
 private:
-	std::string _file;
+	
 public:
-	ReadJSONfile()
-		: _file("users.json")
-	{
-	}
 	std::vector<User> read();
 };
 

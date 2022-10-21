@@ -1,5 +1,6 @@
 [
     {
+
         "firstname": "Maja",
         "id": "1",
         "lastname": "Kaleta"
@@ -13,25 +14,29 @@
         "firstname": "Tom",
         "id": "3",
         "lastname": "Tomski"
+},
+        "appRole": "cashier",
+        "firstname": "Maja",
+        "id": "2",
+        "lastname": "Kaleta",
+        "login": "cashier",
+        "password": "1234"
     },
     {
-        "firstname": "August",
+        "appRole": "administrator",
+        "firstname": "Lili",
+        "id": "3",
+        "lastname": "Sobieski",
+        "login": "admin",
+        "password": "8888"
+    },
+    {
+        "appRole": "guest",
+        "firstname": "Tom",
         "id": "4",
-        "lastname": "Poniatowski"
-    },
-    {
-        "firstname": "Gabriel",
-        "id": "5",
-        "lastname": "Narutowicz"
-    },
-    {
-        "firstname": "August",
-        "id": "6",
-        "lastname": "Poniatowski"
-    },
-    {
-        "firstname": "Gabriel",
-        "id": "7",
-        "lastname": "Narutowicz"
+        "lastname": "Tomski",
+        "login": "guest",
+        "password": "9999"
+
     }
 ]

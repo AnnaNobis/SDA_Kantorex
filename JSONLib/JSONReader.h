@@ -12,4 +12,3 @@ public:
 	std::vector<Currency> readCurrencies(std::string file = "JSONTabelaA.json");
 	void wypisz();
 };
-

@@ -1,5 +1,5 @@
 #pragma once
-#include<memory>
+#include <memory>
 #include "ITransaction.h"
 #include "Buy.h"
 #include "Sell.h"
@@ -13,27 +13,28 @@ class Exchanger
 {
 public:
 	OperationSellBuy _chooseOperation;
-	Exchanger(OperationSellBuy& chooseOperation);
 
-	void startExchangerDisplay();
-
+	Exchanger(OperationSellBuy& chooseOperation, std::string& inputCurrencyFrom, float& inputAmount,
+		std::string& inputCurrencyTo);
 	//void getCurrency(std::string inputCurrency);
-	void print(int i);
-
+	//void print(int i);
+	//void setSpread(float inputSpread);
+	//float getSpread();
 
 private:
-	std::shared_ptr<ITransaction> transaction;
+	std::shared_ptr<ITransaction> transaction = nullptr;
 	std::string _inputCurrencyFrom;
 	std::string _inputCurrencyTo;
-	std::string _yesOrNO;
 	float _inputAmount;
-	float _spread;
-	float _result;
 
 
+		//CashBalance cashBalance;
+			//cashBalance.cashBalance() { 
 
-  };
+			//xxx = cashBalance.getMap();
+	//calculateExchangeValue - xxx[currencyFrom / To]- jak dostac sie do mapy;
 
+	//}
 
 //transaction->setSpread(_spread);
 //transaction->getSpread();
@@ -44,3 +45,4 @@ private:
 //transaction->setCurrencyTo(_currencyTo);
 //
 //transaction->calculateExchangeValue();
+};
