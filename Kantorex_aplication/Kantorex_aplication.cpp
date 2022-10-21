@@ -13,13 +13,10 @@
 #include "Kantorex_login/LogInManager.hpp"
 #include "Kantorex_login/WriteJSONfile.hpp"
 #include "Kantorex_login/Administrator.hpp"
-<<<<<<< HEAD
+
 
 
 //using json = nlohmann::ordered_json;
-=======
-#include "JSONLib/ReportReader.h"
->>>>>>> 74e3bf6 (Poprawione readery i writery)
 
 
 using namespace tabulate;
@@ -35,7 +32,7 @@ int main()
 	//login.checkUser();
 	//std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
 
-<<<<<<< HEAD
+
 	
 	//system("cls"); //czy�ci ekran logowania
 
@@ -51,7 +48,6 @@ int main()
 	//auto sell = OperationSellBuy::SELL;
 
 
-=======
 	//
 	//system("cls"); //czy�ci ekran logowania
 
@@ -65,6 +61,6 @@ int main()
  //   dataReader.readCurrencies("JSONTabelaA.json");
  //   dataReader.wypisz();
 
->>>>>>> 74e3bf6 (Poprawione readery i writery)
+
 }
 
