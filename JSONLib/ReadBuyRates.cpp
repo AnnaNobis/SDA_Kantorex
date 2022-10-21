@@ -3,7 +3,7 @@
 #include <fstream>
 #include "json/json.hpp"
 using json = nlohmann::ordered_json;
-
+//TODO podac ostateczna sciezke pliku
 std::string ReadBuyRates::filePath = "TabelaC.json";
 
 std::map<std::string, double> ReadBuyRates::read()
@@ -30,12 +30,11 @@ std::map<std::string, double> ReadBuyRates::read()
 		}
 	}
 
-	for (auto& el : buyRates) {
-		std::cout << "Kod: " << el.first << "  |  Cena: " << el.second << std::endl;
-	}
 	return buyRates;
 
 }
 
-ReadBuyRates::ReadBuyRates() {
+void ReadBuyRates::changePath(std::string newPath)
+{
+	filePath = newPath;
 }

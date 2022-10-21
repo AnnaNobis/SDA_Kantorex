@@ -15,24 +15,22 @@ void to_json(json& j, const ReportData& data) {
 	{"user", data._userId} };
 }
 
-bool ReportWriter::checkIfFileExist(std::string filePath)
+bool ReportWriter::checkIfFileExist()
 {
 	std::ifstream checkedFile(filePath);
 	return checkedFile.good();
 }
 
-ReportWriter::ReportWriter(std::string filePath)
-{
-}
 
-void ReportWriter::setFilePath(std::string filePath)
+
+void ReportWriter::changePath(std::string newPath)
 {
-	ReportWriter::filePath = filePath;
+	filePath = newPath;
 }
 
 void ReportWriter::writeReport(ReportData data)
 {
-	if (checkIfFileExist(ReportWriter::filePath)) {
+	if (checkIfFileExist()) {
 		writeToExistingReport(data);
 	}
 	else {
@@ -40,7 +38,7 @@ void ReportWriter::writeReport(ReportData data)
 	}
 }
 
-void ReportWriter::writeNewReport( ReportData data) {
+void ReportWriter::writeNewReport(ReportData data) {
 
 	std::ofstream stream(ReportWriter::filePath);
 	json j;
@@ -52,7 +50,7 @@ void ReportWriter::writeNewReport( ReportData data) {
 
 void ReportWriter::writeToExistingReport(ReportData data)
 {
-	std::vector<ReportData>fileData = ReportReader::readReport(ReportWriter::filePath);
+	std::vector<ReportData>fileData = ReportReader::readReport();
 	fileData.push_back(data);
 
 	std::ofstream stream(filePath);
