@@ -30,6 +30,23 @@ Global
 		{2510344A-CD0B-4C28-80DB-9B8AD6BF7007}.Release|x64.Build.0 = Release|x64
 		{2510344A-CD0B-4C28-80DB-9B8AD6BF7007}.Release|x86.ActiveCfg = Release|Win32
 		{2510344A-CD0B-4C28-80DB-9B8AD6BF7007}.Release|x86.Build.0 = Release|Win32
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+
+main
+=======
+<<<<<<< HEAD
+		{9EE4F387-5F96-4973-BB26-B2FAC5C4C889}.Debug|x64.ActiveCfg = Debug|x64
+		{9EE4F387-5F96-4973-BB26-B2FAC5C4C889}.Debug|x64.Build.0 = Debug|x64
+		{9EE4F387-5F96-4973-BB26-B2FAC5C4C889}.Debug|x86.ActiveCfg = Debug|Win32
+		{9EE4F387-5F96-4973-BB26-B2FAC5C4C889}.Debug|x86.Build.0 = Debug|Win32
+		{9EE4F387-5F96-4973-BB26-B2FAC5C4C889}.Release|x64.ActiveCfg = Release|x64
+		{9EE4F387-5F96-4973-BB26-B2FAC5C4C889}.Release|x64.Build.0 = Release|x64
+		{9EE4F387-5F96-4973-BB26-B2FAC5C4C889}.Release|x86.ActiveCfg = Release|Win32
+		{9EE4F387-5F96-4973-BB26-B2FAC5C4C889}.Release|x86.Build.0 = Release|Win32
+>>>>>>> 2c4c3f4 (third_commit)
 		{EC88062B-A056-427A-B880-67F836E077D9}.Debug|x64.ActiveCfg = Debug|x64
 		{EC88062B-A056-427A-B880-67F836E077D9}.Debug|x64.Build.0 = Debug|x64
 		{EC88062B-A056-427A-B880-67F836E077D9}.Debug|x86.ActiveCfg = Debug|Win32
@@ -70,7 +87,16 @@ Global
 		{64BFBF5F-EEB0-4C3F-A3A8-577437DB96FB}.Release|x64.Build.0 = Release|x64
 		{64BFBF5F-EEB0-4C3F-A3A8-577437DB96FB}.Release|x86.ActiveCfg = Release|Win32
 		{64BFBF5F-EEB0-4C3F-A3A8-577437DB96FB}.Release|x86.Build.0 = Release|Win32
+<<<<<<< HEAD
 main
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> d9d73f5 (Report)
+>>>>>>> 3c6216a (second_commit)
+>>>>>>> 2c4c3f4 (third_commit)
+>>>>>>> 182f9c1 (aktualizacja2)
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
