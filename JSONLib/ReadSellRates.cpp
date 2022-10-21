@@ -3,12 +3,12 @@
 #include <fstream>
 #include <iostream>
 using json = nlohmann::ordered_json;
+//TODO podac ostateczna sciezke pliku
+std::string ReadSellRates::filePath = "TabelaC.json";
 
-//std::string ReadSellRates::filePath = "TabelaC.json";
-
-std::map<std::string, double> ReadSellRates::read(std::string path)
+std::map<std::string, double> ReadSellRates::read()
 {
-	std::ifstream ifs(path);
+	std::ifstream ifs(filePath);
 	json j;
 
 	if (!ifs.is_open())
@@ -37,7 +37,10 @@ std::map<std::string, double> ReadSellRates::read(std::string path)
 
 }
 
-ReadSellRates::ReadSellRates() {
+void ReadSellRates::changePath(std::string newPath)
+{
+	filePath = newPath;
 }
+
 
 

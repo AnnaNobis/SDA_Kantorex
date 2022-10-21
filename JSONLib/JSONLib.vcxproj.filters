@@ -80,6 +80,9 @@
     <ClCompile Include="ReadSellRates.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 74e3bf6 (Poprawione readery i writery)
   </ItemGroup>
 </Project>
