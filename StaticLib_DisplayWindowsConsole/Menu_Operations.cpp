@@ -8,19 +8,22 @@
 #include "../ExhangerStaticLib/Exchanger.h"
 
 
+
+
+
 void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedUser)
 { 
    // IKantorDisplay window;
    //window.displayCurrencyTable();
 
     std::cout << std::endl << std::endl << std::endl;
-
-    std::vector<std::string> tMenuGl; // tutaj b�d� zapisywane pozycje z menu
-    tMenuGl.push_back("Exit \t\t\t\t\t"); // tutaj na ko�cu doda�em tabulator bo funkcja menu na ko�cu doda numer opcji
-    tMenuGl.push_back("For exchange currency - SELL operiation\t");
-    tMenuGl.push_back("For exchange currency -  BUY operiation\t");
-    tMenuGl.push_back("Balance\t\t\t\t\t");
-    tMenuGl.push_back("Reports\t\t\t\t\t");
+   
+        std::vector<std::string> tMenuGl;// tutaj b�d� zapisywane pozycje z menu
+        tMenuGl.push_back("Exit \t\t\t\t\t"); // tutaj na ko�cu doda�em tabulator bo funkcja menu na ko�cu doda numer opcji
+        tMenuGl.push_back("For exchange currency - SELL operiation\t");
+        tMenuGl.push_back("For exchange currency -  BUY operiation\t");
+        tMenuGl.push_back("Balance\t\t\t\t\t");
+        tMenuGl.push_back("Reports\t\t\t\t\t");
 
     int id = 0; // id wyboru
 
@@ -28,6 +31,9 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
     do {
         menu("SELECT OPERATION:", tMenuGl, id); // wywo�anie funkcji menu, kt�ra wy�wietli i wykona niezb�dne instrukcje zwi�zane z rysowaniem i zmian� pozycji w menu
         system("cls"); // czyszczenie ekranu, gdy funkcja menu g��wnego zostanie wykonana
+        
+        std::vector<std::string> currenciesToChoose = { "THB","USD", "AUD", "HKD", "CAD", "NZD","SGD", "EUR", "HUF","CHF", "GBP", "UAH","JPY","CZK", "DKK","ISK", "NOK","SEK","HRK","RON","BGN","TRY", "ILS","CLP","PHP","MXN","ZAR","BRL","MYR","IDR","INR","KRW","CNY","XDR","SDR(MFW)" };
+       
         switch (id)  // tutaj zachowanie programu w zale�no�ci od wyboru opcji
         { 
            
@@ -37,11 +43,25 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                 std::string _inputCurrencyFrom= "pln";
                 std::string _inputCurrencyTo;
                 float _inputAmount;
+                std::string operationName = " SELL OPERATION MODE ";
 
-                std::cout << "      " << "SELL OPERATION MODE" << "        " << std::endl;
-          
+                WriteLine(operationName.size());
+                std::cout << "SELL OPERATION MODE" << std::endl;
+                WriteLine(operationName.size());
+
                 std::cout << "Enter currency to exchange/sell : " << std::endl;
                 std::cin >> _inputCurrencyTo;
+              
+
+                for (auto& s : currenciesToChoose)
+                {
+                    if (std::find(currenciesToChoose.begin(), currenciesToChoose.end(), _inputCurrencyTo) != currenciesToChoose.end())
+                        std::cout << "Correct currency" << std::endl;
+
+                    else
+                        std::cout << "Currency is incorect" << std::endl;
+                    break;
+                }
                 std::cout << "You are exchanging from : " << _inputCurrencyFrom  << " to : " << _inputCurrencyTo << std::endl;
 
                 std::cout << "Enter amount in: " << _inputCurrencyFrom << std::endl;
@@ -49,16 +69,12 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
 
                 auto sell = OperationSellBuy::SELL;
                 Exchanger transactionSell(sell, _inputCurrencyFrom, _inputAmount, _inputCurrencyTo);
-                //Exchanger transactionSell(sell);
-
-                //Exchanger transactionSell (sell, _inputCurrencyFrom, _inputAmount, _inputCurrencyTo);
-                //tutaj kod Klaudii
+                transactionSell.calculationPrint();
                 
-
             }
-            //else  - napis że nie masz dostępu albo jakieś info   
+              
             else 
-            std::cout << "Sorry, access to this option denied!" << std::endl;
+            std::cout << "Sorry, access to this operation is denied!" << std::endl;
             break;
 
         case 2: // BUY OPERATION
@@ -68,31 +84,36 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                 std::string _inputCurrencyFrom;
                  std::string _inputCurrencyTo = "pln";
                  float _inputAmount;
+                 std::string operationName = " BUY OPERATION MODE ";
 
-                std::cout << "      " << "BUY OPERATION MODE" << "        " << std::endl;
+                WriteLine(operationName.size());
+                std::cout << operationName  << std::endl;
+                WriteLine(operationName.size());
 
                 std::cout << "Enter currency to exchange/buy : " << std::endl;
                 std::cin >> _inputCurrencyFrom;
+
+                for (auto& s : currenciesToChoose)
+                {
+                    if (std::find(currenciesToChoose.begin(), currenciesToChoose.end(), _inputCurrencyFrom) != currenciesToChoose.end())
+                        std::cout << "Correct currency" << std::endl;
+
+                    else
+                        std::cout << "Currency is incorect" << std::endl;
+                    break;
+                }
+
                 std::cout << "You are exchanging to : " << _inputCurrencyTo << std::endl;
 
                 std::cout << "Enter amount in: " << _inputCurrencyFrom << std::endl;
                 std::cin >> _inputAmount;
 
-//tutaj kod od Klaudii
-
-                 //auto buy = OperationSellBuy::BUY;
-                // Exchanger transactionBuy(buy);
-
                  auto buy = OperationSellBuy::BUY;
                  Exchanger transactionBuy(buy, _inputCurrencyFrom, _inputAmount, _inputCurrencyTo);
-                 //Exchanger transactionBuy(buy);
-             
-
-         
-          }
-           
-            else  //- napis że nie masz dostępu albo jakieś info  
-            std::cout << "Sorry, access to this option denied!" << std::endl;
+                 transactionBuy.calculationPrint();
+                
+          } else  //- napis że nie masz dostępu albo jakieś info  
+            std::cout << "Sorry, access to this operation is denied!" << std::endl;
             break;
 
         case 3: // BALANCE

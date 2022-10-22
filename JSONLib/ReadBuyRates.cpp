@@ -30,7 +30,12 @@ std::map<std::string, float> ReadBuyRates::read()
 			buyRates.insert({ code, rate });
 		}
 	}
-	
+
+
+//	for (auto& el : buyRates) {
+//	std::cout << "Kod: " << el.first << "  |  Cena: " << el.second << std::endl;
+//}
+
 
 	return buyRates;
 

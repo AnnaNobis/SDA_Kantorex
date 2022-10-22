@@ -37,14 +37,10 @@ int main()
 	//std::vector<LoginData> vect = LoggedUsersReader::read();
 	//for_each(vect.begin(), vect.end(), [](LoginData d) {std::cout << d._name << "   " << d._surname << "   " << d._dateAndTime << "   " << d._isLogged << std::endl; });
 
-
-	
 	//system("cls"); //czy�ci ekran logowania
 
-
-
 	//Menu_Operations screen;
-	//screen.displayMenuOperations();
+	//screen.displayMenuOperations(loggedUser);
 
     //JSONReader dataReader;
     //dataReader.readCurrencies("JSONTabelaA.json");
@@ -52,6 +48,10 @@ int main()
 	//auto buy = OperationSellBuy::BUY;
 	//auto sell = OperationSellBuy::SELL;
 
+	//Exchanger first(OperationSellBuy::SELL, "PLN", 100, "HUF");
+	//first.rate();
+	//std::cout << std::endl;
+	//first.calculationPrint();
 
 	//
 	//system("cls"); //czy�ci ekran logowania
