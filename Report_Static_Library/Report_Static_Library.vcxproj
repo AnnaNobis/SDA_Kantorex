@@ -156,6 +156,7 @@
     <ClInclude Include="JSONReportReader.hpp" />
     <ClInclude Include="JSONReportWriter.hpp" />
     <ClInclude Include="json\json.hpp" />
+    <ClInclude Include="LoginData.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="RawDate.hpp" />
     <ClInclude Include="ReportData.hpp" />
@@ -166,6 +167,7 @@
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="JSONReportReader.cpp" />
     <ClCompile Include="JSONReportWriter.cpp" />
+    <ClCompile Include="LoginData.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
