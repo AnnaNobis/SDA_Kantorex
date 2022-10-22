@@ -11,6 +11,6 @@ class RawDate
 	std::string _str;
 public:
 	RawDate();
-	std::string getDate();
+	 std::string getDate();
 	void printDate();
 };
