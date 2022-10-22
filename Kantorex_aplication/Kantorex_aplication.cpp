@@ -45,6 +45,10 @@ int main()
 	//auto buy = OperationSellBuy::BUY;
 	//auto sell = OperationSellBuy::SELL;
 
+	//Exchanger first(OperationSellBuy::SELL, "PLN", 100, "HUF");
+	//first.rate();
+	//std::cout << std::endl;
+	//first.calculationPrint();
 
 	//
 	//system("cls"); //czy�ci ekran logowania

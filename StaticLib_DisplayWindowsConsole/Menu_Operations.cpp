@@ -69,6 +69,7 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
 
                 auto sell = OperationSellBuy::SELL;
                 Exchanger transactionSell(sell, _inputCurrencyFrom, _inputAmount, _inputCurrencyTo);
+                transactionSell.calculationPrint();
                 
             }
               
@@ -109,6 +110,7 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
 
                  auto buy = OperationSellBuy::BUY;
                  Exchanger transactionBuy(buy, _inputCurrencyFrom, _inputAmount, _inputCurrencyTo);
+                 transactionBuy.calculationPrint();
                 
           } else  //- napis że nie masz dostępu albo jakieś info  
             std::cout << "Sorry, access to this operation is denied!" << std::endl;
