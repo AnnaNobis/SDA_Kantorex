@@ -34,15 +34,10 @@ int main()
 	//login.checkUser();
 	//std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
 
-
-
-	
 	//system("cls"); //czy�ci ekran logowania
 
-
-
 	//Menu_Operations screen;
-	//screen.displayMenuOperations();
+	//screen.displayMenuOperations(loggedUser);
 
     //JSONReader dataReader;
     //dataReader.readCurrencies("JSONTabelaA.json");
@@ -50,6 +45,10 @@ int main()
 	//auto buy = OperationSellBuy::BUY;
 	//auto sell = OperationSellBuy::SELL;
 
+	//Exchanger first(OperationSellBuy::SELL, "PLN", 100, "HUF");
+	//first.rate();
+	//std::cout << std::endl;
+	//first.calculationPrint();
 
 	//
 	//system("cls"); //czy�ci ekran logowania

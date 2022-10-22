@@ -1,48 +1,27 @@
-#pragma once
+﻿#pragma once
 #include <memory>
 #include "ITransaction.h"
 #include "Buy.h"
 #include "Sell.h"
 #include <string>
 #include <algorithm>
+#include <iostream>
 
-enum class OperationSellBuy { SELL=1, BUY=2 };
-
+enum class OperationSellBuy { SELL, BUY };
 
 class Exchanger
 {
 public:
 	OperationSellBuy _chooseOperation;
-
-	Exchanger(OperationSellBuy& chooseOperation, std::string& inputCurrencyFrom, float& inputAmount,
-		std::string& inputCurrencyTo);
-	//void getCurrency(std::string inputCurrency);
-	//void print(int i);
-	//void setSpread(float inputSpread);
-	//float getSpread();
+	Exchanger(OperationSellBuy chooseOperation, std::string inputCurrencyFrom, float inputAmount, std::string inputCurrencyTo);
+	void rate();
+	void calculationPrint();
+	std::string getCurrencyForBalance(); //dla Marty CashBAlance
+	float getAmountForBalance(); //dla Marty CashBAlance
 
 private:
 	std::shared_ptr<ITransaction> transaction = nullptr;
 	std::string _inputCurrencyFrom;
 	std::string _inputCurrencyTo;
 	float _inputAmount;
-
-
-		//CashBalance cashBalance;
-			//cashBalance.cashBalance() { 
-
-			//xxx = cashBalance.getMap();
-	//calculateExchangeValue - xxx[currencyFrom / To]- jak dostac sie do mapy;
-
-	//}
-
-//transaction->setSpread(_spread);
-//transaction->getSpread();
-//transaction->getRate(); //zwracam value czyli mnoznik 
-//
-//transaction->setCurrencyFrom(_currencyFrom);
-//transaction->setAmount(_amount);
-//transaction->setCurrencyTo(_currencyTo);
-//
-//transaction->calculateExchangeValue();
 };

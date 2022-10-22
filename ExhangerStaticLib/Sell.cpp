@@ -1,9 +1,9 @@
 #include "pch.h"
 #include "Sell.h"
 
-void Sell::setSpread(float spread)
+void Sell::setSpread()
 {
-	_spread = spread;
+	_spread = 0.95;
 }
 
 float Sell::getSpread()
@@ -14,41 +14,42 @@ float Sell::getSpread()
 
 float Sell::getRate()
 {
-	RateCurrencyMap objTemp;
-	auto RateAndCurrency = objTemp.createMapCodeRate();
+	ReadSellRates objTemp;
+	auto RateAndCurrency = objTemp.read();
 	float rate = RateAndCurrency[_currencyTo];
 	return rate;
+
 }
 
-std::string Sell::checkCurrencyFrom(std::string currencyFrom)
+void Sell::checkCurrencyFrom()
 {
-		std::string answer;
-		if (currencyFrom != "PLN")
-		{
-			std::string answer = "Powinieneœ wybraæ opcje Buy";
-		}
-		return answer;
+	std::string answer;
+	if (_currencyFrom != "PLN")
+	{
+		std::string answer = "Powinieneœ wybraæ opcje Buy";
+		std::cout << answer << std::endl;
+	}
 }
 
 bool Sell::checkAmount()
 {
-	if(_amount>0)
-	return true;
+	if (_amount > 0)
+		return true;
 }
 
 float Sell::calculateExchangeValue()
 {
-	float result = _spread * getRate() * _amount;
+	float result = _spread / getRate() * _amount;
 	return result;
 }
 
 void Sell::printCalculatedValue()
 {
-	std::cout << calculateExchangeValue();
+	std::cout <<"Exchanged amount: "<< calculateExchangeValue() << "  in currency:  " << _currencyTo<< std::endl;
 }
 void Sell::setCurrencyFrom(std::string currencyFrom)
 {
-	currencyFrom = "PLN";
+	_currencyFrom = "PLN";
 }
 
 void Sell::setAmount(float amount)
@@ -58,5 +59,15 @@ void Sell::setAmount(float amount)
 
 void Sell::setCurrencyTo(std::string  currencyTo)
 {
-	currencyTo = _currencyTo;
+	_currencyTo = currencyTo;
+}
+
+float Sell::getAmount()
+{
+	return _amount;
+}
+
+std::string Sell::getCurrency()
+{
+	return _currencyTo;
 }

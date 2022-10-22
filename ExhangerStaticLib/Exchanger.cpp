@@ -1,36 +1,57 @@
 #include "pch.h"
 #include "Exchanger.h"
 
-Exchanger::Exchanger(OperationSellBuy& chooseOperation, std::string& inputCurrencyFrom, float& inputAmount, std::string& inputCurrencyTo)
-	: 
+Exchanger::Exchanger(OperationSellBuy chooseOperation, std::string inputCurrencyFrom, float inputAmount, std::string inputCurrencyTo)
+	:
 	_chooseOperation(chooseOperation),
 	_inputCurrencyFrom(inputCurrencyFrom),
 	_inputAmount(inputAmount),
 	_inputCurrencyTo(inputCurrencyTo)
 {
+
 	if (chooseOperation == OperationSellBuy::BUY)
 	{
-		transaction= std::make_shared<Buy>();
+		transaction = std::make_shared<Buy>();
 	}
 	else if (chooseOperation == OperationSellBuy::SELL)
 	{
 		transaction = std::make_shared<Sell>();
 	}
 
+
+
+	transaction->setCurrencyFrom(_inputCurrencyFrom);
+	transaction->setCurrencyTo(_inputCurrencyTo);
+	transaction->setAmount(_inputAmount);
+	transaction->checkCurrencyFrom();
+	//transaction->getRate();
+	//transaction->getSpread();
+	transaction->setSpread();
+
+}
+void Exchanger::rate()
+{
+	std::cout << transaction->getRate();
+};
+
+void Exchanger::calculationPrint()
+{
 	if (transaction->checkAmount() == true)
 	{
-		transaction->calculateExchangeValue();
 		transaction->printCalculatedValue();
 	}
 
-	//transaction->setCurrencyFrom(_inputCurrencyFrom);
-	//transaction->setCurrencyTo(_inputCurrencyTo);
-	//transaction->setAmount(_inputAmount);
-	//transaction->getRate();
-	//transaction->getSpread();
-	//transaction->setSpread(_spread);
-
 };
+
+std::string Exchanger::getCurrencyForBalance()
+{
+	return transaction->getCurrency();
+}
+
+float Exchanger::getAmountForBalance()
+{
+	return transaction->getAmount();
+}
 
 //void Exchanger::print(int i)
 //{

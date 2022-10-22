@@ -30,9 +30,9 @@ std::map<std::string, float> ReadSellRates::read()
 		}
 	}
 
-	for (auto& el : sellRates) {
-		std::cout << "Kod: " << el.first << "  |  Cena: " << el.second << std::endl;
-	}
+	//for (auto& el : sellRates) {
+	//	std::cout << "Kod: " << el.first << "  |  Cena: " << el.second << std::endl;
+	//}
 	return sellRates;
 
 }

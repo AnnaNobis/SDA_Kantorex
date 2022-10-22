@@ -1,10 +1,10 @@
-#include "pch.h"
+ï»¿#include "pch.h"
 #include "Buy.h"
 
 
-void Buy::setSpread(float spread)
+void Buy::setSpread()
 {
-	_spread = spread;
+	_spread = 1.05;
 }
 
 float Buy::getSpread()
@@ -14,20 +14,22 @@ float Buy::getSpread()
 
 float Buy::getRate()
 {
-	RateCurrencyMap objTemp;
-	auto RateAndCurrency = objTemp.createMapCodeRate();
+	ReadBuyRates objTemp;
+	auto RateAndCurrency = objTemp.read();
 	float rate = RateAndCurrency[_currencyFrom];
 	return rate;
 }
 
-std::string Buy::checkCurrencyFrom(std::string currencyFrom)
+void Buy::checkCurrencyFrom()
 {
 	std::string answer;
-	if (currencyFrom == "PLN")
+	if (_currencyFrom == "PLN")
 	{
-		std::string answer = "Powinieneœ wybraæ opcje Sell";
+		std::string answer = "Powinieneï¿½ wybraï¿½ opcje Sell";
+		std::cout << answer << std::endl;
+
 	}
-	return answer;
+
 }
 
 bool Buy::checkAmount()
@@ -46,20 +48,30 @@ float Buy::calculateExchangeValue()
 
 void Buy::printCalculatedValue()
 {
-	std::cout << calculateExchangeValue();
+	std::cout << "Exchanged amount:  " << calculateExchangeValue() << "  in currency: " << _currencyFrom << std::endl;
+
 }
 
 void Buy::setCurrencyFrom(std::string  currencyFrom)
 {
-	currencyFrom = _currencyFrom;
+	_currencyFrom = currencyFrom;
 }
 
 void Buy::setAmount(float amount)
 {
 	_amount = amount;
 }
+float Buy::getAmount()
+{
+	return _amount;
+}
+
+std::string Buy::getCurrency()
+{
+	return _currencyFrom;
+}
 
 void Buy::setCurrencyTo(std::string  currencyTo)
 {
-	currencyTo = _currencyTo;
+	_currencyTo = currencyTo;
 }
