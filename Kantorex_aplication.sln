@@ -14,6 +14,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Kantorex_UsersRoles", "Kant
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JSONLib", "JSONLib\JSONLib.vcxproj", "{EC88062B-A056-427A-B880-67F836E077D9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Report_Static_Library", "Report_Static_Library\Report_Static_Library.vcxproj", "{D778E8A2-5F78-412E-9508-03718A54B5BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -70,6 +72,14 @@ Global
 		{EC88062B-A056-427A-B880-67F836E077D9}.Release|x64.Build.0 = Release|x64
 		{EC88062B-A056-427A-B880-67F836E077D9}.Release|x86.ActiveCfg = Release|Win32
 		{EC88062B-A056-427A-B880-67F836E077D9}.Release|x86.Build.0 = Release|Win32
+		{D778E8A2-5F78-412E-9508-03718A54B5BF}.Debug|x64.ActiveCfg = Debug|x64
+		{D778E8A2-5F78-412E-9508-03718A54B5BF}.Debug|x64.Build.0 = Debug|x64
+		{D778E8A2-5F78-412E-9508-03718A54B5BF}.Debug|x86.ActiveCfg = Debug|Win32
+		{D778E8A2-5F78-412E-9508-03718A54B5BF}.Debug|x86.Build.0 = Debug|Win32
+		{D778E8A2-5F78-412E-9508-03718A54B5BF}.Release|x64.ActiveCfg = Release|x64
+		{D778E8A2-5F78-412E-9508-03718A54B5BF}.Release|x64.Build.0 = Release|x64
+		{D778E8A2-5F78-412E-9508-03718A54B5BF}.Release|x86.ActiveCfg = Release|Win32
+		{D778E8A2-5F78-412E-9508-03718A54B5BF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

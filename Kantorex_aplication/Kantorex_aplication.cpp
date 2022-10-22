@@ -34,15 +34,10 @@ int main()
 	//login.checkUser();
 	//std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
 
-
-
-	
 	//system("cls"); //czy�ci ekran logowania
 
-
-
 	//Menu_Operations screen;
-	//screen.displayMenuOperations();
+	//screen.displayMenuOperations(loggedUser);
 
     //JSONReader dataReader;
     //dataReader.readCurrencies("JSONTabelaA.json");
