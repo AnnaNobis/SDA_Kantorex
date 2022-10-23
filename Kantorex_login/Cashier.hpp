@@ -1,14 +1,11 @@
 #pragma once
 #include "ILoggedUser.hpp"
-//#include "Display.hpp"
 
 class Cashier : public ILoggedUser
 {
-private:
-	//AllowedOperations _allowedOperations;
 public:
 	Cashier();
-	ILoggedUser::AllowedOperations getAllowedOperations();
+	ILoggedUser::AllowedOperations getAllowedOperations() override;
 	virtual ~Cashier() {}
 };
 
