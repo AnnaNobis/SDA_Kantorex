@@ -4,11 +4,9 @@
 
 class Guest : public ILoggedUser
 {
-private:
-	//AllowedOperations _allowedOperations;
 public:
 	Guest();
-	ILoggedUser::AllowedOperations getAllowedOperations();
+	ILoggedUser::AllowedOperations getAllowedOperations() override;
 	virtual ~Guest() {}
 };
 

@@ -1,14 +1,17 @@
 #pragma once
 #include "ILoggedUser.hpp"
-//#include "Display.hpp"
 
 class Administrator : public ILoggedUser
 {
-private:
-	//AllowedOperations _allowedOperations;
 public:
 	Administrator();
-	ILoggedUser::AllowedOperations getAllowedOperations();
+	ILoggedUser::AllowedOperations getAllowedOperations() override;
+	virtual void setAllowedOperations(AllowedOperations operations) override;
+	virtual void setCanSell(bool canSell) override;
+	virtual void setCanBuy(bool canBuy) override;
+	virtual void setCanBalance(bool canBalance) override;
+	virtual void setCanReport(bool canReport) override;
+	void displayAllowedOperations() override;
 	virtual ~Administrator() {}
 };
 
