@@ -9,30 +9,28 @@
 
 
 
+
 void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedUser)
 { 
-   // IKantorDisplay window;
-   //window.displayCurrencyTable();
-
+ 
     std::cout << std::endl << std::endl << std::endl;
    
-        std::vector<std::string> tMenuGl;// tutaj b�d� zapisywane pozycje z menu
-        tMenuGl.push_back("Exit \t\t\t\t\t"); // tutaj na ko�cu doda�em tabulator bo funkcja menu na ko�cu doda numer opcji
+        std::vector<std::string> tMenuGl;
+        tMenuGl.push_back("Exit \t\t\t\t\t"); 
         tMenuGl.push_back("For exchange currency - SELL operiation\t");
         tMenuGl.push_back("For exchange currency -  BUY operiation\t");
         tMenuGl.push_back("Balance\t\t\t\t\t");
         tMenuGl.push_back("Reports\t\t\t\t\t");
 
     int id = 0; // id wyboru
-
-
+   
     do {
-        menu("SELECT OPERATION:", tMenuGl, id); // wywo�anie funkcji menu, kt�ra wy�wietli i wykona niezb�dne instrukcje zwi�zane z rysowaniem i zmian� pozycji w menu
+        menu("SELECT OPERATION:", tMenuGl, id); 
         system("cls"); // czyszczenie ekranu, gdy funkcja menu g��wnego zostanie wykonana
         
         std::vector<std::string> currenciesToChoose = { "THB","USD", "AUD", "HKD", "CAD", "NZD","SGD", "EUR", "HUF","CHF", "GBP", "UAH","JPY","CZK", "DKK","ISK", "NOK","SEK","HRK","RON","BGN","TRY", "ILS","CLP","PHP","MXN","ZAR","BRL","MYR","IDR","INR","KRW","CNY","XDR","SDR(MFW)" };
        
-        switch (id)  // tutaj zachowanie programu w zale�no�ci od wyboru opcji
+    switch (id)  
         { 
            
         case 1:  // SELL OPERATION
@@ -41,11 +39,9 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                 std::string _inputCurrencyFrom= "pln";
                 std::string _inputCurrencyTo;
                 float _inputAmount;
-                std::string operationName = " SELL OPERATION MODE ";
+                std::string _operationName = " SELL OPERATION MODE ";
 
-                WriteLine(operationName.size());
-                std::cout << "SELL OPERATION MODE" << std::endl;
-                WriteLine(operationName.size());
+                displayOperationName(_operationName);
 
                 std::cout << "Enter currency to exchange/sell : " << std::endl;
                 std::cin >> _inputCurrencyTo;
@@ -82,11 +78,9 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                 std::string _inputCurrencyFrom;
                  std::string _inputCurrencyTo = "pln";
                  float _inputAmount;
-                 std::string operationName = " BUY OPERATION MODE ";
+                 std::string _operationName = " BUY OPERATION MODE ";
 
-                WriteLine(operationName.size());
-                std::cout << operationName  << std::endl;
-                WriteLine(operationName.size());
+                 displayOperationName(_operationName);
 
                 std::cout << "Enter currency to exchange/buy : " << std::endl;
                 std::cin >> _inputCurrencyFrom;
@@ -115,7 +109,7 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
             break;
 
         case 3: // BALANCE
-            if (loggedUser->getCanBalance()) //zmienić 
+            if (loggedUser->getCanBalance()) 
             {
                 //tutaj kod od Marty
               
@@ -139,9 +133,6 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                 std::cout << reportsTable << std::endl;
                 std::cin >> reportNumber;
                 std::cout << std::endl << std::endl << std::endl;
-
-
-                //IKantorDisplay displayReportSelectionScreen();
 
                 //tutaj kod od Mileny
             }
@@ -172,6 +163,12 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
 
 }
 
+void Menu_Operations::displayOperationName(std::string _operationName)
+{
+    WriteLine(_operationName.size());
+    std::cout << _operationName << std::endl;
+    WriteLine(_operationName.size());
+}
 
 
 void Menu_Operations::gotoxy(int x, int y)
@@ -199,7 +196,7 @@ void Menu_Operations::WriteLine(unsigned int width)
     {
         for (unsigned int i = 0; i < width; i++)
         {
-            std::cout << "="; // width razy wypisuj� =
+            std::cout << "="; 
         }
         std::cout << std::endl;
     }
