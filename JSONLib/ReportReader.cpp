@@ -5,7 +5,9 @@
 #include <algorithm>
 #include <fstream>
 #include "json/json.hpp"
-using json = nlohmann::json;
+using json = nlohmann::ordered_json;
+//TODO podac ostateczna sciezke do pliku
+std::string ReportReader::filePath = "report.json";
 
 void from_json(const json& j, ReportData& data) {
 	j.at("date").get_to(data._date);
@@ -16,7 +18,7 @@ void from_json(const json& j, ReportData& data) {
 	j.at("transactionNumber").get_to(data._ID);
 }
 
-std::vector<ReportData> ReportReader::readReport(std::string filePath)
+std::vector<ReportData> ReportReader::readReport()
 {
 	json j;
 	std::ifstream stream(filePath);
@@ -29,8 +31,14 @@ std::vector<ReportData> ReportReader::readReport(std::string filePath)
 	stream >> j;
 	stream.close();
 	std::vector<ReportData> vect;
+
 	for (auto& obj : j) {
 		vect.push_back(obj);
 	}
 	return vect;
+}
+
+void ReportReader::changePath(std::string newPath)
+{
+	filePath = newPath;
 }

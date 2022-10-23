@@ -4,7 +4,9 @@
 #include "ReportData.h"
 class ReportReader
 {
+	static std::string filePath;
 public:
-	static std::vector<ReportData>readReport(std::string filePath);
+	static std::vector<ReportData>readReport();
+	void changePath(std::string newPath);
 };
 

@@ -1,7 +1,9 @@
 #include "pch.h"
 #include "LogInManager.hpp"
-
-
+#include "../JSONLib/LoggedUsersWriter.h"
+#include "../Report_Static_Library/Date.hpp"
+#include "../Report_Static_Library/Time.hpp"
+#include "../Report_Static_Library/RawDate.hpp"
 
 LogInManager::LogInManager()
 {
@@ -21,6 +23,9 @@ void LogInManager::checkUser()
 			std::cout << "Authorization" << std::endl;
 			displayLoggedUserInfo();
 			_role = (_authorization.getCheckedUser()).getAppRole_enum();
+			//TODO usunac u julii
+			LoggedUsersWriter logger;
+			logger.write(_authorization.getCheckedUser().getUserFirstname(), _authorization.getCheckedUser().getUserLastname(), true);			
 		} 
 		else
 		{

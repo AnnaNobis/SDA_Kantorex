@@ -1,20 +1,26 @@
-#pragma once
-#include "RateCurrrencyMap.h"
+﻿#pragma once
+#include "../JSONLib/ReadSellRates.h"
 #include "ITransaction.h"
+#include <iostream>
 
 class Sell : public ITransaction
+
 {
 public:
-
-	void setSpread(float spread = 0.95) override;
+	void setSpread() override;
 	float getSpread() override;
-	float getRate(); //zwracam value czyli mnoznik 
-	std::string checkCurrencyFrom(std::string  currencyFrom)override;
+	float getRate(); //zwracam value czyli mnoznik
+
+	void checkCurrencyFrom()override;
 	bool checkAmount()override;
-	void setCurrencyFrom(std::string  currencyFrom)override;
+
+	void setCurrencyFrom(std::string currencyFrom)override;
 	void setAmount(float amount)override;
-	void setCurrencyTo(std::string  currencyTo)override;
+	float getAmount()override;
+	std::string getCurrency() override;
+	void setCurrencyTo(std::string currencyTo)override;
+	
 	float calculateExchangeValue() override;
-	void  printCalculatedValue() override;
+	void printCalculatedValue() override;
 
 };

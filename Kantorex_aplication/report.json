@@ -1,0 +1,98 @@
+[
+    {
+        "transactionNumber": "1",
+        "date": "15.10.2022",
+        "time": "14:21",
+        "currency": "USD",
+        "amount": 500.0,
+        "user": "admin"
+    },
+    {
+        "transactionNumber": "2",
+        "date": "16.10.2022",
+        "time": "15:30",
+        "currency": "EUR",
+        "amount": 250.0,
+        "user": "cashier"
+    },
+    {
+        "transactionNumber": "3",
+        "date": "14.10.2022",
+        "time": "11:41",
+        "currency": "PLN",
+        "amount": 100.0,
+        "user": "admin"
+    },
+    {
+        "transactionNumber": "4",
+        "date": "15.10.2022",
+        "time": "11:41",
+        "currency": "EUR",
+        "amount": 250.0,
+        "user": "admin"
+    },
+    {
+        "transactionNumber": "1",
+        "date": "15.10.2022",
+        "time": "14:21",
+        "currency": "USD",
+        "amount": 500.0,
+        "user": "cashier"
+    },
+    {
+        "transactionNumber": "2",
+        "date": "16.10.2022",
+        "time": "15:30",
+        "currency": "EUR",
+        "amount": 250.0,
+        "user": "cashier"
+    },
+    {
+        "transactionNumber": "3",
+        "date": "14.10.2022",
+        "time": "11:41",
+        "currency": "PLN",
+        "amount": 100.0,
+        "user": "cashier"
+    },
+    {
+        "transactionNumber": "4",
+        "date": "15.10.2022",
+        "time": "11:41",
+        "currency": "EUR",
+        "amount": 250.0,
+        "user": "cashier"
+    },
+    {
+        "transactionNumber": "1",
+        "date": "15.10.2022",
+        "time": "14:21",
+        "currency": "USD",
+        "amount": 500.0,
+        "user": "admin"
+    },
+    {
+        "transactionNumber": "2",
+        "date": "16.10.2022",
+        "time": "15:30",
+        "currency": "EUR",
+        "amount": 250.0,
+        "user": "admin"
+    },
+    {
+        "transactionNumber": "3",
+        "date": "14.10.2022",
+        "time": "11:41",
+        "currency": "PLN",
+        "amount": 100.0,
+        "user": "admin"
+    },
+    {
+        "transactionNumber": "4",
+        "date": "15.10.2022",
+        "time": "11:41",
+        "currency": "EUR",
+        "amount": 250.0,
+        "user": "cashier"
+    }
+]

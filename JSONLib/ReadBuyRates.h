@@ -6,7 +6,7 @@ class ReadBuyRates
 {
 static std::string filePath;
 public:
-	ReadBuyRates();
-	std::map<std::string, double> read();
+	std::map<std::string, float> read();
+	void changePath(std::string newPath);
 };
 

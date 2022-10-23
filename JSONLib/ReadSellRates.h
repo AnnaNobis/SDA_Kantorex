@@ -3,10 +3,10 @@
 #include <string>
 class ReadSellRates
 {
-	//static std::string filePath;
+	static std::string filePath;
 public:
-	ReadSellRates();
-	std::map<std::string, double> read(std::string path);
+	std::map<std::string, float> read();
+	void changePath(std::string newPath);
 
 };
 

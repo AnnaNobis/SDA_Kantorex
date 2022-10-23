@@ -14,9 +14,6 @@ public:
     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE); // tutaj uchwyt do standardowego wyj�cia konsoli 
 
 
-
-    void drawingPartMenuOperations();
-
     void gotoxy(int x, int y);// pozycjonowanie rysowania na ekranie
 
     // rysowanie pojedynczej pozycji w menu
@@ -29,8 +26,7 @@ public:
 
     void displayMenuOperations(std::shared_ptr<ILoggedUser> loggedUser);
 
-
-
+   
 
 };
 
