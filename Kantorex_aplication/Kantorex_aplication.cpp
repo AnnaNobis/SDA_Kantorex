@@ -17,9 +17,6 @@
 #include "Kantorex_login/Authorization.hpp"
 
 
-
-
-
 //using json = nlohmann::ordered_json;
 
 
@@ -27,15 +24,15 @@ using namespace tabulate;
 
 int main()
 {
-
-	//IKantorDisplay window;
-	//window.displayLogin();
-	//system("cls"); //czy�ci ekran logowania
-
-
 	LogInManager login;
 	login.checkUser();
 	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+	
+	system("cls");
+
+	Menu_Operations screen;
+	screen.displayMenuOperations(loggedUser);
+
 	//loggedUser->setCanBuy(0);
 	//loggedUser->displayAllowedOperations();
 
@@ -46,14 +43,9 @@ int main()
 	//std::cout << std::endl;
 	//login.displayLoggedUserInfo();
 
-
 	//std::vector<LoginData> vect = LoggedUsersReader::read();
 	//for_each(vect.begin(), vect.end(), [](LoginData d) {std::cout << d._name << "   " << d._surname << "   " << d._dateAndTime << "   " << d._isLogged << std::endl; });
 
-	system("cls"); //czy�ci ekran logowania
-
-	Menu_Operations screen;
-	screen.displayMenuOperations(loggedUser);
 
     //JSONReader dataReader;
     //dataReader.readCurrencies("JSONTabelaA.json");
