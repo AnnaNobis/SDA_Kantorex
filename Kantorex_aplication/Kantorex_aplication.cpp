@@ -13,6 +13,7 @@
 #include "Kantorex_login/LogInManager.hpp"
 #include "Kantorex_login/WriteJSONfile.hpp"
 #include "Kantorex_login/Administrator.hpp"
+#include "../JSONLib/LoggedUsersReader.h"
 
 
 
@@ -29,10 +30,13 @@ int main()
 	//system("cls"); //czy�ci ekran logowania
 
 
-
 	LogInManager login;
 	login.checkUser();
 	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+
+
+	//std::vector<LoginData> vect = LoggedUsersReader::read();
+	//for_each(vect.begin(), vect.end(), [](LoginData d) {std::cout << d._name << "   " << d._surname << "   " << d._dateAndTime << "   " << d._isLogged << std::endl; });
 
 	system("cls"); //czy�ci ekran logowania
 
@@ -50,7 +54,7 @@ int main()
 	//std::cout << std::endl;
 	//first.calculationPrint();
 
-	//
+
 	//system("cls"); //czy�ci ekran logowania
 
 	//// IKantorDisplay window;
@@ -62,7 +66,6 @@ int main()
  //   JSONReader dataReader;
  //   dataReader.readCurrencies("JSONTabelaA.json");
  //   dataReader.wypisz();
-
 
 }
 

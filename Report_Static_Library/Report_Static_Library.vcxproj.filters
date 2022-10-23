@@ -45,6 +45,9 @@
     <ClInclude Include="json\json.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="LoginData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Report_Static_Library.cpp">
@@ -72,6 +75,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Time.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
