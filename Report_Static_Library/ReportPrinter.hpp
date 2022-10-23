@@ -7,7 +7,7 @@
 class ReportPrinter
 {
 	std::vector<ReportData> dailyData;
-	JSONReportReader dataFromFile;
+	//JSONReportReader dataFromFile;
 public:
 	
 	ReportPrinter(std::string filePath);

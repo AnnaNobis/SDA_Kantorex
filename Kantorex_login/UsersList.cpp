@@ -72,4 +72,5 @@ UsersList::~UsersList()
     WriteJSONfile file;
     file.write(getUsersList());
     std::cout << std::endl << "Wywołanie destruktora. Zapis do pliku." << std::endl;
+
 }

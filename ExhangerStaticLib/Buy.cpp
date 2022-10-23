@@ -1,6 +1,8 @@
 ﻿#include "pch.h"
 #include "Buy.h"
-
+#include "..\JSONLib\ReportWriter.h"
+#include "..\Report_Static_Library\ReportData.hpp"
+#include "..\Kantorex_login\User.hpp"
 
 void Buy::setSpread()
 {
@@ -43,8 +45,12 @@ bool Buy::checkAmount()
 float Buy::calculateExchangeValue()
 {
 	float result = _spread * getRate() * _amount;
+	
+	ReportWriter::writeReport(ReportData(_currencyFrom, _amount, _currencyTo, result));
 	return result;
 }
+
+
 
 void Buy::printCalculatedValue()
 {

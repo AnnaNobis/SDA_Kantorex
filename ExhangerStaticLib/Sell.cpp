@@ -1,5 +1,7 @@
 #include "pch.h"
 #include "Sell.h"
+#include "..\Report_Static_Library\ReportData.hpp"
+#include "..\JSONLib\ReportWriter.h"
 
 void Sell::setSpread()
 {
@@ -40,6 +42,7 @@ bool Sell::checkAmount()
 float Sell::calculateExchangeValue()
 {
 	float result = _spread / getRate() * _amount;
+	ReportWriter::writeReport(ReportData(_currencyFrom, _amount, _currencyTo, result));
 	return result;
 }
 
