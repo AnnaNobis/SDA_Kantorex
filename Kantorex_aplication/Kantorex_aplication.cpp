@@ -30,14 +30,14 @@ int main()
 
 
 
-	//LogInManager login;
-	//login.checkUser();
-	//std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+	LogInManager login;
+	login.checkUser();
+	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
 
-	//system("cls"); //czy�ci ekran logowania
+	system("cls"); //czy�ci ekran logowania
 
-	//Menu_Operations screen;
-	//screen.displayMenuOperations(loggedUser);
+	Menu_Operations screen;
+	screen.displayMenuOperations(loggedUser);
 
     //JSONReader dataReader;
     //dataReader.readCurrencies("JSONTabelaA.json");

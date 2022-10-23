@@ -22,5 +22,11 @@ public:
 	void displayBuyOperation();
 
 	void displayExitScreen();
+
+	void displayReportSelectionScreen();
+
+	void WriteLine(unsigned int width);
+
+
 };
 

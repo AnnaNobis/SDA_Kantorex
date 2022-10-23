@@ -110,31 +110,46 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                  Exchanger transactionBuy(buy, _inputCurrencyFrom, _inputAmount, _inputCurrencyTo);
                  transactionBuy.calculationPrint();
                 
-          } else  //- napis że nie masz dostępu albo jakieś info  
+          } else    
             std::cout << "Sorry, access to this operation is denied!" << std::endl;
             break;
 
         case 3: // BALANCE
-            if (loggedUser->getCanSell()) //zmienić 
+            if (loggedUser->getCanBalance()) //zmienić 
             {
                 //tutaj kod od Marty
               
             }
-            else  //- napis że nie masz dostępu albo jakieś info  
+            else  
             std::cout << "Sorry, access to this option denied!" << std::endl;
             break;
 
         case 4: //REPORTS
-            if (loggedUser->getCanSell()) //zmienić
+            if (loggedUser->getCanReport()) 
             {
-                auto reports = IKantorDisplay::displayReportSelectionScreen;
+                int reportNumber;
+                Table reportsTable;
+
+                std::cout << "Select number to enter report of your choice: " << std::endl;
+                reportsTable.add_row({ "1.", "For users logger report" });
+                reportsTable.add_row({ "2.", "For transactions report" });
+                reportsTable.add_row({ "3.", "For ...do not remember.. " });
+               //reportsTable.add_row({ "0.", "Exit" });
+
+                std::cout << reportsTable << std::endl;
+                std::cin >> reportNumber;
+                std::cout << std::endl << std::endl << std::endl;
+
+
+                //IKantorDisplay displayReportSelectionScreen();
+
                 //tutaj kod od Mileny
             }
-            else  //- napis że nie masz dostępu albo jakieś info  
+            else  
                 std::cout << "Sorry, access to this option denied!" << std::endl;
             break;
 
-        case 0: // dla wyj�cia z programu
+        case 0: 
         {
             std::cout << "Press y, if you want to exit...";
             if (_getch() == 'y')
@@ -156,6 +171,7 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
     std::cin.get();
 
 }
+
 
 
 void Menu_Operations::gotoxy(int x, int y)
