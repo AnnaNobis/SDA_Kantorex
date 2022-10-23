@@ -30,17 +30,18 @@ int main()
 	//system("cls"); //czy�ci ekran logowania
 
 
+	LogInManager login;
+	login.checkUser();
+	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
 
-	//LogInManager login;
-	//login.checkUser();
-	//std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+
 	//std::vector<LoginData> vect = LoggedUsersReader::read();
 	//for_each(vect.begin(), vect.end(), [](LoginData d) {std::cout << d._name << "   " << d._surname << "   " << d._dateAndTime << "   " << d._isLogged << std::endl; });
 
-	//system("cls"); //czy�ci ekran logowania
+	system("cls"); //czy�ci ekran logowania
 
-	//Menu_Operations screen;
-	//screen.displayMenuOperations(loggedUser);
+	Menu_Operations screen;
+	screen.displayMenuOperations(loggedUser);
 
     //JSONReader dataReader;
     //dataReader.readCurrencies("JSONTabelaA.json");
@@ -53,7 +54,7 @@ int main()
 	//std::cout << std::endl;
 	//first.calculationPrint();
 
-	//
+
 	//system("cls"); //czy�ci ekran logowania
 
 	//// IKantorDisplay window;

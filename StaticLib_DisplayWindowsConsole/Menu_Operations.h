@@ -26,9 +26,7 @@ public:
 
     void displayMenuOperations(std::shared_ptr<ILoggedUser> loggedUser);
 
-   std::vector<std::string> tMenuGl();
-   //void (std::vector<std::string> tMenuGl);
-
+   
 
 };
 
