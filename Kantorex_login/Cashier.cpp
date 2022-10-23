@@ -9,6 +9,7 @@ Cashier::Cashier()
 	_operations._canReport = true;
 	_operations._canExit = true;
 	_operations._canBuy = true;
+	_operations._canSetOperations = false;
 	_operations._canSell = true;
 }
 

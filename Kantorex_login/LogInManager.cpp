@@ -88,10 +88,13 @@ void LogInManager::setPassword()
 std::string LogInManager::hidePassword(std::string & password)
 {
 	char c;
-	while ((c = _getch()) != 13)
-	{
-		std::cout << "*";
-		password += c;
-	}
+	int i = 0;
+
+		while (((c = _getch()) != 13) && i < 8)
+		{
+			std::cout << "*";
+			password += c;
+			i++;
+		}	
 	return password;
 }

@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExhangerStaticLib", "Exhang
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Kantorex_UsersRoles", "Kantorex_UsersRoles\Kantorex_UsersRoles.vcxproj", "{64BFBF5F-EEB0-4C3F-A3A8-577437DB96FB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Kantorex_tests", "Kantorex_tests\Kantorex_tests.vcxproj", "{9EE4F387-5F96-4973-BB26-B2FAC5C4C889}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{64BFBF5F-EEB0-4C3F-A3A8-577437DB96FB}.Release|x64.Build.0 = Release|x64
 		{64BFBF5F-EEB0-4C3F-A3A8-577437DB96FB}.Release|x86.ActiveCfg = Release|Win32
 		{64BFBF5F-EEB0-4C3F-A3A8-577437DB96FB}.Release|x86.Build.0 = Release|Win32
+		{9EE4F387-5F96-4973-BB26-B2FAC5C4C889}.Debug|x64.ActiveCfg = Debug|x64
+		{9EE4F387-5F96-4973-BB26-B2FAC5C4C889}.Debug|x64.Build.0 = Debug|x64
+		{9EE4F387-5F96-4973-BB26-B2FAC5C4C889}.Debug|x86.ActiveCfg = Debug|Win32
+		{9EE4F387-5F96-4973-BB26-B2FAC5C4C889}.Debug|x86.Build.0 = Debug|Win32
+		{9EE4F387-5F96-4973-BB26-B2FAC5C4C889}.Release|x64.ActiveCfg = Release|x64
+		{9EE4F387-5F96-4973-BB26-B2FAC5C4C889}.Release|x64.Build.0 = Release|x64
+		{9EE4F387-5F96-4973-BB26-B2FAC5C4C889}.Release|x86.ActiveCfg = Release|Win32
+		{9EE4F387-5F96-4973-BB26-B2FAC5C4C889}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

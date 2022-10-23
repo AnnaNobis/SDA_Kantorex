@@ -8,6 +8,7 @@ Guest::Guest()
 	_operations._canReport = false;
 	_operations._canExit = true;
 	_operations._canBuy = false;
+	_operations._canSetOperations = false;
 	_operations._canSell = false;
 }
 

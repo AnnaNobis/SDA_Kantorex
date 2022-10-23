@@ -13,6 +13,7 @@
 #include "Kantorex_login/LogInManager.hpp"
 #include "Kantorex_login/WriteJSONfile.hpp"
 #include "Kantorex_login/Administrator.hpp"
+#include "Kantorex_login/Authorization.hpp"
 
 
 
@@ -22,6 +23,7 @@ using namespace tabulate;
 
 int main()
 {
+
 	//IKantorDisplay window;
 	//window.displayLogin();
 	//system("cls"); //czy�ci ekran logowania
@@ -30,6 +32,15 @@ int main()
 	LogInManager login;
 	login.checkUser();
 	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+	//loggedUser->setCanBuy(0);
+	//loggedUser->displayAllowedOperations();
+
+	//UsersList list;
+	//User user1;
+	//user1 = list.getUser(1);
+
+	//std::cout << std::endl;
+	//login.displayLoggedUserInfo();
 
 	
 	//system("cls"); //czy�ci ekran logowania
@@ -42,8 +53,8 @@ int main()
     //JSONReader dataReader;
     //dataReader.readCurrencies("JSONTabelaA.json");
     //dataReader.wypisz();
-	auto buy = OperationSellBuy::BUY;
-	auto sell = OperationSellBuy::SELL;
+	//auto buy = OperationSellBuy::BUY;
+	//auto sell = OperationSellBuy::SELL;
 
 }
 
