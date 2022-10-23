@@ -31,11 +31,11 @@ int main()
 
 
 
-	//LogInManager login;
-	//login.checkUser();
-	//std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
-	//std::vector<LoginData> vect = LoggedUsersReader::read();
-	//for_each(vect.begin(), vect.end(), [](LoginData d) {std::cout << d._name << "   " << d._surname << "   " << d._dateAndTime << "   " << d._isLogged << std::endl; });
+	LogInManager login;
+	login.checkUser();
+	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+	std::vector<LoginData> vect = LoggedUsersReader::read();
+	for_each(vect.begin(), vect.end(), [](LoginData d) {std::cout << d._name << "   " << d._surname << "   " << d._dateAndTime << "   " << d._isLogged << std::endl; });
 
 	//system("cls"); //czy�ci ekran logowania
 
