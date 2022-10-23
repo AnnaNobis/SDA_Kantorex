@@ -9,8 +9,6 @@
 
 
 
-
-
 void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedUser)
 { 
    // IKantorDisplay window;
@@ -129,8 +127,8 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
         case 4: //REPORTS
             if (loggedUser->getCanSell()) //zmienić
             {
+                auto reports = IKantorDisplay::displayReportSelectionScreen;
                 //tutaj kod od Mileny
-
             }
             else  //- napis że nie masz dostępu albo jakieś info  
                 std::cout << "Sorry, access to this option denied!" << std::endl;
