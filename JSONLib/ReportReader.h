@@ -8,7 +8,7 @@ class ReportReader
 {
 	static std::string filePath;
 public:
-	static std::vector<ReportData>readReport();
+	static  std::vector<ReportData>readReport();
 	void changePath(std::string newPath);
 };
 
