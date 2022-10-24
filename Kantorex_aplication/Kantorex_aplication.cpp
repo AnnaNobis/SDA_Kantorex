@@ -25,6 +25,7 @@ using namespace tabulate;
 int main()
 {
 
+
 	//IKantorDisplay window;
 	//window.displayLogin();
 	//system("cls"); //czy�ci ekran logowania

@@ -16,7 +16,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JSONLib", "JSONLib\JSONLib.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Report_Static_Library", "Report_Static_Library\Report_Static_Library.vcxproj", "{D778E8A2-5F78-412E-9508-03718A54B5BF}"
 EndProject
+
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CashBalanceStaticLib", "CashBalanceStaticLib\CashBalanceStaticLib.vcxproj", "{1CF3BC02-22CF-4D1B-9D1F-E7E5331EF3BF}"
+
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,6 +84,7 @@ Global
 		{D778E8A2-5F78-412E-9508-03718A54B5BF}.Release|x64.Build.0 = Release|x64
 		{D778E8A2-5F78-412E-9508-03718A54B5BF}.Release|x86.ActiveCfg = Release|Win32
 		{D778E8A2-5F78-412E-9508-03718A54B5BF}.Release|x86.Build.0 = Release|Win32
+
 		{1CF3BC02-22CF-4D1B-9D1F-E7E5331EF3BF}.Debug|x64.ActiveCfg = Debug|x64
 		{1CF3BC02-22CF-4D1B-9D1F-E7E5331EF3BF}.Debug|x64.Build.0 = Debug|x64
 		{1CF3BC02-22CF-4D1B-9D1F-E7E5331EF3BF}.Debug|x86.ActiveCfg = Debug|Win32
@@ -90,6 +93,7 @@ Global
 		{1CF3BC02-22CF-4D1B-9D1F-E7E5331EF3BF}.Release|x64.Build.0 = Release|x64
 		{1CF3BC02-22CF-4D1B-9D1F-E7E5331EF3BF}.Release|x86.ActiveCfg = Release|Win32
 		{1CF3BC02-22CF-4D1B-9D1F-E7E5331EF3BF}.Release|x86.Build.0 = Release|Win32
+
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

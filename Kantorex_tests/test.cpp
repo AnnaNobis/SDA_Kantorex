@@ -1,88 +1,65 @@
 #include "pch.h"
 #include "Kantorex_login/User.hpp"
 #include "Kantorex_login/UsersList.hpp"
-#include "Kantorex_login/ReadJSONfile.hpp"
 #include "Kantorex_login/Authorization.hpp"
+#include "Kantorex_login/LogInManager.hpp"
+#include "Kantorex_login/ILoggedUser.hpp"
+#include "Kantorex_login/Administrator.hpp"
 #include <vector>
-
-//int User::_counter = 0;
 
 class UserTest : public ::testing::Test
 {
 protected:
 	UserTest()
-		: objectUnderTest("Maja", "Kaleta", "cashier", "1234", ApplicationRole::CASHIER)
+		: _objectUnderTest("Maja", "Kaleta", "cashier", "1234", ApplicationRole::CASHIER)
 	{};
-	User objectUnderTest;
-};
-
-class ReadJSONfileTest : public ::testing::Test
-{
-protected:
-	ReadJSONfileTest()
-		: usersListInput{
-							{"Maja", "Kaleta", "cashier", "1234", ApplicationRole::CASHIER},
-							{"Lili", "Sobieski", "admin", "8888", ApplicationRole::ADMINISTRATOR},
-							{"Tom", "Tomski", "guest", "9999", ApplicationRole::GUEST}
-	}
-		, objectUnderTest()
-	{};
-	std::vector<User> usersListInput;
-	ReadJSONfile objectUnderTest;
+	User _objectUnderTest;
 };
 
 class AuthorizationTest : public ::testing::Test
 {
 protected:
 	AuthorizationTest()
-		: usersListInput{
+		: _usersListInput{
 					{"Maja", "Kaleta", "cashier", "1234", ApplicationRole::CASHIER},
 					{"Lili", "Sobieski", "admin", "8888", ApplicationRole::ADMINISTRATOR},
 					{"Tom", "Tomski", "guest", "9999", ApplicationRole::GUEST}
 			}
-		, enteredLogin("cashier")
-		, enteredPassword("1234")
-		, _checkedUser("Maja", "Kaleta", "cashier", "1234", ApplicationRole::CASHIER)
+		, _enteredLogin("cashier")
+		, _enteredPassword("1234")
+		, _users(_usersListInput)
+		, _checkedUser(_users.getUser(1))
 	{};
-	std::vector<User> usersListInput;
-	std::string enteredLogin;
-	std::string enteredPassword;
+	std::vector<User> _usersListInput;
+	std::string _enteredLogin;
+	std::string _enteredPassword;
 	User _checkedUser;
-	//UsersList _users;
-	Authorization objectUnderTest;
+	UsersList _users;
+	Authorization _objectUnderTest;
 };
 
-//class UsersListTest : public ::testing::Test
-//{
-//protected:
-//	std::vector<User> testedUsersListInput;
-//	std::shared_ptr<std::vector<User>> testedList;
-//	UsersList objectUnderTest;
-//	UsersListTest()
-//		: testedUsersListInput{
-//			{"Maja", "Kaleta", "cashier", "1234", ApplicationRole::CASHIER},
-//			{"Lili", "Sobieski", "admin", "8888", ApplicationRole::ADMINISTRATOR},
-//			{"Tom", "Tomski", "guest", "9999", ApplicationRole::GUEST}
-//	}
-//		, testedList(std::make_shared<std::vector<User>>(testedUsersListInput)
-//		, objectUnderTest()
-//	{
-//
-//	};
-//};
+class UsersListTest : public ::testing::Test
+{
+protected:
+
+	UsersListTest()
+		: testedUsersListInput{
+			{"Maja", "Kaleta", "cashier", "1234", ApplicationRole::CASHIER},
+			{"Lili", "Sobieski", "admin", "8888", ApplicationRole::ADMINISTRATOR},
+			{"Tom", "Tomski", "guest", "9999", ApplicationRole::GUEST}
+	}
+		, objectUnderTest(testedUsersListInput)
+	{
+
+	};
+
+	std::vector<User> testedUsersListInput;
+	UsersList objectUnderTest;
+};
 
 
-//		User user1("Maja", "Kaleta", "cashier", "1234", ApplicationRole::CASHIER);
-//		User user2("Lili", "Sobieski", "admin", "8888", ApplicationRole::ADMINISTRATOR);
-//		User user3("Tom", "Tomski", "guest", "9999", ApplicationRole::GUEST);
-//		_testedList.emplace_back("Maja", "Kaleta", "cashier", "1234", ApplicationRole::CASHIER);
-//		_testedList.emplace_back("Lili", "Sobieski", "admin", "8888", ApplicationRole::ADMINISTRATOR);
-//		_testedList.emplace_back("Tom", "Tomski", "guest", "9999", ApplicationRole::GUEST);
-//	//}
-//	//std::shared_ptr<std::vector<User>> _testedList;
-//};
 
-
+// class User
 TEST(classUser_enamToString, enteredValue_ApplicationRole_ADMINISTRATOR_expectedReturnValue_administrator) 
 {
 	User user;
@@ -124,51 +101,93 @@ TEST(classUser_getAppRole_enum, expectedReturnValue_ApplicationRole_GUEST)
 	User user;
 	EXPECT_EQ(user.getAppRole_enum(), ApplicationRole::GUEST);
 }
-
-TEST(classUsersList_getUser, enteredValue_int_1_expectedReturnValue_user1_id_str_1)
-{
-	UsersList list;
-	User user1;
-	user1 = list.getUser(1);
-	EXPECT_EQ(user1.getUserId(), "1");
-}
-// class Authorization
-
-TEST_F(AuthorizationTest, checkLogin)
-{
-	EXPECT_EQ(objectUnderTest.checkLogin(enteredLogin),true);
-}
-TEST_F(AuthorizationTest, checkPassword)
-{
-	EXPECT_EQ(objectUnderTest.checkPassword(enteredPassword), true);
-}
-
-// class User
-
 TEST_F(UserTest, getUserId)
 {
-	EXPECT_EQ(objectUnderTest.getUserId(), "1");
+	EXPECT_EQ(_objectUnderTest.getUserId(), "1");
 }
 
 TEST_F(UserTest, getUserFirstname)
 {
-	EXPECT_EQ(objectUnderTest.getUserFirstname(), "Maja");
+	EXPECT_EQ(_objectUnderTest.getUserFirstname(), "Maja");
 }
 
 TEST_F(UserTest, getUserLastname)
 {
-	EXPECT_EQ(objectUnderTest.getUserLastname(), "Kaleta");
+	EXPECT_EQ(_objectUnderTest.getUserLastname(), "Kaleta");
 }
 
 TEST_F(UserTest, getUserLogin)
 {
-	EXPECT_EQ(objectUnderTest.getLogin(), "cashier");
+	EXPECT_EQ(_objectUnderTest.getLogin(), "cashier");
 }
 TEST_F(UserTest, getPassword)
 {
-	EXPECT_EQ(objectUnderTest.getPassword(), "1234");
+	EXPECT_EQ(_objectUnderTest.getPassword(), "1234");
 }
 TEST_F(UserTest, getAppRole)
 {
-	EXPECT_EQ(objectUnderTest.getAppRole_enum(), ApplicationRole::CASHIER);
+	EXPECT_EQ(_objectUnderTest.getAppRole_enum(), ApplicationRole::CASHIER);
 }
+
+// class UsersList
+TEST_F(UsersListTest, getUser_enteredValue_int_1_expectedReturnValue_user1_id_str_1)
+{
+	EXPECT_EQ((objectUnderTest.getUser(1)).getUserId(), "1");
+}
+TEST_F(UsersListTest, getUser_enteredValue_str_Kaleta_expectedReturnValue_user1_str_Kaleta)
+{
+	EXPECT_EQ((objectUnderTest.getUser("Kaleta")).getUserLastname(), "Kaleta");
+}
+TEST_F(UsersListTest, addUser_enteredValue_User4Lovelace_expectedReturnValue_user4Id_str_4_str_Lovelace)
+{
+	objectUnderTest.addUser("Ada", "Lovelace", "alove", "alove88", ApplicationRole::GUEST);
+	EXPECT_EQ((objectUnderTest.getUser("Lovelace")).getUserLastname(), "Lovelace");
+	//EXPECT_EQ((objectUnderTest.getUser(4)).getUserId(), "4");
+}
+
+// class Authorization
+TEST_F(AuthorizationTest, checkLogin)
+{
+	EXPECT_EQ(_objectUnderTest.checkLogin(_enteredLogin),true);
+}
+TEST_F(AuthorizationTest, checkPassword)
+{
+	EXPECT_EQ(_objectUnderTest.checkPassword(_enteredPassword), true);
+}
+
+
+// class ILoggedUsers
+TEST(classAdministrator_getCanBuy, expectedReturnValue_False)
+{
+	std::shared_ptr<ILoggedUser> loggedUser = std::make_shared<Administrator>();
+	EXPECT_EQ(loggedUser->getCanBuy(), false);
+}
+TEST(classAdministrator_getCanSell, expectedReturnValue_False)
+{
+	std::shared_ptr<ILoggedUser> loggedUser = std::make_shared<Administrator>();
+	EXPECT_EQ(loggedUser->getCanSell(), false);
+}
+TEST(classAdministrator_getCanBalance, expectedReturnValue_True)
+{
+	std::shared_ptr<ILoggedUser> loggedUser = std::make_shared<Administrator>();
+	EXPECT_EQ(loggedUser->getCanBalance(), true);
+}
+TEST(classAdministrator_getCanRepart, expectedReturnValue_True)
+{
+	std::shared_ptr<ILoggedUser> loggedUser = std::make_shared<Administrator>();
+	EXPECT_EQ(loggedUser->getCanReport(), true);
+}
+// negative
+//TEST(classAdministrator_getCanRepart, expectedReturnValue_Truef)
+//{
+//	std::shared_ptr<ILoggedUser> loggedUser = std::make_shared<Administrator>();
+//	EXPECT_EQ(loggedUser->getCanReport(), false);
+//}
+
+
+// class LogInManager
+//TEST(classLogInManager_hidePassword, enteredValue_str_password_expectedReturnValue_str_password)
+//{
+//	LogInManager objectUnderTest;
+//	EXPECT_EQ(objectUnderTest.hidePassword("password"), "password");
+//}
