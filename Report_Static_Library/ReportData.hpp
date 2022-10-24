@@ -11,12 +11,17 @@ struct ReportData
 
 	std::string _date ;
 	std::string _time ;
-	std::string _currency ;
-	double _cashAmount ;
-	std::string _userId ;
+
+	std::string _currencyFrom;
+	std::string _currencyTo;
+
+	double _cashAmountFrom;
+	double _cashAmountTo;
+
+	/*std::string _userId ;*/
 	//int _ID ;
 	static int count;
-	ReportData(std::string date, std::string time, std::string currency, double cashAmount, std::string userId);
+	ReportData(/*std::string date, std::string time,*/ std::string currencyFrom, double cashAmount, std::string currencyTo, double cashAmountTo/*, std::string userId*/);
 	ReportData();
 	//void setNewId();
 	void setID();

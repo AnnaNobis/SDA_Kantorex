@@ -14,8 +14,8 @@
 #include "Kantorex_login/WriteJSONfile.hpp"
 #include "Kantorex_login/Administrator.hpp"
 
-#include "Kantorex_login/Authorization.hpp"
 
+#include "Kantorex_login/Authorization.hpp"
 
 //using json = nlohmann::ordered_json;
 
@@ -24,15 +24,15 @@ using namespace tabulate;
 
 int main()
 {
+
+	//IKantorDisplay window;
+	//window.displayLogin();
+	//system("cls"); //czy�ci ekran logowania
+
+
 	LogInManager login;
 	login.checkUser();
 	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
-	
-	system("cls");
-
-	Menu_Operations screen;
-	screen.displayMenuOperations(loggedUser);
-
 	//loggedUser->setCanBuy(0);
 	//loggedUser->displayAllowedOperations();
 
@@ -43,15 +43,21 @@ int main()
 	//std::cout << std::endl;
 	//login.displayLoggedUserInfo();
 
+
 	LogInManager login;
 	login.checkUser();
 	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
 	std::vector<LoginData> vect = LoggedUsersReader::read();
 	for_each(vect.begin(), vect.end(), [](LoginData d) {std::cout << d._name << "   " << d._surname << "   " << d._dateAndTime << "   " << d._isLogged << std::endl; });
 
+
 	//std::vector<LoginData> vect = LoggedUsersReader::read();
 	//for_each(vect.begin(), vect.end(), [](LoginData d) {std::cout << d._name << "   " << d._surname << "   " << d._dateAndTime << "   " << d._isLogged << std::endl; });
 
+	system("cls"); //czy�ci ekran logowania
+
+	//Menu_Operations screen;
+	//screen.displayMenuOperations(loggedUser);
 
 
     //JSONReader dataReader;
@@ -61,11 +67,14 @@ int main()
 	//auto sell = OperationSellBuy::SELL;
 
 
-	//Exchanger first(OperationSellBuy::SELL, "PLN", 100, "HUF");
-	//first.rate();
-	//std::cout << std::endl;
-	//first.calculationPrint();
-
+	Exchanger first(OperationSellBuy::BUY, "GBP", 600, "PLN");
+	first.rate();
+	std::cout << std::endl;
+	first.calculationPrint();
+	Exchanger second(OperationSellBuy::SELL, "PLN", 700, "USD");
+	second.rate();
+	std::cout << std::endl;
+	second.calculationPrint();
 
 	//system("cls"); //czy�ci ekran logowania
 

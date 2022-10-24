@@ -1,13 +1,13 @@
 #pragma once
 #include <vector>
 #include "ReportData.hpp"
-#include "JSONReportReader.hpp"
+
 #include <algorithm>
 #include <iostream>
 class ReportPrinter
 {
 	std::vector<ReportData> dailyData;
-	JSONReportReader dataFromFile;
+	//JSONReportReader dataFromFile;
 public:
 	
 	ReportPrinter(std::string filePath);

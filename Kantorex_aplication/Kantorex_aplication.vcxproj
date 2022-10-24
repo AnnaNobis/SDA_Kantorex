@@ -110,7 +110,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>JSONLib.lib;ExhangerStaticLib.lib;Kantorex_login.lib;Report_Static_Library.lib;StaticLib_DisplayWindowsConsole.lib;Kantorex_UsersRoles.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>JSONLib.lib;ExhangerStaticLib.lib;Kantorex_login.lib;Report_Static_Library.lib;StaticLib_DisplayWindowsConsole.lib;Kantorex_UsersRoles.lib;CashBalanceStaticLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -133,6 +133,9 @@
     <ClCompile Include="Kantorex_aplication.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CashBalanceStaticLib\CashBalanceStaticLib.vcxproj">
+      <Project>{1cf3bc02-22cf-4d1b-9d1f-e7e5331ef3bf}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\ExhangerStaticLib\ExhangerStaticLib.vcxproj">
       <Project>{0804d17b-a210-40e0-acc7-5f12d8e8f96c}</Project>
     </ProjectReference>

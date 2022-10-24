@@ -26,8 +26,6 @@ public:
 
     void displayMenuOperations(std::shared_ptr<ILoggedUser> loggedUser);
 
-    void displayOperationName(std::string _operationName);
-
    
 
 };
