@@ -27,17 +27,15 @@ int main()
 {
 
 
-	//LogInManager login;
-	//login.checkUser();
-	//std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
-	//
-	//system("cls"); //czy�ci ekran logowania
-
-	//
+	LogInManager login;
+	login.checkUser();
+	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+	
+	system("cls"); 
 
 
-	//Menu_Operations screen;
-	//screen.displayMenuOperations(loggedUser);
+	Menu_Operations screen;
+	screen.displayMenuOperations(loggedUser);
 
 	//drukowanie raportu 
 	LoggedPrinter newReport;
@@ -45,13 +43,6 @@ int main()
 	newReport.ReadLoggReportAll();
 	std::cout << std::endl << std::endl << std::endl << std::endl << std::endl;
 	newReport.ReadLoggReportSurname("Sobieski");
-
-
-	LogInManager login;
-	login.checkUser();
-	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
-	
-	system("cls"); //czy�ci ekran logowania
 
 
 
@@ -96,11 +87,6 @@ int main()
 	//second.rate();
 	//std::cout << std::endl;
 	//second.calculationPrint();
-
-
-
-
-
 
 
 }

@@ -9,6 +9,7 @@
 #include "../ExhangerStaticLib/Exchanger.h"
 #include "Menu_Operations.h"
 #include "../Report_Static_Library/ReportPrinter.hpp"
+#include "../Report_Static_Library/LoggedPrinter.hpp"
 
 
 //void IKantorDisplay::displayLogin()
@@ -132,7 +133,33 @@ void IKantorDisplay::displaySwitchForReports(int reportNumber)
 	switch (reportNumber)
 	{
 	case 1: //users logger report
-	{std::cout << "Users logger report" << std::endl;
+	{
+		Table reportTransaction3;
+		LoggedPrinter printer;
+		
+		auto data = printer.ReadLoggReportAll();
+		reportTransaction3.add_row({ "DATE & TIME", "SURNAME", "NAME" ,"OPERATION"});
+		std::for_each(data.begin(), data.end(), [&](LoginData l)
+			{
+				
+		std::string tmp_dateTime = l._dateAndTime;
+		std::string tmp_surname = l._surname;
+		std::string tmp_name =l._name;
+		std::string loggStatus;
+				if (l._isLogged == 0)
+				{
+					loggStatus = "log out";
+				}
+				else
+				{
+					loggStatus = "log in";
+				}
+		reportTransaction3.add_row({ tmp_dateTime, tmp_surname, tmp_name, loggStatus }); });
+
+		std::cout << reportTransaction3 << std::endl;
+		std::cout << std::endl << std::endl << std::endl;
+
+		
 	break;
 	}
 

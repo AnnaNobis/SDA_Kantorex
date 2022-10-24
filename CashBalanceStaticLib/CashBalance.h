@@ -10,7 +10,7 @@
 class CashBalance
 {
 public:
-	CashBalance(OperationSellBuy chooseOperation, std::string inputCurrencyFrom, float inputAmount, std::string inputCurrencyTo);
+	//CashBalance(OperationSellBuy chooseOperation, std::string inputCurrencyFrom, float inputAmount, std::string inputCurrencyTo);
 	std::map<std::string, float>createMapp();
 	bool checkCashRegister();
 	void showOpeningBalance();
