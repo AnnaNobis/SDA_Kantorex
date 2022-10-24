@@ -46,6 +46,7 @@ int main()
 	//login.displayLoggedUserInfo();
 
 
+
 	/*LogInManager login;
 	login.checkUser();
 	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
@@ -53,10 +54,13 @@ int main()
 	for_each(vect.begin(), vect.end(), [](LoginData d) {std::cout << d._name << "   " << d._surname << "   " << d._dateAndTime << "   " << d._isLogged << std::endl; });*/
 
 
+
 	//std::vector<LoginData> vect = LoggedUsersReader::read();
 	//for_each(vect.begin(), vect.end(), [](LoginData d) {std::cout << d._name << "   " << d._surname << "   " << d._dateAndTime << "   " << d._isLogged << std::endl; });
 
+
 	
+
 
 
     //JSONReader dataReader;
@@ -64,6 +68,7 @@ int main()
     //dataReader.wypisz();
 	//auto buy = OperationSellBuy::BUY;
 	//auto sell = OperationSellBuy::SELL;
+
 
 
 	Exchanger first(OperationSellBuy::BUY, "USD", 200000, "PLN");
@@ -74,6 +79,7 @@ int main()
 	second.rate();
 	std::cout << std::endl;
 	second.calculationPrint();
+
 
 	ReportPrinter newReport;
 	newReport.ReadDailyReport("24.10.2022");

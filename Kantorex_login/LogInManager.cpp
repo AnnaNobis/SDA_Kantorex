@@ -14,7 +14,6 @@ LogInManager::LogInManager()
 void LogInManager::checkUser()
 {
 	if (_authorization.checkLogin(_username))
-	//if (checkLogin(_username))
 	{
 		if (_authorization.checkPassword(_password))
 		{
