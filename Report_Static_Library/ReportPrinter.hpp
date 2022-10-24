@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include "ReportData.hpp"
-#include "JSONReportReader.hpp"
+
 #include <algorithm>
 #include <iostream>
 class ReportPrinter

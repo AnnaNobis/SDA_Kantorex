@@ -55,7 +55,7 @@ void ReportWriter::writeToExistingReport(ReportData data)
 {
 	std::vector<ReportData>fileData = ReportReader::readReport();
 	int x = std::stoi(fileData[fileData.size() - 1]._ID)+1;
-	//ReportData::count = std::stoi(fileData[fileData.size() - 1]._ID);
+
 	
 	data._ID = std::to_string(x);
 	fileData.push_back(data);
