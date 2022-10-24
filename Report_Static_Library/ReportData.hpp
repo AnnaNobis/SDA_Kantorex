@@ -21,8 +21,9 @@ struct ReportData
 	/*std::string _userId ;*/
 	//int _ID ;
 	static int count;
-	ReportData(/*std::string date, std::string time,*/ std::string currencyFrom, double cashAmount, std::string currencyTo, double cashAmountTo/*, std::string userId*/);
 	ReportData();
+	ReportData(/*std::string date, std::string time,*/ std::string currencyFrom, double cashAmount, std::string currencyTo, double cashAmountTo/*, std::string userId*/);
+	
 	//void setNewId();
 	void setID();
 	//ReportData(std::string date, std::string time, std::string currency, std::string cashAmount, std::string userId);

@@ -13,7 +13,7 @@
 #include "Kantorex_login/LogInManager.hpp"
 #include "Kantorex_login/WriteJSONfile.hpp"
 #include "Kantorex_login/Administrator.hpp"
-
+#include "Report_Static_Library/ReportPrinter.hpp"
 
 #include "Kantorex_login/Authorization.hpp"
 
@@ -25,15 +25,16 @@ using namespace tabulate;
 int main()
 {
 
-
-	//IKantorDisplay window;
-	//window.displayLogin();
-	//system("cls"); //czy�ci ekran logowania
-
-
 	LogInManager login;
 	login.checkUser();
 	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+	
+	system("cls"); //czy�ci ekran logowania
+
+	Menu_Operations screen;
+	screen.displayMenuOperations(loggedUser);
+
+
 	//loggedUser->setCanBuy(0);
 	//loggedUser->displayAllowedOperations();
 
@@ -45,20 +46,21 @@ int main()
 	//login.displayLoggedUserInfo();
 
 
-	//LogInManager login;
-	//login.checkUser();
-	//std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+
+	/*LogInManager login;
+	login.checkUser();
+	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+	std::vector<LoginData> vect = LoggedUsersReader::read();
+	for_each(vect.begin(), vect.end(), [](LoginData d) {std::cout << d._name << "   " << d._surname << "   " << d._dateAndTime << "   " << d._isLogged << std::endl; });*/
+
+
+
 	//std::vector<LoginData> vect = LoggedUsersReader::read();
 	//for_each(vect.begin(), vect.end(), [](LoginData d) {std::cout << d._name << "   " << d._surname << "   " << d._dateAndTime << "   " << d._isLogged << std::endl; });
 
 
-	//std::vector<LoginData> vect = LoggedUsersReader::read();
-	//for_each(vect.begin(), vect.end(), [](LoginData d) {std::cout << d._name << "   " << d._surname << "   " << d._dateAndTime << "   " << d._isLogged << std::endl; });
+	
 
-	//system("cls"); //czy�ci ekran logowania
-
-	//Menu_Operations screen;
-	//screen.displayMenuOperations(loggedUser);
 
 
     //JSONReader dataReader;
@@ -68,14 +70,21 @@ int main()
 	//auto sell = OperationSellBuy::SELL;
 
 
-	//Exchanger first(OperationSellBuy::BUY, "GBP", 600, "PLN");
-	//first.rate();
-	//std::cout << std::endl;
-	//first.calculationPrint();
-	//Exchanger second(OperationSellBuy::SELL, "PLN", 700, "USD");
-	//second.rate();
-	//std::cout << std::endl;
-	//second.calculationPrint();
+
+	Exchanger first(OperationSellBuy::BUY, "USD", 200000, "PLN");
+	first.rate();
+	std::cout << std::endl;
+	first.calculationPrint();
+	Exchanger second(OperationSellBuy::SELL, "PLN", 30000, "USD");
+	second.rate();
+	std::cout << std::endl;
+	second.calculationPrint();
+
+
+	ReportPrinter newReport;
+	newReport.ReadDailyReport("24.10.2022");
+	newReport.ReadCurrencyReport("USD");
+
 
 	//system("cls"); //czy�ci ekran logowania
 
@@ -85,9 +94,7 @@ int main()
 	//Menu_Operations screen;
 	//screen.displayMenuOperations(loggedUser);
 
- //   JSONReader dataReader;
- //   dataReader.readCurrencies("JSONTabelaA.json");
- //   dataReader.wypisz();
+
 
 
 }

@@ -1,18 +1,19 @@
 #pragma once
 #include <vector>
 #include "ReportData.hpp"
-
+#include "..\JSONLib\ReportReader.h"
+#include "..\JSONLib\ReportWriter.h"
 #include <algorithm>
 #include <iostream>
 class ReportPrinter
 {
 	std::vector<ReportData> dailyData;
-	//JSONReportReader dataFromFile;
+	ReportReader dataFromFile;
 public:
 	
-	ReportPrinter(std::string filePath);
-	void ReadDailyReport(std::string date);
-	void ReadCurrencyReport(std::string currency);
+	ReportPrinter(/*std::string filePath*/);
+	std::vector<ReportData> ReadDailyReport(std::string date);
+	std::vector<ReportData> ReadCurrencyReport(std::string currency);
 };
 //class RawData
 //{

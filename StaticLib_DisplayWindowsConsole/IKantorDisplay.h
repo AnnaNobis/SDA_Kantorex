@@ -27,6 +27,8 @@ public:
 
 	void WriteLine(unsigned int width);
 
+	void displaySwitchForReports(int reportNumber);
+
 
 };
 
