@@ -5,6 +5,8 @@
 #include "Kantorex_login/LogInManager.hpp"
 #include "Kantorex_login/ILoggedUser.hpp"
 #include "Kantorex_login/Administrator.hpp"
+#include "Kantorex_login/ReadJSONfile.hpp"
+#include "Kantorex_login/WriteJSONfile.hpp"
 #include <vector>
 
 class UserTest : public ::testing::Test
@@ -38,26 +40,21 @@ protected:
 	Authorization _objectUnderTest;
 };
 
-class UsersListTest : public ::testing::Test
+class WriteJSONfileTest : public ::testing::Test
 {
 protected:
-
-	UsersListTest()
-		: testedUsersListInput{
+	WriteJSONfileTest()
+		: testedUsersListInput {
 			{"Maja", "Kaleta", "cashier", "1234", ApplicationRole::CASHIER},
-			{"Lili", "Sobieski", "admin", "8888", ApplicationRole::ADMINISTRATOR},
-			{"Tom", "Tomski", "guest", "9999", ApplicationRole::GUEST}
+			{ "Lili", "Sobieski", "admin", "8888", ApplicationRole::ADMINISTRATOR },
+			{ "Tom", "Tomski", "guest", "9999", ApplicationRole::GUEST }
 	}
-		, objectUnderTest(testedUsersListInput)
+		, list(testedUsersListInput)
 	{
-
 	};
-
 	std::vector<User> testedUsersListInput;
-	UsersList objectUnderTest;
+	UsersList list;
 };
-
-
 
 // class User
 TEST(classUser_enamToString, enteredValue_ApplicationRole_ADMINISTRATOR_expectedReturnValue_administrator) 
@@ -129,21 +126,7 @@ TEST_F(UserTest, getAppRole)
 	EXPECT_EQ(_objectUnderTest.getAppRole_enum(), ApplicationRole::CASHIER);
 }
 
-// class UsersList
-TEST_F(UsersListTest, getUser_enteredValue_int_1_expectedReturnValue_user1_id_str_1)
-{
-	EXPECT_EQ((objectUnderTest.getUser(1)).getUserId(), "1");
-}
-TEST_F(UsersListTest, getUser_enteredValue_str_Kaleta_expectedReturnValue_user1_str_Kaleta)
-{
-	EXPECT_EQ((objectUnderTest.getUser("Kaleta")).getUserLastname(), "Kaleta");
-}
-TEST_F(UsersListTest, addUser_enteredValue_User4Lovelace_expectedReturnValue_user4Id_str_4_str_Lovelace)
-{
-	objectUnderTest.addUser("Ada", "Lovelace", "alove", "alove88", ApplicationRole::GUEST);
-	EXPECT_EQ((objectUnderTest.getUser("Lovelace")).getUserLastname(), "Lovelace");
-	//EXPECT_EQ((objectUnderTest.getUser(4)).getUserId(), "4");
-}
+
 
 // class Authorization
 TEST_F(AuthorizationTest, checkLogin)
@@ -191,3 +174,37 @@ TEST(classAdministrator_getCanRepart, expectedReturnValue_True)
 //	LogInManager objectUnderTest;
 //	EXPECT_EQ(objectUnderTest.hidePassword("password"), "password");
 //}
+
+// class ReaderJSONfile
+TEST(classReadJSONfile, expectedReturnValue_str_Kaleta)
+{
+	ReadJSONfile file;
+	std::vector<User> list = file.read();
+	EXPECT_EQ(list[0].getUserLastname(), "Kaleta");
+	EXPECT_EQ(list[1].getUserLastname(), "Sobieski");
+	EXPECT_EQ(list[2].getUserLastname(), "Tomski");
+}
+TEST(classReadJSONfile, expectedReturnValue_str_Tomski)
+{
+	ReadJSONfile file;
+	std::vector<User> list = file.read();
+	EXPECT_EQ(list[2].getUserLastname(), "Tomski");
+}
+//TEST(classReadJSONfile, expectedReturnValue_str_Tomski)
+//{
+//	ReadJSONfile file;
+//	std::vector<User> list = file.read();
+//	EXPECT_EQ(list[2].getUserLastname(), "Inny");
+//}
+
+// classWriteJSONfile
+TEST_F(WriteJSONfileTest, expectedReturnValue_str_Sobieski)
+{
+	WriteJSONfile fileWrite;
+	list.addUser("Jan", "Sobieski", "jsob", "1234", ApplicationRole::GUEST);
+	fileWrite.write(list.getUsersList());
+	ReadJSONfile fileRead;
+	std::vector<User> list = fileRead.read();
+	auto it = list.end()-1;
+	EXPECT_EQ((*it).getUserLastname(), "Sobieski");
+}

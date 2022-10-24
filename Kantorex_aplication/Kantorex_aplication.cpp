@@ -45,17 +45,17 @@ int main()
 	//login.displayLoggedUserInfo();
 
 
-	LogInManager login;
-	login.checkUser();
-	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
-	std::vector<LoginData> vect = LoggedUsersReader::read();
-	for_each(vect.begin(), vect.end(), [](LoginData d) {std::cout << d._name << "   " << d._surname << "   " << d._dateAndTime << "   " << d._isLogged << std::endl; });
+	//LogInManager login;
+	//login.checkUser();
+	//std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+	//std::vector<LoginData> vect = LoggedUsersReader::read();
+	//for_each(vect.begin(), vect.end(), [](LoginData d) {std::cout << d._name << "   " << d._surname << "   " << d._dateAndTime << "   " << d._isLogged << std::endl; });
 
 
 	//std::vector<LoginData> vect = LoggedUsersReader::read();
 	//for_each(vect.begin(), vect.end(), [](LoginData d) {std::cout << d._name << "   " << d._surname << "   " << d._dateAndTime << "   " << d._isLogged << std::endl; });
 
-	system("cls"); //czy�ci ekran logowania
+	//system("cls"); //czy�ci ekran logowania
 
 	//Menu_Operations screen;
 	//screen.displayMenuOperations(loggedUser);
@@ -68,14 +68,14 @@ int main()
 	//auto sell = OperationSellBuy::SELL;
 
 
-	Exchanger first(OperationSellBuy::BUY, "GBP", 600, "PLN");
-	first.rate();
-	std::cout << std::endl;
-	first.calculationPrint();
-	Exchanger second(OperationSellBuy::SELL, "PLN", 700, "USD");
-	second.rate();
-	std::cout << std::endl;
-	second.calculationPrint();
+	//Exchanger first(OperationSellBuy::BUY, "GBP", 600, "PLN");
+	//first.rate();
+	//std::cout << std::endl;
+	//first.calculationPrint();
+	//Exchanger second(OperationSellBuy::SELL, "PLN", 700, "USD");
+	//second.rate();
+	//std::cout << std::endl;
+	//second.calculationPrint();
 
 	//system("cls"); //czy�ci ekran logowania
 
