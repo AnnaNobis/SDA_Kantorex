@@ -41,12 +41,11 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                 std::string _inputCurrencyFrom= "pln";
                 std::string _inputCurrencyTo;
                 float _inputAmount;
-                std::string operationName = " SELL OPERATION MODE ";
+                std::string _operationName = " SELL OPERATION MODE ";
 
-                WriteLine(operationName.size());
-                std::cout << "SELL OPERATION MODE" << std::endl;
-                WriteLine(operationName.size());
+                displayOperationName(_operationName);
 
+          
                 std::cout << "Enter currency to exchange/sell : " << std::endl;
                 std::cin >> _inputCurrencyTo;
               
@@ -82,11 +81,11 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                 std::string _inputCurrencyFrom;
                  std::string _inputCurrencyTo = "pln";
                  float _inputAmount;
-                 std::string operationName = " BUY OPERATION MODE ";
+                 std::string _operationName = " BUY OPERATION MODE ";
 
-                WriteLine(operationName.size());
-                std::cout << operationName  << std::endl;
-                WriteLine(operationName.size());
+
+                displayOperationName(_operationName);
+                
 
                 std::cout << "Enter currency to exchange/buy : " << std::endl;
                 std::cin >> _inputCurrencyFrom;
@@ -132,16 +131,21 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
 
                 std::cout << "Select number to enter report of your choice: " << std::endl;
                 reportsTable.add_row({ "1.", "For users logger report" });
-                reportsTable.add_row({ "2.", "For transactions report" });
-                reportsTable.add_row({ "3.", "For ...do not remember.. " });
+                reportsTable.add_row({ "2.", "For  daily transactions report" });
+                reportsTable.add_row({ "3.", "For currency transactions report" });
+                reportsTable.add_row({ "4.", "For ...do not remember.. " });
                //reportsTable.add_row({ "0.", "Exit" });
 
                 std::cout << reportsTable << std::endl;
                 std::cin >> reportNumber;
                 std::cout << std::endl << std::endl << std::endl;
 
+                IKantorDisplay temp;
+                temp.displaySwitchForReports(reportNumber);
+           
 
-                //IKantorDisplay displayReportSelectionScreen();
+
+                
 
                 //tutaj kod od Mileny
             }
@@ -242,5 +246,10 @@ A: // znacznik miejsca skoku
 
 }
 
-
+void Menu_Operations::displayOperationName(std::string _operationName)
+{
+    WriteLine(_operationName.size());
+    std::cout << "SELL OPERATION MODE" << std::endl;
+    WriteLine(_operationName.size());
+}
 

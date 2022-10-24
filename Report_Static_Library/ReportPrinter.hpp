@@ -12,8 +12,8 @@ class ReportPrinter
 public:
 	
 	ReportPrinter(/*std::string filePath*/);
-	void ReadDailyReport(std::string date);
-	void ReadCurrencyReport(std::string currency);
+	std::vector<ReportData> ReadDailyReport(std::string date);
+	std::vector<ReportData> ReadCurrencyReport(std::string currency);
 };
 //class RawData
 //{
