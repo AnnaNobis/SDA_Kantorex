@@ -47,6 +47,7 @@ int main()
 	//login.displayLoggedUserInfo();
 
 
+
 	/*LogInManager login;
 	login.checkUser();
 	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
@@ -57,15 +58,11 @@ int main()
 	//std::vector<LoginData> vect = LoggedUsersReader::read();
 	//for_each(vect.begin(), vect.end(), [](LoginData d) {std::cout << d._name << "   " << d._surname << "   " << d._dateAndTime << "   " << d._isLogged << std::endl; });
 
-	
-
-
     //JSONReader dataReader;
     //dataReader.readCurrencies("JSONTabelaA.json");
     //dataReader.wypisz();
 	//auto buy = OperationSellBuy::BUY;
 	//auto sell = OperationSellBuy::SELL;
-
 
 	//Exchanger first(OperationSellBuy::BUY, "USD", 200000, "PLN");
 	//first.rate();
@@ -79,16 +76,6 @@ int main()
 	//ReportPrinter newReport;
 	//newReport.ReadDailyReport("24.10.2022");
 	//newReport.ReadCurrencyReport("USD");
-
-
-	//system("cls"); //czy�ci ekran logowania
-
-	//// IKantorDisplay window;
- //  //window.displayCurrencyTable();
-
-	//Menu_Operations screen;
-	//screen.displayMenuOperations(loggedUser);
-
 
 
 
