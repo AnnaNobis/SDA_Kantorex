@@ -90,11 +90,6 @@ void User::setUserId(std::string id)
     _id = id;
 }
 
-//User::~User()
-//{
-//    --_counter;
-//}
-
 std::string User::getUserFirstname() const
 {
     return _firstname;

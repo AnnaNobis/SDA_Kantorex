@@ -14,17 +14,18 @@
 #include "Kantorex_login/WriteJSONfile.hpp"
 #include "Kantorex_login/Administrator.hpp"
 #include "Report_Static_Library/ReportPrinter.hpp"
+
 #include "Report_Static_Library/LoggedPrinter.hpp"
 
+#include "../CashBalanceStaticLib/CashBalance.h"
 #include "Kantorex_login/Authorization.hpp"
 
 //using json = nlohmann::ordered_json;
-
-
 using namespace tabulate;
 
 int main()
 {
+
 
 	//LogInManager login;
 	//login.checkUser();
@@ -46,6 +47,17 @@ int main()
 	newReport.ReadLoggReportSurname("Sobieski");
 
 
+	LogInManager login;
+	login.checkUser();
+	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+	
+	system("cls"); //czy�ci ekran logowania
+
+
+
+	/*CashBalance balance(OperationSellBuy::BUY, "USD", 200000, "PLN");
+	balance.showOpeningBalance();
+	balance.checkCashRegister();*/
 
 
 	//loggedUser->setCanBuy(0);
@@ -59,6 +71,7 @@ int main()
 	//login.displayLoggedUserInfo();
 
 
+
 	/*LogInManager login;
 	login.checkUser();
 	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
@@ -69,15 +82,11 @@ int main()
 	//std::vector<LoginData> vect = LoggedUsersReader::read();
 	//for_each(vect.begin(), vect.end(), [](LoginData d) {std::cout << d._name << "   " << d._surname << "   " << d._dateAndTime << "   " << d._isLogged << std::endl; });
 
-	
-
-
     //JSONReader dataReader;
     //dataReader.readCurrencies("JSONTabelaA.json");
     //dataReader.wypisz();
 	//auto buy = OperationSellBuy::BUY;
 	//auto sell = OperationSellBuy::SELL;
-
 
 	//Exchanger first(OperationSellBuy::BUY, "USD", 200000, "PLN");
 	//first.rate();
@@ -89,13 +98,7 @@ int main()
 	//second.calculationPrint();
 
 
-	//system("cls"); //czy�ci ekran logowania
 
-	//// IKantorDisplay window;
- //  //window.displayCurrencyTable();
-
-	//Menu_Operations screen;
-	//screen.displayMenuOperations(loggedUser);
 
 
 

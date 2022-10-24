@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "Exchanger.h"
 
+
+
 Exchanger::Exchanger(OperationSellBuy chooseOperation, std::string inputCurrencyFrom, float inputAmount, std::string inputCurrencyTo)
 	:
 	_chooseOperation(chooseOperation),
@@ -31,10 +33,10 @@ Exchanger::Exchanger(OperationSellBuy chooseOperation, std::string inputCurrency
 
 
 }
-void Exchanger::rate()
-{
-	std::cout << transaction->getRate();
-};
+//void Exchanger::rate()
+//{
+//	std::cout << transaction->getRate();
+//};
 
 void Exchanger::calculationPrint()
 {
@@ -43,11 +45,16 @@ void Exchanger::calculationPrint()
 		transaction->printCalculatedValue();
 	}
 
-};
+}
 
 std::string Exchanger::getCurrencyForBalance()
 {
 	return transaction->getCurrency();
+}
+
+float Exchanger::getExchangedAmount()
+{
+	return transaction->calculateExchangeValue();
 }
 
 float Exchanger::getAmountForBalance()

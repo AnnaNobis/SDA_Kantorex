@@ -310,11 +310,5 @@
         "surname": "Tomski",
         "dateAndTime": "Mon Oct 24 18:25:38 2022\n",
         "isLogged": true
-    },
-    {
-        "name": "Tom",
-        "surname": "Tomski",
-        "dateAndTime": "Mon Oct 24 18:30:55 2022\n",
-        "isLogged": false
     }
 ]
