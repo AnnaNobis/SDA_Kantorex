@@ -14,6 +14,9 @@
 #include "Kantorex_login/WriteJSONfile.hpp"
 #include "Kantorex_login/Administrator.hpp"
 #include "Report_Static_Library/ReportPrinter.hpp"
+
+#include "Report_Static_Library/LoggedPrinter.hpp"
+
 #include "../CashBalanceStaticLib/CashBalance.h"
 #include "Kantorex_login/Authorization.hpp"
 
@@ -22,14 +25,35 @@ using namespace tabulate;
 
 int main()
 {
+
+
+	//LogInManager login;
+	//login.checkUser();
+	//std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+	//
+	//system("cls"); //czy�ci ekran logowania
+
+	//
+
+
+	//Menu_Operations screen;
+	//screen.displayMenuOperations(loggedUser);
+
+	//drukowanie raportu 
+	LoggedPrinter newReport;
+	//newReport.ReadLoggReport("Maja");
+	newReport.ReadLoggReportAll();
+	std::cout << std::endl << std::endl << std::endl << std::endl << std::endl;
+	newReport.ReadLoggReportSurname("Sobieski");
+
+
 	LogInManager login;
 	login.checkUser();
 	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
 	
 	system("cls"); //czy�ci ekran logowania
 
-	Menu_Operations screen;
-	screen.displayMenuOperations(loggedUser);
+
 
 	/*CashBalance balance(OperationSellBuy::BUY, "USD", 200000, "PLN");
 	balance.showOpeningBalance();
@@ -73,9 +97,9 @@ int main()
 	//std::cout << std::endl;
 	//second.calculationPrint();
 
-	//ReportPrinter newReport;
-	//newReport.ReadDailyReport("24.10.2022");
-	//newReport.ReadCurrencyReport("USD");
+
+
+
 
 
 

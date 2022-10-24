@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "UsersList.hpp"
 #include <iostream>
-
+#include "..\JSONLib\LoggedUsersWriter.h"
 
 
 UsersList::UsersList()
@@ -65,6 +65,9 @@ void UsersList::displayUsers()
 
 UsersList::~UsersList()
 {
+    
+    
+
     WriteJSONfile file;
     file.write(getUsersList());
 }

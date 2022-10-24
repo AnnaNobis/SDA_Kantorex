@@ -6,7 +6,8 @@
 #include "../Kantorex_login/ILoggedUser.hpp"
 #include "../Kantorex_login/Administrator.hpp"
 #include "../ExhangerStaticLib/Exchanger.h"
-
+#include "../Kantorex_login/Authorization.hpp"
+#include "../JSONLib/LoggedUsersWriter.h"
 
 
 void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedUser)
@@ -160,6 +161,9 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                 id = -1;
             std::cout << std::endl;
 
+
+
+
         }
         break;
         }
@@ -172,8 +176,10 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
     } while (id > -1);
 
     std::cout << "Press enter to end session...";
+   
     std::cin.get();
-
+    LoggedUsersWriter logout;
+    logout.writeToExistingFileLogout();
 }
 
 
