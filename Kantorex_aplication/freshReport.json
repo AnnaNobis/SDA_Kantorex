@@ -160,5 +160,14 @@
         "amount_from": 30000.0,
         "currency_to": "USD",
         "amount_to": 5752.22998046875
+    },
+    {
+        "transactionNumber": "19",
+        "date": "24.10.2022",
+        "time": "21:31:51",
+        "currency_from": "PLN",
+        "amount_from": 100.0,
+        "currency_to": "USD",
+        "amount_to": 19.174100875854492
     }
 ]

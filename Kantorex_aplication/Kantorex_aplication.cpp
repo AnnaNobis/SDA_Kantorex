@@ -14,17 +14,14 @@
 #include "Kantorex_login/WriteJSONfile.hpp"
 #include "Kantorex_login/Administrator.hpp"
 #include "Report_Static_Library/ReportPrinter.hpp"
-
+#include "../CashBalanceStaticLib/CashBalance.h"
 #include "Kantorex_login/Authorization.hpp"
 
 //using json = nlohmann::ordered_json;
-
-
 using namespace tabulate;
 
 int main()
 {
-
 	LogInManager login;
 	login.checkUser();
 	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
@@ -33,6 +30,10 @@ int main()
 
 	Menu_Operations screen;
 	screen.displayMenuOperations(loggedUser);
+
+	/*CashBalance balance(OperationSellBuy::BUY, "USD", 200000, "PLN");
+	balance.showOpeningBalance();
+	balance.checkCashRegister();*/
 
 
 	//loggedUser->setCanBuy(0);
@@ -54,14 +55,8 @@ int main()
 	for_each(vect.begin(), vect.end(), [](LoginData d) {std::cout << d._name << "   " << d._surname << "   " << d._dateAndTime << "   " << d._isLogged << std::endl; });*/
 
 
-
 	//std::vector<LoginData> vect = LoggedUsersReader::read();
 	//for_each(vect.begin(), vect.end(), [](LoginData d) {std::cout << d._name << "   " << d._surname << "   " << d._dateAndTime << "   " << d._isLogged << std::endl; });
-
-
-	
-
-
 
     //JSONReader dataReader;
     //dataReader.readCurrencies("JSONTabelaA.json");
@@ -69,31 +64,18 @@ int main()
 	//auto buy = OperationSellBuy::BUY;
 	//auto sell = OperationSellBuy::SELL;
 
+	//Exchanger first(OperationSellBuy::BUY, "USD", 200000, "PLN");
+	//first.rate();
+	//std::cout << std::endl;
+	//first.calculationPrint();
+	//Exchanger second(OperationSellBuy::SELL, "PLN", 30000, "USD");
+	//second.rate();
+	//std::cout << std::endl;
+	//second.calculationPrint();
 
-
-	Exchanger first(OperationSellBuy::BUY, "USD", 200000, "PLN");
-	first.rate();
-	std::cout << std::endl;
-	first.calculationPrint();
-	Exchanger second(OperationSellBuy::SELL, "PLN", 30000, "USD");
-	second.rate();
-	std::cout << std::endl;
-	second.calculationPrint();
-
-
-	ReportPrinter newReport;
-	newReport.ReadDailyReport("24.10.2022");
-	newReport.ReadCurrencyReport("USD");
-
-
-	//system("cls"); //czy�ci ekran logowania
-
-	//// IKantorDisplay window;
- //  //window.displayCurrencyTable();
-
-	//Menu_Operations screen;
-	//screen.displayMenuOperations(loggedUser);
-
+	//ReportPrinter newReport;
+	//newReport.ReadDailyReport("24.10.2022");
+	//newReport.ReadCurrencyReport("USD");
 
 
 

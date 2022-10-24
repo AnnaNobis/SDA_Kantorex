@@ -130,5 +130,11 @@
         "surname": "Kaleta",
         "dateAndTime": "Mon Oct 24 13:30:04 2022\n",
         "isLogged": true
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Mon Oct 24 21:31:08 2022\n",
+        "isLogged": true
     }
 ]
