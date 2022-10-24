@@ -6,7 +6,7 @@
 
 int ReportData::count/* = 0*/;
 ReportData::ReportData(/*std::string date,*/ /*std::string time,*/ 
-	std::string currencyFrom, double cashAmountTo, std::string currencyTo, double cashAmountFrom/*, std::string userId*/):
+	std::string currencyFrom, double cashAmountFrom, std::string currencyTo, double cashAmountTo/*, std::string userId*/):
 	/*_date(date),*/
 	/*_time(time),*/
 	_currencyFrom(currencyFrom),
