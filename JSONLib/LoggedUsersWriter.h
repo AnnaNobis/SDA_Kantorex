@@ -21,5 +21,7 @@ public:
 		dateAndTime = r.getDate();
 	}
 	void write(std::string userName, std::string userSurname, bool isLogged);
+
+	void writeToExistingFileLogout();
 };
 

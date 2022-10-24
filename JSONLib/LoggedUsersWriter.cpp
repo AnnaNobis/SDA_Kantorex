@@ -53,3 +53,22 @@ void LoggedUsersWriter::write(std::string userName, std::string userSurname, boo
 	}
 
 }
+
+
+void LoggedUsersWriter::writeToExistingFileLogout()
+{
+	std::vector<LoginData>fileData2 = LoggedUsersReader::read();
+	LoginData lastLogin = fileData2[fileData2.size() - 1];
+	RawDate r2;
+	
+	lastLogin._isLogged = false;
+	lastLogin._dateAndTime = r2.getDate();
+	
+	fileData2.push_back(lastLogin);
+
+	std::ofstream stream(filePath);
+
+	json j;
+	j = json(fileData2);
+	stream << std::setw(4) << j << std::endl;
+}

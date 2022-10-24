@@ -14,6 +14,7 @@
 #include "Kantorex_login/WriteJSONfile.hpp"
 #include "Kantorex_login/Administrator.hpp"
 #include "Report_Static_Library/ReportPrinter.hpp"
+#include "Report_Static_Library/LoggedPrinter.hpp"
 
 #include "Kantorex_login/Authorization.hpp"
 
@@ -25,14 +26,26 @@ using namespace tabulate;
 int main()
 {
 
-	LogInManager login;
-	login.checkUser();
-	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
-	
-	system("cls"); //czy�ci ekran logowania
+	//LogInManager login;
+	//login.checkUser();
+	//std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+	//
+	//system("cls"); //czy�ci ekran logowania
 
-	Menu_Operations screen;
-	screen.displayMenuOperations(loggedUser);
+	//
+
+
+	//Menu_Operations screen;
+	//screen.displayMenuOperations(loggedUser);
+
+	//drukowanie raportu 
+	LoggedPrinter newReport;
+	//newReport.ReadLoggReport("Maja");
+	newReport.ReadLoggReportAll();
+	std::cout << std::endl << std::endl << std::endl << std::endl << std::endl;
+	newReport.ReadLoggReportSurname("Sobieski");
+
+
 
 
 	//loggedUser->setCanBuy(0);
@@ -66,18 +79,14 @@ int main()
 	//auto sell = OperationSellBuy::SELL;
 
 
-	Exchanger first(OperationSellBuy::BUY, "USD", 200000, "PLN");
-	first.rate();
-	std::cout << std::endl;
-	first.calculationPrint();
-	Exchanger second(OperationSellBuy::SELL, "PLN", 30000, "USD");
-	second.rate();
-	std::cout << std::endl;
-	second.calculationPrint();
-
-	ReportPrinter newReport;
-	newReport.ReadDailyReport("24.10.2022");
-	newReport.ReadCurrencyReport("USD");
+	//Exchanger first(OperationSellBuy::BUY, "USD", 200000, "PLN");
+	//first.rate();
+	//std::cout << std::endl;
+	//first.calculationPrint();
+	//Exchanger second(OperationSellBuy::SELL, "PLN", 30000, "USD");
+	//second.rate();
+	//std::cout << std::endl;
+	//second.calculationPrint();
 
 
 	//system("cls"); //czy�ci ekran logowania
