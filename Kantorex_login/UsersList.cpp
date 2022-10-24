@@ -10,6 +10,11 @@ UsersList::UsersList()
     _usersList = std::make_shared<std::vector<User>>(jsonFile.read());
 }
 
+UsersList::UsersList(std::vector<User> lista)
+{
+    _usersList = std::make_shared<std::vector<User>>(lista);
+}
+
 
 std::shared_ptr<std::vector<User>> UsersList::getUsersList()
 {

@@ -29,13 +29,6 @@ public:
 	{
 		_id = std::to_string(++_counter);
 	}
-	//User(std::string firstname, std::string lastname)
-	//	: User(firstname, lastname,"","", ApplicationRole::GUEST)
-	//{
-	//}
-	//User()
-	//	: User("nd","nd","nd","nd")
-	//{}
 	void setUserId(std::string id);
 	void setUserFirstname(std::string firstname);
 	void setUserLastname(std::string lastname);

@@ -21,6 +21,6 @@ public:
 	void displayLoggedUserInfo();
 	void setUsername();
 	void setPassword();
-	std::string hidePassword(std::string & password);
+	std::string hidePassword(std::string & password, int size=8);
 };
 
