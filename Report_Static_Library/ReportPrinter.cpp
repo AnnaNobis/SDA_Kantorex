@@ -8,7 +8,7 @@ ReportPrinter::ReportPrinter(/*std::string filePath*/)
 
 }
 
-void ReportPrinter::ReadDailyReport(std::string date)
+std::vector<ReportData> ReportPrinter::ReadDailyReport(std::string date)
 {
 	std::vector<ReportData> tmp_data(dailyData.size());
 
@@ -20,9 +20,9 @@ void ReportPrinter::ReadDailyReport(std::string date)
 
 	tmp_data.resize(std::distance(tmp_data.begin(), it));
 
-	std::cout << std::endl << "################DAILY REPORT: " << date << " ################" << std::endl;
+	//std::cout << std::endl << "################DAILY REPORT: " << date << " ################" << std::endl;
 
-	std::for_each(tmp_data.begin(), tmp_data.end(), [](ReportData l) {
+	/*std::for_each(tmp_data.begin(), tmp_data.end(), [](ReportData l) {
 		std::cout << std::endl 
 			<< "transactionNumber: " << l._ID 
 			<< "    date: " << l._date 
@@ -31,12 +31,13 @@ void ReportPrinter::ReadDailyReport(std::string date)
 			<< "    amount_from: " << l._cashAmountFrom
 			<< "    currency_to: " << l._currencyTo
 			<< "    amount_to: " << l._cashAmountTo
-			<< std::endl; });
+			<< std::endl; });*/
+	return tmp_data;
 
 
 }
 
-void ReportPrinter::ReadCurrencyReport(std::string currency)
+std::vector<ReportData> ReportPrinter::ReadCurrencyReport(std::string currency)
 {
 
 	std::vector<ReportData> tmp_data(dailyData.size());
@@ -49,7 +50,7 @@ void ReportPrinter::ReadCurrencyReport(std::string currency)
 
 	tmp_data.resize(std::distance(tmp_data.begin(), it));
 
-	std::cout << std::endl << "################CURRENCY REPORT: " << currency << " ################" << std::endl;
+	/*std::cout << std::endl << "################CURRENCY REPORT: " << currency << " ################" << std::endl;
 
 	std::for_each(tmp_data.begin(), tmp_data.end(), [](ReportData l) {
 		std::cout << std::endl
@@ -60,7 +61,7 @@ void ReportPrinter::ReadCurrencyReport(std::string currency)
 			<< "    amount_from: " << l._cashAmountFrom
 			<< "    currency_to: " << l._currencyTo
 			<< "    amount_to: " << l._cashAmountTo
-			<< std::endl; });
+			<< std::endl; });*/
 
-
+	return tmp_data;
 }
