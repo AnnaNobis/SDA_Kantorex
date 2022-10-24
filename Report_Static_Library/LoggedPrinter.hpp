@@ -13,7 +13,7 @@ class LoggedPrinter
 public:
 
 	LoggedPrinter(/*std::string filePath*/);
-	void ReadLoggReportAll(/*std::string requestedName*/);
+	std::vector<LoginData> ReadLoggReportAll();
 	void ReadLoggReportSurname(std::string requestedSurname);
 
 

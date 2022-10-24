@@ -56,14 +56,14 @@
 //		std::cout << "- " << listItem.first << " : " << listItem.second << std::endl;
 //		});
 //}
-CashBalance::CashBalance(OperationSellBuy chooseOperation, std::string inputCurrencyFrom, float inputAmount, std::string inputCurrencyTo)
-	:  _sellBuy(chooseOperation),
-	   _inputCurrencyFrom(inputCurrencyFrom),
-	   _inputAmount(inputAmount),
-       _inputCurrencyTo(inputCurrencyTo)
-{
-	balance = std::make_shared<Exchanger>();
-}
+//CashBalance::CashBalance(OperationSellBuy chooseOperation, std::string inputCurrencyFrom, float inputAmount, std::string inputCurrencyTo)
+//	:  _sellBuy(chooseOperation),
+//	   _inputCurrencyFrom(inputCurrencyFrom),
+//	   _inputAmount(inputAmount),
+//       _inputCurrencyTo(inputCurrencyTo)
+//{
+//	balance = std::make_shared<Exchanger>();
+//}
 std::map<std::string, float> CashBalance::createMapp()
 {
 	RawData rawData2;

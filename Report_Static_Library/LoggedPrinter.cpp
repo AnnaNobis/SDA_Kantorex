@@ -6,10 +6,10 @@ LoggedPrinter::LoggedPrinter()
 	loggedData = dataFromFile.read();
 }
 
-void LoggedPrinter::ReadLoggReportAll(/*std::string requestedName*/)
+std::vector<LoginData> LoggedPrinter::ReadLoggReportAll()
 {
 
-	std::for_each(loggedData.begin(), loggedData.end(), [](LoginData l) {
+	/*std::for_each(loggedData.begin(), loggedData.end(), [](LoginData l) {
 		std::string loggStatus;
 		if (l._isLogged == 0)
 		{
@@ -24,7 +24,8 @@ void LoggedPrinter::ReadLoggReportAll(/*std::string requestedName*/)
 			<< "    surname: " << l._surname
 			<< "    dateAndTime: " << l._dateAndTime
 			<< "    operation: " << loggStatus
-			<< std::endl; });
+			<< std::endl; });*/
+	return loggedData;
 }
 
 void LoggedPrinter::ReadLoggReportSurname(std::string requestedSurname)
