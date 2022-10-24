@@ -21,6 +21,8 @@ void IKantorDisplay::displayCurrencyTable()
 {
 	Table currenciesTable;
 
+	//
+
 	currenciesTable.add_row({ "SYM", "COUNTRY", "CURRENCY", "UNIT", "CURRENCY BALANCE", "BUY", "SELL" });
 	currenciesTable.add_row({ "USD", "USA", "dolar", "100", "10000", "5.20", "4.90" });
 	currenciesTable.add_row({ "EUR", "Europa", "euro", "100", "5000", "5.00", "4.50" });

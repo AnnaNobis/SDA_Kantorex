@@ -161,7 +161,6 @@
     <ClInclude Include="RawData.h" />
     <ClInclude Include="ReadBuyRates.h" />
     <ClInclude Include="ReadSellRates.h" />
-    <ClInclude Include="ReportData.h" />
     <ClInclude Include="ReportReader.h" />
     <ClInclude Include="ReportWriter.h" />
   </ItemGroup>
@@ -180,7 +179,6 @@
     <ClCompile Include="RawData.cpp" />
     <ClCompile Include="ReadBuyRates.cpp" />
     <ClCompile Include="ReadSellRates.cpp" />
-    <ClCompile Include="ReportData.cpp" />
     <ClCompile Include="ReportReader.cpp" />
     <ClCompile Include="ReportWriter.cpp" />
   </ItemGroup>

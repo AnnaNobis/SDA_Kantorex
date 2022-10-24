@@ -28,6 +28,8 @@ Exchanger::Exchanger(OperationSellBuy chooseOperation, std::string inputCurrency
 	//transaction->getSpread();
 	transaction->setSpread();
 
+
+
 }
 void Exchanger::rate()
 {

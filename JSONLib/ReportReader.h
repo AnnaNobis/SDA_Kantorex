@@ -1,7 +1,9 @@
 #pragma once
 #include <vector>
 #include <string>
-#include "ReportData.h"
+#include "..\Report_Static_Library\ReportData.hpp"
+
+//#include "ReportData.h"
 class ReportReader
 {
 	static std::string filePath;
