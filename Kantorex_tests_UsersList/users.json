@@ -2,7 +2,7 @@
     {
         "appRole": "cashier",
         "firstname": "Maja",
-        "id": "1",
+        "id": "7",
         "lastname": "Kaleta",
         "login": "cashier",
         "password": "1234"
@@ -10,7 +10,7 @@
     {
         "appRole": "administrator",
         "firstname": "Lili",
-        "id": "2",
+        "id": "8",
         "lastname": "Sobieski",
         "login": "admin",
         "password": "8888"
@@ -18,9 +18,17 @@
     {
         "appRole": "guest",
         "firstname": "Tom",
-        "id": "3",
+        "id": "9",
         "lastname": "Tomski",
         "login": "guest",
         "password": "9999"
+    },
+    {
+        "appRole": "guest",
+        "firstname": "Ada",
+        "id": "10",
+        "lastname": "Lovelace",
+        "login": "alove",
+        "password": "alove88"
     }
 ]
