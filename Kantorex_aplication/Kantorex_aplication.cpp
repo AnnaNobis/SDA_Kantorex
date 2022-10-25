@@ -1,63 +1,52 @@
 #include <iostream>
-#include "JSONLib/JSONReader.h"
-#include "StaticLib_DisplayWindowsConsole/IKantorDisplay.h"
-#include "StaticLib_DisplayWindowsConsole/Menu_Operations.h"
-#include "../include_libraries/tabulate.hpp"
-#include "../Kantorex_login/Kantorex.hpp"
-#include "../ExhangerStaticLib/Exchanger.h"
-#include "JSONLib/RawData.h"
-#include "../ExhangerStaticLib/RateCurrrencyMap.h"
-#include "JSONLib/ReadBuyRates.h"
-#include "JSONLib/ReadSellRates.h"
-#include "Kantorex_login/LogInManager.hpp"
-#include "Kantorex_login/WriteJSONfile.hpp"
-#include "Kantorex_login/Administrator.hpp"
-#include "Report_Static_Library/ReportPrinter.hpp"
-#include "Report_Static_Library/LoggedPrinter.hpp"
-#include "../CashBalanceStaticLib/CashBalance.h"
-#include "Kantorex_login/Authorization.hpp"
-#include "../StaticLib_DisplayWindowsConsole/KantorDisplay_login.h"
+//#include "JSONLib/JSONReader.h"
+//#include "StaticLib_DisplayWindowsConsole/IKantorDisplay.h"
+//#include "StaticLib_DisplayWindowsConsole/Menu_Operations.h"
+//#include "../include_libraries/tabulate.hpp"
+//#include "../Kantorex_login/Kantorex.hpp"
+//#include "../ExhangerStaticLib/Exchanger.h"
+//#include "JSONLib/RawData.h"
+//#include "../ExhangerStaticLib/RateCurrrencyMap.h"
+//#include "JSONLib/ReadBuyRates.h"
+//#include "JSONLib/ReadSellRates.h"
+//#include "Kantorex_login/LogInManager.hpp"
+//#include "Kantorex_login/WriteJSONfile.hpp"
+//#include "Kantorex_login/Administrator.hpp"
+//#include "Report_Static_Library/ReportPrinter.hpp"
+//#include "Report_Static_Library/LoggedPrinter.hpp"
+//#include "../CashBalanceStaticLib/CashBalance.h"
+//#include "Kantorex_login/Authorization.hpp"
+//#include "../StaticLib_DisplayWindowsConsole/KantorDisplay_login.h"
+#include "StaticLib_DisplayWindowsConsole/Manager_start.h"
 
 //using json = nlohmann::ordered_json;
 using namespace tabulate;
 
-std::shared_ptr<ILoggedUser> displayLogin()
-{
-	LogInManager login;
-	login.checkUser();
-	if (login.isUnknown())
-	{
-		return nullptr;
-	}
-	else
-	{
-		return login.creatLoggedUser();
-	}
-}
+
 
 int main()
 {
-	int attempts = 0;
-	std::shared_ptr<ILoggedUser> loggedUser;
-	do
-	{
-		loggedUser = displayLogin();
-		attempts++;
 
-	} while (attempts < 3 && loggedUser == nullptr);
+	Manager_start start;
+	start.startProgram();
 
-	if (loggedUser != nullptr)
-	{
-		Menu_Operations screen;
-		screen.displayMenuOperations(loggedUser);
-	}
+	//int attempts = 0;
+	//KantorDisplay_login login;
+	//std::shared_ptr<ILoggedUser> loggedUser;
+	//do
+	//{
+	//	loggedUser = login.displayLogin();
+	//	attempts++;
 
+	//} while (attempts < 3 && loggedUser == nullptr);
 
-	//LogInManager login;
-	//login.checkUser();
-	//std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+	//if (loggedUser != nullptr)
+	//{
+	//	system("cls");
+	//	Menu_Operations screen;
+	//	screen.displayMenuOperations(loggedUser);
+	//}
 
-	//system("cls");
 
 	/*KantorDisplay_login kantor;
 	int attempts = 0;
@@ -68,8 +57,6 @@ int main()
 	} while
 	{};*/
 
-	//Menu_Operations screen;
-	//screen.displayMenuOperations(loggedUser);
 
 	////drukowanie raportu 
 	//LoggedPrinter newReport;
@@ -93,8 +80,6 @@ int main()
 
 	//std::cout << std::endl;
 	//login.displayLoggedUserInfo();
-
-
 
 	/*LogInManager login;
 	login.checkUser();
@@ -124,3 +109,16 @@ int main()
 
 }
 
+//std::shared_ptr<ILoggedUser> displayLogin()
+//{
+//	LogInManager login;
+//	login.checkUser();
+//	if (login.isUnknown())
+//	{
+//		return nullptr;
+//	}
+//	else
+//	{
+//		return login.creatLoggedUser();
+//	}
+//}
