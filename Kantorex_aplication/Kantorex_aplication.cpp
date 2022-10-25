@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include "JSONLib/JSONReader.h"
 #include "StaticLib_DisplayWindowsConsole/IKantorDisplay.h"
@@ -14,36 +13,42 @@
 #include "Kantorex_login/WriteJSONfile.hpp"
 #include "Kantorex_login/Administrator.hpp"
 #include "Report_Static_Library/ReportPrinter.hpp"
-
 #include "Report_Static_Library/LoggedPrinter.hpp"
-
 #include "../CashBalanceStaticLib/CashBalance.h"
 #include "Kantorex_login/Authorization.hpp"
+#include "../StaticLib_DisplayWindowsConsole/KantorDisplay_login.h"
 
 //using json = nlohmann::ordered_json;
 using namespace tabulate;
 
+
+
 int main()
 {
-
-
 	LogInManager login;
 	login.checkUser();
 	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
-	
-	system("cls"); 
 
+	system("cls");
+
+	/*KantorDisplay_login kantor;
+	int attempts = 0;
+	std::shared_ptr<ILoggedUser>  loggedUser = kantor.displayLogin();
+	do
+	{
+		loggedUser = kantor.displayLogin();
+	} while
+	{};*/
 
 	Menu_Operations screen;
 	screen.displayMenuOperations(loggedUser);
 
-	//drukowanie raportu 
-	LoggedPrinter newReport;
-	//newReport.ReadLoggReport("Maja");
-	newReport.ReadLoggReportAll();
-	std::cout << std::endl << std::endl << std::endl << std::endl << std::endl;
-	newReport.ReadLoggReportSurname("Sobieski");
-
+	////drukowanie raportu 
+	//LoggedPrinter newReport;
+	////newReport.ReadLoggReport("Maja");
+	//newReport.ReadLoggReportAll();
+	//std::cout << std::endl << std::endl << std::endl << std::endl << std::endl;
+	//newReport.ReadLoggReportSurname("Sobieski");
 
 
 	/*CashBalance balance(OperationSellBuy::BUY, "USD", 200000, "PLN");

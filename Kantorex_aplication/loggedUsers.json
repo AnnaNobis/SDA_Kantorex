@@ -316,5 +316,29 @@
         "surname": "Kaleta",
         "dateAndTime": "Mon Oct 24 23:05:10 2022\n",
         "isLogged": true
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Tue Oct 25 17:43:47 2022\n",
+        "isLogged": true
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Tue Oct 25 17:46:46 2022\n",
+        "isLogged": false
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Tue Oct 25 19:38:04 2022\n",
+        "isLogged": true
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Tue Oct 25 19:38:35 2022\n",
+        "isLogged": false
     }
 ]

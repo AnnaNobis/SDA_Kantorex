@@ -8,13 +8,13 @@
 #include "../ExhangerStaticLib/Exchanger.h"
 #include "../Kantorex_login/Authorization.hpp"
 #include "../JSONLib/LoggedUsersWriter.h"
+#include "KantorDisplay_switchForReports.h"
+
 
 
 void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedUser)
 { 
-   // IKantorDisplay window;
-   //window.displayCurrencyTable();
-
+ 
     std::cout << std::endl << std::endl << std::endl;
    
         std::vector<std::string> tMenuGl;// tutaj b�d� zapisywane pozycje z menu
@@ -141,14 +141,9 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                 std::cin >> reportNumber;
                 std::cout << std::endl << std::endl << std::endl;
 
-                IKantorDisplay temp;
+                KantorDisplay_switchForReports temp;
                 temp.displaySwitchForReports(reportNumber);
            
-
-
-                
-
-                //tutaj kod od Mileny
             }
             else  
                 std::cout << "Sorry, access to this option denied!" << std::endl;
@@ -161,10 +156,8 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                 id = -1;
             std::cout << std::endl;
 
-
-
-
         }
+
         break;
         }
         if (id > 0) {
@@ -192,7 +185,6 @@ void Menu_Operations::gotoxy(int x, int y)
         SetConsoleCursorPosition(handle, c); // ustaw pozycj� karetki
     }
 
-
 void Menu_Operations::WriteMenuPos(std::string & str, int id, int idset)
     {
         if (id == idset) { // gdy pozycja jest wybrana
@@ -213,7 +205,6 @@ void Menu_Operations::WriteLine(unsigned int width)
         }
         std::cout << std::endl;
     }
-
 
 int Menu_Operations::menu(std::string title, std::vector<std::string>& tMenu, int& id)
 {

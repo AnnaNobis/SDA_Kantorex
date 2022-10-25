@@ -7,28 +7,18 @@ using namespace tabulate;
 class IKantorDisplay
 {
 public:
-	//void displayLogin();
-	
-	void displayCurrencyTable();
+	virtual void WriteLine(unsigned int width);
 
 	void displayMenu();
 
 	void reset(); //wraca do menu
-
-	void dislayBalanceTable();
-
-	void displaySellOperation();
-
-	void displayBuyOperation();
-
+	
 	void displayExitScreen();
 
+	//void displaySellOperation();
+	//void displayBuyOperation();
+
 	void displayReportSelectionScreen();
-
-	void WriteLine(unsigned int width);
-
-	void displaySwitchForReports(int reportNumber);
-
 
 };
 
