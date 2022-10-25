@@ -29,15 +29,32 @@ void LogInManager::checkUser()
 		else
 		{
 			std::cout << "Invalid password" << std::endl;
-			_role = (_authorization.getCheckedUser()).getAppRole_enum();
+			std::cout << std::endl;
+			_role = ApplicationRole::UNKNOWN;
+			//_role = (_authorization.getCheckedUser()).getAppRole_enum();
 			//_role = ApplicationRole::GUEST;// na razie, do przemyślenia
+
 		}
 	}
 	else
 	{
 		std::cout << "Invalid login" << std::endl;
-		_role = (_authorization.getCheckedUser()).getAppRole_enum();
+		std::cout << std::endl;
+		_role = ApplicationRole::UNKNOWN;
+		//_role = (_authorization.getCheckedUser()).getAppRole_enum();
 		//_role = ApplicationRole::GUEST;// na razie, do przemyślenia
+	}
+}
+
+bool LogInManager::isUnknown()
+{
+	if (_role == ApplicationRole::UNKNOWN)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
 	}
 }
 
@@ -98,6 +115,7 @@ std::string LogInManager::hidePassword(std::string & password, int size)
 			std::cout << "*";
 			password += c;
 			i++;
-		}	
+		}
+		std::cout << std::endl;
 	return password;
 }

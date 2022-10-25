@@ -30,13 +30,13 @@ protected:
 		, _enteredLogin("cashier")
 		, _enteredPassword("1234")
 		, _users(_usersListInput)
-		, _checkedUser(_users.getUser(1))
+		,_checkedUser(_users.getUser(1))
 	{};
 	std::vector<User> _usersListInput;
 	std::string _enteredLogin;
 	std::string _enteredPassword;
-	User _checkedUser;
 	UsersList _users;
+	User _checkedUser;
 	Authorization _objectUnderTest;
 };
 
