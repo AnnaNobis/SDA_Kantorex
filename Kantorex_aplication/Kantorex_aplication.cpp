@@ -21,15 +21,43 @@
 //using json = nlohmann::ordered_json;
 using namespace tabulate;
 
-
-
-int main()
+std::shared_ptr<ILoggedUser> displayLogin()
 {
 	LogInManager login;
 	login.checkUser();
-	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+	if (login.isUnknown())
+	{
+		return nullptr;
+	}
+	else
+	{
+		return login.creatLoggedUser();
+	}
+}
 
-	system("cls");
+int main()
+{
+	int attempts = 0;
+	std::shared_ptr<ILoggedUser> loggedUser;
+	do
+	{
+		loggedUser = displayLogin();
+		attempts++;
+
+	} while (attempts < 3 && loggedUser == nullptr);
+
+	if (loggedUser != nullptr)
+	{
+		Menu_Operations screen;
+		screen.displayMenuOperations(loggedUser);
+	}
+
+
+	//LogInManager login;
+	//login.checkUser();
+	//std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+
+	//system("cls");
 
 	/*KantorDisplay_login kantor;
 	int attempts = 0;
@@ -40,8 +68,8 @@ int main()
 	} while
 	{};*/
 
-	Menu_Operations screen;
-	screen.displayMenuOperations(loggedUser);
+	//Menu_Operations screen;
+	//screen.displayMenuOperations(loggedUser);
 
 	////drukowanie raportu 
 	//LoggedPrinter newReport;
