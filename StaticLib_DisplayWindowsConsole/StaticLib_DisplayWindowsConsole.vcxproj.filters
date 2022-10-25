@@ -27,6 +27,18 @@
     <ClInclude Include="Menu_Operations.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="KantorDisplay_CurrencyTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KantorDisplay_switchForReports.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KantorDisplay_login.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KantorDisplay_balanceTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="StaticLib_DisplayWindowsConsole.cpp">
@@ -39,6 +51,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Menu_Operations.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KantorDisplay_CurrencyTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KantorDisplay_switchForReports.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KantorDisplay_login.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KantorDisplay_balanceTable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
