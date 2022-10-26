@@ -26,7 +26,7 @@ std::map<std::string, float> ReadBuyRates::read()
 		for (auto& elem : element["rates"]) {
 			code = elem["code"];
 			rate = elem["bid"];
-			std::cout << code << "  |  " << rate << std::endl;
+			//std::cout << code << "  |  " << rate << std::endl;
 			buyRates.insert({ code, rate });
 		}
 	}

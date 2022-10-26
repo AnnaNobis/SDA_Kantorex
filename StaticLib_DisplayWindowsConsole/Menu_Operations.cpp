@@ -47,7 +47,7 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                 displayOperationName(_operationName);
 
           
-                std::cout << "Enter currency to exchange/sell : " << std::endl;
+                std::cout << "Enter currency to which exchange PLN : " << std::endl;
                 std::cin >> _inputCurrencyTo;
               
 
@@ -80,7 +80,7 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
             if (loggedUser->getCanBuy())
             { 
                 std::string _inputCurrencyFrom;
-                 std::string _inputCurrencyTo = "pln";
+                 std::string _inputCurrencyTo = "PLN";
                  float _inputAmount;
                  std::string _operationName = " BUY OPERATION MODE ";
 
@@ -88,7 +88,7 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                 displayOperationName(_operationName);
                 
 
-                std::cout << "Enter currency to exchange/buy : " << std::endl;
+                std::cout << "Enter currency to buy (not PLN) : " << std::endl;
                 std::cin >> _inputCurrencyFrom;
 
                 for (auto& s : currenciesToChoose)
@@ -134,7 +134,7 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                 reportsTable.add_row({ "1.", "For users logger report" });
                 reportsTable.add_row({ "2.", "For  daily transactions report" });
                 reportsTable.add_row({ "3.", "For currency transactions report" });
-                reportsTable.add_row({ "4.", "For ...do not remember.. " });
+                //reportsTable.add_row({ "4.", "For ...do not remember.. " });
                //reportsTable.add_row({ "0.", "Exit" });
 
                 std::cout << reportsTable << std::endl;
@@ -246,7 +246,7 @@ A: // znacznik miejsca skoku
 void Menu_Operations::displayOperationName(std::string _operationName)
 {
     WriteLine(_operationName.size());
-    std::cout << "SELL OPERATION MODE" << std::endl;
+    std::cout << _operationName << std::endl;
     WriteLine(_operationName.size());
 }
 

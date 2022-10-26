@@ -39,10 +39,12 @@ bool Sell::checkAmount()
 		return true;
 }
 
+
 float Sell::calculateExchangeValue()
 {
-	float result = _spread / getRate() * _amount;
-	ReportWriter::writeReport(ReportData(_currencyFrom, _amount, _currencyTo, result));
+	float resultTemp = _spread / getRate() * _amount;
+	float result = round(resultTemp); //*10000 / 10000; // wychodza bez miejsc po przecinku
+
 	return result;
 }
 
