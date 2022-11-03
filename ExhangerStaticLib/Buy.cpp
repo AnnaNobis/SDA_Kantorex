@@ -1,39 +1,31 @@
 ﻿#include "pch.h"
 #include "Buy.h"
-#include "..\JSONLib\ReportWriter.h"
-#include "..\Report_Static_Library\ReportData.hpp"
-#include "..\Kantorex_login\User.hpp"
-
+#include "BuyRate.h"
+//#include "..\Kantorex_login\User.hpp"
 void Buy::setSpread()
 {
 	_spread = 1.05;
 }
-
 float Buy::getSpread()
 {
 	return _spread;
 }
-
 float Buy::getRate()
 {
-	ReadBuyRates objTemp;
-	auto RateAndCurrency = objTemp.read();
-	float rate = RateAndCurrency[_currencyFrom];
+	std::map < std::string, float> rates = r.getBuyRates();
+	float rate = rates[_currencyFrom];
+	std::cout << "RATE: " << rate << std::endl;
 	return rate;
 }
-
 void Buy::checkCurrencyFrom()
 {
 	std::string answer;
 	if (_currencyFrom == "PLN")
 	{
-		std::string answer = "Powiniene� wybra� opcje Sell";
+		std::string answer = "Powinienes wybrac opcje Sell";
 		std::cout << answer << std::endl;
-
 	}
-
 }
-
 bool Buy::checkAmount()
 {
 	if (_amount > 0)
@@ -41,7 +33,6 @@ bool Buy::checkAmount()
 		return true;
 	}
 }
-
 
 float Buy::calculateExchangeValue()
 {
@@ -56,12 +47,10 @@ void Buy::printCalculatedValue()
 	std::cout << "Exchanged amount:  " << calculateExchangeValue() << "  in currency: " << _currencyTo << std::endl;
 
 }
-
 void Buy::setCurrencyFrom(std::string  currencyFrom)
 {
 	_currencyFrom = currencyFrom;
 }
-
 void Buy::setAmount(float amount)
 {
 	_amount = amount;
@@ -70,13 +59,17 @@ float Buy::getAmount()
 {
 	return _amount;
 }
-
 std::string Buy::getCurrency()
 {
 	return _currencyFrom;
 }
-
 void Buy::setCurrencyTo(std::string  currencyTo)
 {
 	_currencyTo = currencyTo;
+}
+float Buy::calculateExchangeValueWantedAmount(float wantedAmount)
+{
+	_amountToGetFromClient = wantedAmount / (_spread * getRate());
+	double result = round(_amountToGetFromClient * 10000) / 100; // wychodza bez miejsc po przecinku
+	return result;
 }

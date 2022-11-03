@@ -142,6 +142,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Buy.h" />
+    <ClInclude Include="BuyRate.h" />
     <ClInclude Include="Exchanger.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="ITransaction.h" />
@@ -151,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Buy.cpp" />
+    <ClCompile Include="BuyRate.cpp" />
     <ClCompile Include="Exchanger.cpp" />
     <ClCompile Include="ExhangerStaticLib.cpp" />
     <ClCompile Include="ITransaction.cpp" />

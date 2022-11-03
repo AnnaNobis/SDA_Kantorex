@@ -9,6 +9,7 @@ using namespace tabulate;
 int main()
 {
 
+
 	Manager_start start;
 	start.startProgram();
 }
@@ -95,13 +96,16 @@ int main()
 	//auto sell = OperationSellBuy::SELL;
 
 	//Exchanger first(OperationSellBuy::BUY, "USD", 200000, "PLN");
+	
 	//first.rate();
 	//std::cout << std::endl;
 	//first.calculationPrint();
-	//Exchanger second(OperationSellBuy::SELL, "PLN", 30000, "USD");
-	//second.rate();
+	////Exchanger second(OperationSellBuy::SELL, "PLN", 30000, "USD");
+	////second.rate();
 	//std::cout << std::endl;
-	//second.calculationPrint();
+	////second.calculationPrint();
+	//first.startTransactionGivenAmount();
+	//first.balance->showBalance();
 
 
 

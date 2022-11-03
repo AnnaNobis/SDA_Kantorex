@@ -9,6 +9,7 @@ protected:
 	std::string _currencyFrom;
 	float _amount = 0.00;
 	std::string _currencyTo;
+	float _amountToGetFromClient = 0.00;
 
 public:
 	//ITransaction();
@@ -24,5 +25,5 @@ public:
 	virtual void printCalculatedValue() = 0;
 	virtual bool checkAmount() = 0;
 	virtual float calculateExchangeValue() = 0;
-
+	virtual float calculateExchangeValueWantedAmount(float wantedAmount) = 0;
 };
