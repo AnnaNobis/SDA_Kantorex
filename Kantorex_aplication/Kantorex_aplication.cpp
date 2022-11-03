@@ -1,22 +1,4 @@
 #include <iostream>
-//#include "JSONLib/JSONReader.h"
-//#include "StaticLib_DisplayWindowsConsole/IKantorDisplay.h"
-//#include "StaticLib_DisplayWindowsConsole/Menu_Operations.h"
-//#include "../include_libraries/tabulate.hpp"
-//#include "../Kantorex_login/Kantorex.hpp"
-//#include "../ExhangerStaticLib/Exchanger.h"
-//#include "JSONLib/RawData.h"
-//#include "../ExhangerStaticLib/RateCurrrencyMap.h"
-//#include "JSONLib/ReadBuyRates.h"
-//#include "JSONLib/ReadSellRates.h"
-//#include "Kantorex_login/LogInManager.hpp"
-//#include "Kantorex_login/WriteJSONfile.hpp"
-//#include "Kantorex_login/Administrator.hpp"
-//#include "Report_Static_Library/ReportPrinter.hpp"
-//#include "Report_Static_Library/LoggedPrinter.hpp"
-//#include "../CashBalanceStaticLib/CashBalance.h"
-//#include "Kantorex_login/Authorization.hpp"
-//#include "../StaticLib_DisplayWindowsConsole/KantorDisplay_login.h"
 #include "StaticLib_DisplayWindowsConsole/Manager_start.h"
 
 //using json = nlohmann::ordered_json;
@@ -29,6 +11,21 @@ int main()
 
 	Manager_start start;
 	start.startProgram();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	//int attempts = 0;
 	//KantorDisplay_login login;
@@ -107,7 +104,6 @@ int main()
 	//second.calculationPrint();
 
 
-}
 
 //std::shared_ptr<ILoggedUser> displayLogin()
 //{
@@ -122,3 +118,23 @@ int main()
 //		return login.creatLoggedUser();
 //	}
 //}
+// 
+// 
+// //#include "JSONLib/JSONReader.h"
+//#include "StaticLib_DisplayWindowsConsole/IKantorDisplay.h"
+//#include "StaticLib_DisplayWindowsConsole/Menu_Operations.h"
+//#include "../include_libraries/tabulate.hpp"
+//#include "../Kantorex_login/Kantorex.hpp"
+//#include "../ExhangerStaticLib/Exchanger.h"
+//#include "JSONLib/RawData.h"
+//#include "../ExhangerStaticLib/RateCurrrencyMap.h"
+//#include "JSONLib/ReadBuyRates.h"
+//#include "JSONLib/ReadSellRates.h"
+//#include "Kantorex_login/LogInManager.hpp"
+//#include "Kantorex_login/WriteJSONfile.hpp"
+//#include "Kantorex_login/Administrator.hpp"
+//#include "Report_Static_Library/ReportPrinter.hpp"
+//#include "Report_Static_Library/LoggedPrinter.hpp"
+//#include "../CashBalanceStaticLib/CashBalance.h"
+//#include "Kantorex_login/Authorization.hpp"
+//#include "../StaticLib_DisplayWindowsConsole/KantorDisplay_login.h"
