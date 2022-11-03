@@ -149,6 +149,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="RateCurrrencyMap.h" />
     <ClInclude Include="Sell.h" />
+    <ClInclude Include="SellRate.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Buy.cpp" />
@@ -164,6 +165,7 @@
     </ClCompile>
     <ClCompile Include="RateCurrrencyMap.cpp" />
     <ClCompile Include="Sell.cpp" />
+    <ClCompile Include="SellRate.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JSONLib\JSONLib.vcxproj">

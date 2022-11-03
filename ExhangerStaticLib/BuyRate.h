@@ -4,11 +4,8 @@ class BuyRate
 {
 	std::map<std::string, float> buyRates;
 public:
-	BuyRate() {
-		ReadBuyRates r;
-		buyRates = r.read();
-	}
+	BuyRate();
 	std::map<std::string, float> getBuyRates() {
 		return buyRates;
-	};
+	}
 };
