@@ -13,7 +13,8 @@
 
 void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedUser)
 { 
- 
+    CashBalance balance;
+
     const std::string red("\033[0;31;43m");
     const std::string blue("\033[0;34;43m");
     const std::string green("\033[0;32;43m");
@@ -70,7 +71,7 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                 std::cin >> _inputAmount;
 
                 auto sell = OperationSellBuy::SELL;
-                Exchanger transactionSell(sell, _inputCurrencyFrom, _inputAmount, _inputCurrencyTo);
+                Exchanger transactionSell(balance, sell, _inputCurrencyFrom, _inputAmount, _inputCurrencyTo);
                 transactionSell.calculationPrint();
                 
             }
@@ -111,7 +112,7 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                 std::cin >> _inputAmount;
 
                  auto buy = OperationSellBuy::BUY;
-                 Exchanger transactionBuy(buy, _inputCurrencyFrom, _inputAmount, _inputCurrencyTo);
+                 Exchanger transactionBuy(balance, buy, _inputCurrencyFrom, _inputAmount, _inputCurrencyTo);
                  transactionBuy.calculationPrint();
                 
           } else    

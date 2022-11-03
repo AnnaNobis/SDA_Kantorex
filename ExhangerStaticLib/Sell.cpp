@@ -11,10 +11,12 @@ float Sell::getSpread()
 }
 float Sell::getRate()
 {
-	ReadSellRates objTemp;
-	auto RateAndCurrency = objTemp.read();
-	float rate = RateAndCurrency[_currencyTo];
-	return rate;
+	
+		std::map < std::string, float> rates = r.getSellRates();
+		float rate = rates[_currencyFrom];
+		std::cout << "RATE: " << rate << std::endl;
+		return rate;
+
 }
 void Sell::checkCurrencyFrom()
 {

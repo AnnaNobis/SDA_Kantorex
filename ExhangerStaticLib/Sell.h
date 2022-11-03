@@ -2,8 +2,11 @@
 #include "../JSONLib/ReadSellRates.h"
 #include "ITransaction.h"
 #include <iostream>
+#include"../ExhangerStaticLib/SellRate.h"
+
 class Sell : public ITransaction
 {
+	SellRate r;
 public:
 	void setSpread() override;
 	float getSpread() override;
