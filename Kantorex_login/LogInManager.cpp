@@ -4,6 +4,7 @@
 #include "../Report_Static_Library/Date.hpp"
 #include "../Report_Static_Library/Time.hpp"
 #include "../Report_Static_Library/RawDate.hpp"
+#include "../StaticLib_DisplayWindowsConsole/Menu_Operations.h"
 
 LogInManager::LogInManager()
 {
@@ -13,13 +14,18 @@ LogInManager::LogInManager()
 
 void LogInManager::checkUser()
 {
+	const std::string red("\033[0;31;43m");
+	const std::string blue("\033[0;34;43m");
+	const std::string green("\033[0;32;43m");
+	const std::string reset("\033[0m");
+
 	if (_authorization.checkLogin(_username))
 	{
 		if (_authorization.checkPassword(_password))
 		{
 			std::cout << std::endl;
 			std::cout << std::endl;
-			std::cout << "Authorization" << std::endl;
+			std::cout << green << "Authorization" <<reset << std::endl;
 			displayLoggedUserInfo();
 			_role = (_authorization.getCheckedUser()).getAppRole_enum();
 			//TODO usunac u julii
@@ -28,7 +34,7 @@ void LogInManager::checkUser()
 		} 
 		else
 		{
-			std::cout << "Invalid password" << std::endl;
+			std::cout << red << "Invalid password" << reset << std::endl;
 			std::cout << std::endl;
 			_role = ApplicationRole::UNKNOWN;
 			//_role = (_authorization.getCheckedUser()).getAppRole_enum();
@@ -38,7 +44,7 @@ void LogInManager::checkUser()
 	}
 	else
 	{
-		std::cout << "Invalid login" << std::endl;
+		std::cout<< red << "Invalid login" << reset << std::endl;
 		std::cout << std::endl;
 		_role = ApplicationRole::UNKNOWN;
 		//_role = (_authorization.getCheckedUser()).getAppRole_enum();
@@ -91,7 +97,9 @@ void LogInManager::displayLoggedUserInfo()
 
 void LogInManager::setUsername()
 {
-	std::cout << "KANTOREX application" << std::endl;
+	Menu_Operations m;
+	m.displayOperationName("KANTOREX application");
+	//std::cout << "KANTOREX application" << std::endl;
 	std::cout << "Enter username: " << std::endl;
 	std::string username;
 	std::cin >> username;
