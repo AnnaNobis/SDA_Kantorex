@@ -17,6 +17,7 @@ class LogInManager
 public:
 	LogInManager();
 	void checkUser();
+	bool isUnknown();
 	std::shared_ptr<ILoggedUser> creatLoggedUser();
 	void displayLoggedUserInfo();
 	void setUsername();

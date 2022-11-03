@@ -6,7 +6,8 @@ enum class ApplicationRole
 {
 	ADMINISTRATOR,
 	CASHIER,
-	GUEST
+	GUEST,
+	UNKNOWN
 };
 
 class User

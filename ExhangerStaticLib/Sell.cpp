@@ -21,7 +21,7 @@ void Sell::checkCurrencyFrom()
 	std::string answer;
 	if (_currencyFrom != "PLN")
 	{
-		std::string answer = "Powinieneú wybraÊ opcje Buy";
+		std::string answer = "Powiniene≈ì wybra√¶ opcje Buy";
 		std::cout << answer << std::endl;
 	}
 }
@@ -30,10 +30,15 @@ bool Sell::checkAmount()
 	if (_amount > 0)
 		return true;
 }
+
+
+
 float Sell::calculateExchangeValue()
 {
-	float result = _spread / getRate() * _amount;
-	//ReportWriter::writeReport(ReportData(_currencyFrom, _amount, _currencyTo, result));
+	float resultTemp = _spread / getRate() * _amount;
+	float result = round(resultTemp); //*10000 / 10000; // wychodza bez miejsc po przecinku
+
+
 	return result;
 }
 void Sell::printCalculatedValue()

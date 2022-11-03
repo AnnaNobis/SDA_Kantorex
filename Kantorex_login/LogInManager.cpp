@@ -4,6 +4,7 @@
 #include "../Report_Static_Library/Date.hpp"
 #include "../Report_Static_Library/Time.hpp"
 #include "../Report_Static_Library/RawDate.hpp"
+#include "../StaticLib_DisplayWindowsConsole/Menu_Operations.h"
 
 LogInManager::LogInManager()
 {
@@ -13,13 +14,18 @@ LogInManager::LogInManager()
 
 void LogInManager::checkUser()
 {
+	const std::string red("\033[0;31;43m");
+	const std::string blue("\033[0;34;43m");
+	const std::string green("\033[0;32;43m");
+	const std::string reset("\033[0m");
+
 	if (_authorization.checkLogin(_username))
 	{
 		if (_authorization.checkPassword(_password))
 		{
 			std::cout << std::endl;
 			std::cout << std::endl;
-			std::cout << "Authorization" << std::endl;
+			std::cout << green << "Authorization" <<reset << std::endl;
 			displayLoggedUserInfo();
 			_role = (_authorization.getCheckedUser()).getAppRole_enum();
 			//TODO usunac u julii
@@ -28,16 +34,33 @@ void LogInManager::checkUser()
 		} 
 		else
 		{
-			std::cout << "Invalid password" << std::endl;
-			_role = (_authorization.getCheckedUser()).getAppRole_enum();
+			std::cout << red << "Invalid password" << reset << std::endl;
+			std::cout << std::endl;
+			_role = ApplicationRole::UNKNOWN;
+			//_role = (_authorization.getCheckedUser()).getAppRole_enum();
 			//_role = ApplicationRole::GUEST;// na razie, do przemyślenia
+
 		}
 	}
 	else
 	{
-		std::cout << "Invalid login" << std::endl;
-		_role = (_authorization.getCheckedUser()).getAppRole_enum();
+		std::cout<< red << "Invalid login" << reset << std::endl;
+		std::cout << std::endl;
+		_role = ApplicationRole::UNKNOWN;
+		//_role = (_authorization.getCheckedUser()).getAppRole_enum();
 		//_role = ApplicationRole::GUEST;// na razie, do przemyślenia
+	}
+}
+
+bool LogInManager::isUnknown()
+{
+	if (_role == ApplicationRole::UNKNOWN)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
 	}
 }
 
@@ -74,7 +97,9 @@ void LogInManager::displayLoggedUserInfo()
 
 void LogInManager::setUsername()
 {
-	std::cout << "KANTOREX application" << std::endl;
+	Menu_Operations m;
+	m.displayOperationName("KANTOREX application");
+	//std::cout << "KANTOREX application" << std::endl;
 	std::cout << "Enter username: " << std::endl;
 	std::string username;
 	std::cin >> username;
@@ -98,6 +123,7 @@ std::string LogInManager::hidePassword(std::string & password, int size)
 			std::cout << "*";
 			password += c;
 			i++;
-		}	
+		}
+		std::cout << std::endl;
 	return password;
 }
