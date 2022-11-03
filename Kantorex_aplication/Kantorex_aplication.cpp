@@ -25,24 +25,40 @@ using namespace tabulate;
 
 int main()
 {
+	CashBalance balance;
+	balance.showBalance();
+	Exchanger first(balance, OperationSellBuy::BUY, "USD", 20000, "PLN"); //from usd to pln
+	balance.showBalance();
+	Exchanger second(balance, OperationSellBuy::SELL, "PLN", 500, "EUR"); //from pln to eur
+	balance.showBalance();
+	//Exchanger third(balance, OperationSellBuy::BUY, "USD", 2000, "PLN"); //from usd to pln
+	//balance.showBalance(); 
+	//Exchanger fourth(balance, OperationSellBuy::BUY, "USD", 2000, "PLN");
+	//balance.showBalance();
+	//Exchanger fifth(balance, OperationSellBuy::BUY, "USD", 15500, "PLN");
+	//balance.showBalance();
+	////Exchanger sixth(balance, OperationSellBuy::BUY, "USD", 100, "PLN"); // tutaj brakuje jakiegos komunikatu ze chcesz wymienic wiecej niz masz w kasie
+	//Exchanger a(balance, OperationSellBuy::SELL, "PLN", 5000, "EUR");
+	//balance.showBalance();
+	Exchanger b(balance, OperationSellBuy::SELL, "PLN", 5500, "EUR");
+	balance.showBalance();
+
+	//LogInManager login;
+	//login.checkUser();
+	//std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
+	//
+	//system("cls"); 
 
 
-	LogInManager login;
-	login.checkUser();
-	std::shared_ptr<ILoggedUser> loggedUser = login.creatLoggedUser();
-	
-	system("cls"); 
+	//Menu_Operations screen;
+	//screen.displayMenuOperations(loggedUser);
 
-
-	Menu_Operations screen;
-	screen.displayMenuOperations(loggedUser);
-
-	//drukowanie raportu 
-	LoggedPrinter newReport;
-	//newReport.ReadLoggReport("Maja");
-	newReport.ReadLoggReportAll();
-	std::cout << std::endl << std::endl << std::endl << std::endl << std::endl;
-	newReport.ReadLoggReportSurname("Sobieski");
+	////drukowanie raportu 
+	//LoggedPrinter newReport;
+	////newReport.ReadLoggReport("Maja");
+	//newReport.ReadLoggReportAll();
+	//std::cout << std::endl << std::endl << std::endl << std::endl << std::endl;
+	//newReport.ReadLoggReportSurname("Sobieski");
 
 
 
@@ -80,13 +96,16 @@ int main()
 	//auto sell = OperationSellBuy::SELL;
 
 	//Exchanger first(OperationSellBuy::BUY, "USD", 200000, "PLN");
+	
 	//first.rate();
 	//std::cout << std::endl;
 	//first.calculationPrint();
-	//Exchanger second(OperationSellBuy::SELL, "PLN", 30000, "USD");
-	//second.rate();
+	////Exchanger second(OperationSellBuy::SELL, "PLN", 30000, "USD");
+	////second.rate();
 	//std::cout << std::endl;
-	//second.calculationPrint();
+	////second.calculationPrint();
+	//first.startTransactionGivenAmount();
+	//first.balance->showBalance();
 
 
 }

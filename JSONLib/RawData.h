@@ -4,10 +4,10 @@
 #include "JSONReader.h"
 
 class RawData
-{private:
+{
+private:
 	std::vector<Currency> rawDataVector;
 public:
 	RawData();
 	std::vector<Currency> getRawData();
 };
-

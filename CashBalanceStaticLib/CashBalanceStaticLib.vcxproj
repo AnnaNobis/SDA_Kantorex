@@ -169,6 +169,9 @@
     <ProjectReference Include="..\Kantorex_UsersRoles\Kantorex_UsersRoles.vcxproj">
       <Project>{64bfbf5f-eeb0-4c3f-a3a8-577437db96fb}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\Report_Static_Library\Report_Static_Library.vcxproj">
+      <Project>{d778e8a2-5f78-412e-9508-03718a54b5bf}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\StaticLib_DisplayWindowsConsole\StaticLib_DisplayWindowsConsole.vcxproj">
       <Project>{c0e94b94-a897-4c58-9c62-744d433f4fa4}</Project>
     </ProjectReference>

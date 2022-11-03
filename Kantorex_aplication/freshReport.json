@@ -169,5 +169,23 @@
         "amount_from": 100.0,
         "currency_to": "USD",
         "amount_to": 19.174100875854492
+    },
+    {
+        "transactionNumber": "20",
+        "date": "25.10.2022",
+        "time": "20:54:35",
+        "currency_from": "USD",
+        "amount_from": 200000.0,
+        "currency_to": "PLN",
+        "amount_to": 0.0
+    },
+    {
+        "transactionNumber": "21",
+        "date": "25.10.2022",
+        "time": "21:11:16",
+        "currency_from": "USD",
+        "amount_from": 200000.0,
+        "currency_to": "PLN",
+        "amount_to": 0.0
     }
 ]
