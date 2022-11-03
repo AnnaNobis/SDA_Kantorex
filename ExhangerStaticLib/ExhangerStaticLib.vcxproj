@@ -142,15 +142,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Buy.h" />
+    <ClInclude Include="BuyRate.h" />
     <ClInclude Include="Exchanger.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="ITransaction.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="RateCurrrencyMap.h" />
     <ClInclude Include="Sell.h" />
+    <ClInclude Include="SellRate.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Buy.cpp" />
+    <ClCompile Include="BuyRate.cpp" />
     <ClCompile Include="Exchanger.cpp" />
     <ClCompile Include="ExhangerStaticLib.cpp" />
     <ClCompile Include="ITransaction.cpp" />
@@ -162,6 +165,7 @@
     </ClCompile>
     <ClCompile Include="RateCurrrencyMap.cpp" />
     <ClCompile Include="Sell.cpp" />
+    <ClCompile Include="SellRate.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JSONLib\JSONLib.vcxproj">
