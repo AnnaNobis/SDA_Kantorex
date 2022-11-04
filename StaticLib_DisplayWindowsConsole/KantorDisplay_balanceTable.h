@@ -4,6 +4,6 @@
 class KantorDisplay_balanceTable : public IKantorDisplay
 {
 public:
-	void dislayBalanceTable();
+	void dislayBalanceTable(CashBalance& b);
 };
 

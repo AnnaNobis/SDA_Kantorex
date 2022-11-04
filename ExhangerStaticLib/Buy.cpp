@@ -14,7 +14,6 @@ float Buy::getRate()
 {
 	std::map < std::string, float> rates = r.getBuyRates();
 	float rate = rates[_currencyFrom];
-	std::cout << "RATE: " << rate << std::endl;
 	return rate;
 }
 void Buy::checkCurrencyFrom()
@@ -33,7 +32,6 @@ bool Buy::checkAmount()
 		return true;
 	}
 }
-
 float Buy::calculateExchangeValue()
 {
 	float resultTemp = _spread * getRate() * _amount;
@@ -41,10 +39,9 @@ float Buy::calculateExchangeValue()
 
 	return result;
 }
-
 void Buy::printCalculatedValue()
 {
-	std::cout << "Exchanged amount:  " << calculateExchangeValue() << "  in currency: " << _currencyTo << std::endl;
+	std::cout << "Exchanged gross amount:  " << calculateExchangeValue() << _currencyTo << std::endl;
 
 }
 void Buy::setCurrencyFrom(std::string  currencyFrom)

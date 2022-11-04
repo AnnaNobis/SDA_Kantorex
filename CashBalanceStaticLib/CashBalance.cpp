@@ -30,6 +30,13 @@ bool CashBalance::checkCashRegister(float exchangedCash, std::string finalCurren
 		return true;
 	};
 }
+
+float CashBalance::getAmountOfCurrency(std::string currency)
+{
+	return balanceMap.at(currency);
+	
+}
+
 void CashBalance::updateBalance(std::string currency, float inputCash, float exchangedCash, std::string finalCurrency)
 {
 	float value1;
@@ -45,6 +52,12 @@ void CashBalance::updateBalance(std::string currency, float inputCash, float exc
 	balanceMap.at(currency) = result1;
 	balanceMap.at(finalCurrency) = result2;
 
+}
+
+
+std::map<std::string, float>CashBalance::getBalanceMap()
+{
+	return balanceMap;
 }
 
 //float CashBalance::setBalance(int howMuch, std::string input)

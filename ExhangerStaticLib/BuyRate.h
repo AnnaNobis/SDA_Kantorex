@@ -5,7 +5,8 @@ class BuyRate
 	std::map<std::string, float> buyRates;
 public:
 	BuyRate();
-	std::map<std::string, float> getBuyRates() {
+	std::map<std::string, float> getBuyRates()
+	{
 		return buyRates;
 	}
 };

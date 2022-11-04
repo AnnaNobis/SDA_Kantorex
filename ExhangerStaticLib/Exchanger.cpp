@@ -1,6 +1,9 @@
 ﻿#include "pch.h"
 #include "Exchanger.h"
 
+const std::string red("\033[0;37;41m");
+const std::string reset("\033[0m");
+
 Exchanger::Exchanger(CashBalance& b, OperationSellBuy chooseOperation, std::string inputCurrencyFrom, float inputAmount, std::string inputCurrencyTo)
 	:
 	_chooseOperation(chooseOperation),
@@ -28,16 +31,14 @@ Exchanger::Exchanger(CashBalance& b, OperationSellBuy chooseOperation, std::stri
 	//transaction->getSpread();
 	//transaction->setSpread();
 }
-void Exchanger::calculationPrint()
-{
-	if (transaction->checkAmount() == true)
-	{
-		transaction->printCalculatedValue();
-	}
-}
-void Exchanger::startTransaction()
-{
-}
+//void Exchanger::calculationPrint()
+//{
+//	if (transaction->checkAmount() == true)
+//	{
+//		transaction->printCalculatedValue();
+//	}
+//}
+
 std::string Exchanger::getCurrencyForBalance()
 {
 	return transaction->getCurrency();
@@ -50,42 +51,65 @@ float Exchanger::getExchangedAmount()
 {
 	return transaction->calculateExchangeValue();
 }
-void Exchanger::startTransactionGivenAmount(CashBalance& balance)
+float Exchanger::getRate()
+{
+	return transaction->getRate();
+}
+void Exchanger::startTransactionGivenAmount(CashBalance& b)
 {
 	//CashBalance checkBalance; //cash balance shared pointer.
 
 	if (_chooseOperation == OperationSellBuy::BUY)
 	{
-		bool check1 = balance.checkCashRegister(transaction->calculateExchangeValue(), _inputCurrencyTo);
+		bool check1 = b.checkCashRegister(transaction->calculateExchangeValue(), _inputCurrencyTo);
 		if (transaction->checkAmount() == true && check1 == true)
 		{
+
 			transaction->calculateExchangeValue();
 			transaction->printCalculatedValue();
-			balance.updateBalance(_inputCurrencyFrom, _inputAmount, transaction->calculateExchangeValue(), _inputCurrencyTo);
+			b.updateBalance(_inputCurrencyFrom, _inputAmount, transaction->calculateExchangeValue(), _inputCurrencyTo);
+		}
+		else if (check1!=true)
+		{
+			std::cout <<red<< "Not enough money in cash register, available money: " << b.getAmountOfCurrency(_inputCurrencyTo)<<reset<<std::endl;
+		}
+			else if (transaction->checkAmount() != true)
+		{
+			std::cout << red<<"Incorrect amount " <<reset<< std::endl;
 		}
 
 	}
 	else if (_chooseOperation == OperationSellBuy::SELL)
 	{
-		bool check2 = balance.checkCashRegister(transaction->calculateExchangeValue(), _inputCurrencyTo);
+		bool check2 = b.checkCashRegister(transaction->calculateExchangeValue(), _inputCurrencyTo);
 		if (transaction->checkAmount() == true && check2 == true)
 		{
 			transaction->calculateExchangeValue();
 			transaction->printCalculatedValue();
-			balance.updateBalance(_inputCurrencyFrom, _inputAmount, transaction->calculateExchangeValue(), _inputCurrencyTo);
+			b.updateBalance(_inputCurrencyFrom, _inputAmount, transaction->calculateExchangeValue(), _inputCurrencyTo);
+		}
+		else if (check2 != true)
+		{
+
+
+			std::cout <<red<< "Not enough money in cash register, available money: " << b.getAmountOfCurrency(_inputCurrencyTo) << reset<<std::endl;
+		}
+		else if (transaction->checkAmount() != true)
+		{
+			std::cout << red<< "Incorrect amount "<<reset << std::endl;
 		}
 	}
 
 }
-void Exchanger::startTransactionAmountDesired()
-{
-	//CashBalance checkBalance;
-	if (/*checkBalance.checkCashRegister() == true &&*/ transaction->checkAmount() == true)
-	{
-		transaction->calculateExchangeValueWantedAmount(_inputAmount);
-		transaction->printCalculatedValue();
-	};
-}
+//void Exchanger::startTransactionAmountDesired()
+//{
+//	//CashBalance checkBalance;
+//	if (/*checkBalance.checkCashRegister() == true &&*/ transaction->checkAmount() == true)
+//	{
+//		transaction->calculateExchangeValueWantedAmount(_inputAmount);
+//		transaction->printCalculatedValue();
+//	};
+//}
 //void Exchanger::print(int i)
 //{
 //	switch (i)

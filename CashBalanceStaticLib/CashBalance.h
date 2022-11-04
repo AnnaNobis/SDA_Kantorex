@@ -16,5 +16,7 @@ public:
 	bool checkCashRegister(float exchangedCash, std::string finalCurrency);
 	void showBalance();
 	void updateBalance(std::string currency, float inputCash, float exchangedCash, std::string finalCurrency);
+	std::map<std::string, float> getBalanceMap();
+	float getAmountOfCurrency(std::string currency);
 
 };

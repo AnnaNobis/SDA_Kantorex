@@ -16,12 +16,13 @@ public:
 	Exchanger(CashBalance& b, OperationSellBuy chooseOperation, std::string inputCurrencyFrom, float inputAmount, std::string inputCurrencyTo);
 	//void rate();
 	float getExchangedAmount();
-	void calculationPrint();
-	void startTransaction();
+	float getRate();
+	//void calculationPrint();
+	//void startTransaction();
 	std::string getCurrencyForBalance(); //dla Marty CashBAlance
 	float getAmountForBalance(); //dla Marty CashBAlance
-	void startTransactionGivenAmount(CashBalance& balance);
-	void startTransactionAmountDesired();
+	void startTransactionGivenAmount(CashBalance& b);
+	//void startTransactionAmountDesired();
 	//std::shared_ptr<CashBalance> balance = nullptr;
 
 private:

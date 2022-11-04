@@ -14,9 +14,9 @@ LogInManager::LogInManager()
 
 void LogInManager::checkUser()
 {
-	const std::string red("\033[0;31;43m");
-	const std::string blue("\033[0;34;43m");
-	const std::string green("\033[0;32;43m");
+	const std::string red("\033[0;37;41m");
+	const std::string blue("\033[0;37;44m");
+	const std::string green("\033[0;37;42m");
 	const std::string reset("\033[0m");
 
 	if (_authorization.checkLogin(_username))
