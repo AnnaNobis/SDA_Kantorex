@@ -10,6 +10,8 @@
 #include "../JSONLib/LoggedUsersWriter.h"
 #include "KantorDisplay_switchForReports.h"
 #include "../StaticLib_DisplayWindowsConsole/KantorDisplay_balanceTable.h"
+#include "../JSONLib/ReadSellAndBuyTable.h"
+#include "KantorDisplay_CurrencyTable.h"
 
 
 void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedUser)
@@ -23,14 +25,18 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
     const std::string reset("\033[0m");
 
     std::cout << std::endl << std::endl << std::endl;
-   
+
+
         std::vector<std::string> tMenuGl;// tutaj b�d� zapisywane pozycje z menu
         tMenuGl.push_back("Exit \t\t\t\t\t"); // tutaj na ko�cu doda�em tabulator bo funkcja menu na ko�cu doda numer opcji
         tMenuGl.push_back("For exchange currency - SELL operation\t");
         tMenuGl.push_back("For exchange currency -  BUY operation\t");
         tMenuGl.push_back("Balance\t\t\t\t\t");
         tMenuGl.push_back("Reports\t\t\t\t\t");
-
+        std::cout << std::endl<< std::endl << std::endl << std::endl << std::endl;
+        KantorDisplay_CurrencyTable table;
+        table.displayCurrencyTable();
+        
     int id = 0; // id wyboru
 
 
@@ -42,7 +48,7 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
        
         switch (id)  // tutaj zachowanie programu w zale�no�ci od wyboru opcji
         { 
-           
+ 
         case 1:  // SELL OPERATION
             if (loggedUser->getCanSell())
             {
@@ -130,6 +136,9 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
             {
                 KantorDisplay_balanceTable tabBalance;
                 tabBalance.dislayBalanceTable(balance);
+                std::cout << std::endl;
+  
+
             }
             else  
             std::cout << red << "Sorry, access to this operation is denied!" << reset << std::endl;
@@ -168,18 +177,24 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
             if (_getch() == 'y')
                 id = -1;
             std::cout << std::endl;
-
         }
 
         break;
+
         }
+
+
         if (id > 0) {
             WriteLine(50);
             std::cout << "Press enter to return to main menu...";
             _getch();
         }
+    
         system("cls");
     } while (id > -1);
+
+
+
 
     std::cout << "Press enter to end session...";
    

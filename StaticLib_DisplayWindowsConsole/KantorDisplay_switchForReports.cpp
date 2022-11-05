@@ -14,6 +14,7 @@ void KantorDisplay_switchForReports::displaySwitchForReports(int reportNumber)
 
 			auto data = printer.ReadLoggReportAll();
 			reportTransaction3.add_row({ "DATE & TIME", "SURNAME", "NAME" ,"OPERATION" });
+			
 			std::for_each(data.begin(), data.end(), [&](LoginData l)
 				{
 
