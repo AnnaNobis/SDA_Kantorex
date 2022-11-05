@@ -1,28 +1,17 @@
 #include <iostream>
 #include "StaticLib_DisplayWindowsConsole/Manager_start.h"
-
+#include "JSONLib/ReadSellAndBuyTable.h"
 //using json = nlohmann::ordered_json;
 using namespace tabulate;
 
-
-
 int main()
 {
-
+	ReadSellAndBuyTable tab;
+	tab.read();
 
 	Manager_start start;
 	start.startProgram();
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

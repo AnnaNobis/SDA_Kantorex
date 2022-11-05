@@ -30,6 +30,12 @@
     </ClCompile>
     <ClCompile Include="LoggedUsersWriter.cpp" />
     <ClCompile Include="LoggedUsersReader.cpp" />
+    <ClCompile Include="ReadSellAndBuyTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeBuySellRate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Currency.h">
@@ -66,6 +72,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LoggedUsersReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadSellAndBuyTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeBuySellRate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

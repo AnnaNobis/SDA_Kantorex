@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Manager_start.h"
 #include "KantorDisplay_login.h"
+#include "KantorDisplay_CurrencyTable.h"
 
 void Manager_start::startProgram()
 {
@@ -19,5 +20,8 @@ void Manager_start::startProgram()
 		system("cls");
 		Menu_Operations screen;
 		screen.displayMenuOperations(loggedUser);
+
+
 	}
+
 }
