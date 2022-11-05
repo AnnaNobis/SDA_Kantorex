@@ -51,7 +51,9 @@ User UsersList::getUser(std::string lastName)
 
 void UsersList::addUser(std::string firstname, std::string lastname, std::string login, std::string password, ApplicationRole applicationRole)
 {
-    User newUser(firstname, lastname, login, password, applicationRole);
+    auto listSize = _usersList->size();
+    std::string listSize_str = std::to_string(listSize+1);
+    User newUser(listSize_str, firstname, lastname, login, password, applicationRole);
     _usersList->push_back(newUser);
 }
 
@@ -65,9 +67,6 @@ void UsersList::displayUsers()
 
 UsersList::~UsersList()
 {
-    
-    
-
     WriteJSONfile file;
     file.write(getUsersList());
 }

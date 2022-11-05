@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClInclude Include="..\include_libraries\tabulate.hpp" />
     <ClInclude Include="Authorization.hpp" />
+    <ClInclude Include="Encryption.hpp" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="LogInManager.hpp" />
     <ClInclude Include="pch.h" />
@@ -163,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Authorization.cpp" />
+    <ClCompile Include="Encryption.cpp" />
     <ClCompile Include="Kantorex_login.cpp" />
     <ClCompile Include="LogInManager.cpp" />
     <ClCompile Include="pch.cpp">

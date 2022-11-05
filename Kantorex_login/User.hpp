@@ -1,6 +1,5 @@
 #pragma once
 #include <string>
-//#include "../include_libraries/json.hpp"
 
 enum class ApplicationRole
 {
@@ -13,7 +12,6 @@ enum class ApplicationRole
 class User
 {
 private:
-	static int _counter;
 	std::string _id;
 	std::string _firstname;
 	std::string _lastname;
@@ -21,14 +19,14 @@ private:
 	std::string _password;
 	ApplicationRole _applicationRole;
 public:
-	User(std::string firstname = "Joe", std::string lastname="Doe", std::string login="jDoe", std::string password="1111", ApplicationRole applicationRole = ApplicationRole::GUEST)
-		: _firstname(firstname)
+	User(std::string id = "0", std::string firstname = "Joe", std::string lastname = "Doe", std::string login = "jDoe", std::string password = "1111", ApplicationRole applicationRole = ApplicationRole::GUEST)
+		: _id(id)
+		, _firstname(firstname)
 		, _lastname(lastname)
 		, _login(login)
 		, _password(password)
 		, _applicationRole(applicationRole)
 	{
-		_id = std::to_string(++_counter);
 	}
 	void setUserId(std::string id);
 	void setUserFirstname(std::string firstname);
@@ -45,5 +43,4 @@ public:
 	ApplicationRole getAppRole_enum() const;
 	std::string enumToString(ApplicationRole appRole) const;
 	static ApplicationRole stringToEnum(std::string appRole);
-	//virtual~User();
 };

@@ -10,9 +10,30 @@ int main()
 {
 
 
+
+	if (loggedUser != nullptr)
+	{
+		Menu_Operations screen;
+		screen.displayMenuOperations(loggedUser);
+	}
+	
+	//{
+	//	UsersList list;
+	//	list.displayUsers();
+	//	LogInManager log;
+	//	log.checkUser();
+	//	log.creatLoggedUser();
+	//	log.displayLoggedUserInfo();
+	//	User user = list.getUser(1);
+	//	std::cout << user.getUserId();
+	//}
+	//UsersList list2;
+	//list2.displayUsers();
+
 	Manager_start start;
 	start.startProgram();
 }
+
 
 
 
