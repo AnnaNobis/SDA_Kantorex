@@ -21,7 +21,7 @@ void Sell::checkCurrencyFrom()
 	std::string answer;
 	if (_currencyFrom != "PLN")
 	{
-		std::string answer = "Powinieneœ wybraæ opcje Buy";
+		std::string answer = "You should choose option 'BUY' ";
 		std::cout << answer << std::endl;
 	}
 }

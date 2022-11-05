@@ -60,7 +60,7 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                 displayOperationName(_operationName);
 
           
-                std::cout << "Enter currency to which exchange PLN : " << std::endl;
+                std::cout << "Please enter the currency you want to purchase : " << std::endl;
                 std::cin >> _inputCurrencyTo;
               
 

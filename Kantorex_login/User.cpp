@@ -2,8 +2,6 @@
 #include "User.hpp"
 #include <iostream>
 
-int User::_counter = 0;
-
 std::string User::getUserId() const
 {
     return _id;

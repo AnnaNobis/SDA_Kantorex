@@ -22,5 +22,13 @@
         "lastname": "Tomski",
         "login": "guest",
         "password": "9999"
+    },
+    {
+        "appRole": "guest",
+        "firstname": "Jan",
+        "id": "3",
+        "lastname": "Sobieski",
+        "login": "jsob",
+        "password": "1234"
     }
 ]
