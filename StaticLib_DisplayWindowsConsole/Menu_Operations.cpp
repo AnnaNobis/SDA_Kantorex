@@ -9,18 +9,25 @@
 #include "../Kantorex_login/Authorization.hpp"
 #include "../JSONLib/LoggedUsersWriter.h"
 #include "KantorDisplay_switchForReports.h"
-
+#include "../StaticLib_DisplayWindowsConsole/KantorDisplay_balanceTable.h"
 
 
 void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedUser)
 { 
- 
+    CashBalance balance;
+
+
+    const std::string red("\033[0;37;41m");
+    const std::string blue("\033[0;37;44m");
+    const std::string green("\033[0;37;42m");
+    const std::string reset("\033[0m");
+
     std::cout << std::endl << std::endl << std::endl;
    
         std::vector<std::string> tMenuGl;// tutaj b�d� zapisywane pozycje z menu
         tMenuGl.push_back("Exit \t\t\t\t\t"); // tutaj na ko�cu doda�em tabulator bo funkcja menu na ko�cu doda numer opcji
-        tMenuGl.push_back("For exchange currency - SELL operiation\t");
-        tMenuGl.push_back("For exchange currency -  BUY operiation\t");
+        tMenuGl.push_back("For exchange currency - SELL operation\t");
+        tMenuGl.push_back("For exchange currency -  BUY operation\t");
         tMenuGl.push_back("Balance\t\t\t\t\t");
         tMenuGl.push_back("Reports\t\t\t\t\t");
 
@@ -39,7 +46,7 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
         case 1:  // SELL OPERATION
             if (loggedUser->getCanSell())
             {
-                std::string _inputCurrencyFrom= "pln";
+                std::string _inputCurrencyFrom= "PLN";
                 std::string _inputCurrencyTo;
                 float _inputAmount;
                 std::string _operationName = " SELL OPERATION MODE ";
@@ -47,32 +54,34 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                 displayOperationName(_operationName);
 
           
-                std::cout << "Enter currency to exchange/sell : " << std::endl;
+                std::cout << "Enter currency to which exchange PLN : " << std::endl;
                 std::cin >> _inputCurrencyTo;
               
 
                 for (auto& s : currenciesToChoose)
                 {
                     if (std::find(currenciesToChoose.begin(), currenciesToChoose.end(), _inputCurrencyTo) != currenciesToChoose.end())
-                        std::cout << "Correct currency" << std::endl;
+                    {
+                        std::cout << green << "Correct currency" << reset << std::endl;
+                        std::cout << "You are exchanging from : " << _inputCurrencyFrom << " to : " << _inputCurrencyTo << std::endl;
 
+                        std::cout << "Enter amount in: " << _inputCurrencyFrom << std::endl;
+                        std::cin >> _inputAmount;
+
+                        auto sell = OperationSellBuy::SELL;
+                        Exchanger transactionSell(balance, sell, _inputCurrencyFrom, _inputAmount, _inputCurrencyTo);
+                        std::cout << _inputCurrencyTo << " RATE: " << transactionSell.getRate() << std::endl;
+                    }
                     else
-                        std::cout << "Currency is incorect" << std::endl;
+                        std::cout <<red << "Currency is incorrect"<< reset << std::endl;
                     break;
                 }
-                std::cout << "You are exchanging from : " << _inputCurrencyFrom  << " to : " << _inputCurrencyTo << std::endl;
-
-                std::cout << "Enter amount in: " << _inputCurrencyFrom << std::endl;
-                std::cin >> _inputAmount;
-
-                auto sell = OperationSellBuy::SELL;
-                Exchanger transactionSell(sell, _inputCurrencyFrom, _inputAmount, _inputCurrencyTo);
-                transactionSell.calculationPrint();
                 
+
             }
               
             else 
-            std::cout << "Sorry, access to this operation is denied!" << std::endl;
+            std::cout <<red << "Sorry, access to this operation is denied!"<<reset << std::endl;
             break;
 
         case 2: // BUY OPERATION
@@ -80,7 +89,7 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
             if (loggedUser->getCanBuy())
             { 
                 std::string _inputCurrencyFrom;
-                 std::string _inputCurrencyTo = "pln";
+                 std::string _inputCurrencyTo = "PLN";
                  float _inputAmount;
                  std::string _operationName = " BUY OPERATION MODE ";
 
@@ -88,27 +97,29 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                 displayOperationName(_operationName);
                 
 
-                std::cout << "Enter currency to exchange/buy : " << std::endl;
+                std::cout << "Enter currency to buy (not PLN) : " << std::endl;
                 std::cin >> _inputCurrencyFrom;
 
                 for (auto& s : currenciesToChoose)
                 {
                     if (std::find(currenciesToChoose.begin(), currenciesToChoose.end(), _inputCurrencyFrom) != currenciesToChoose.end())
-                        std::cout << "Correct currency" << std::endl;
+                    {
+                        std::cout << green << "Correct currency" << reset << std::endl;
+                        std::cout << "You are exchanging to : " << _inputCurrencyTo << std::endl;
 
+                        std::cout << "Enter amount in: " << _inputCurrencyFrom << std::endl;
+                        std::cin >> _inputAmount;
+
+                        auto buy = OperationSellBuy::BUY;
+                        Exchanger transactionBuy(balance, buy, _inputCurrencyFrom, _inputAmount, _inputCurrencyTo);
+                        std::cout << _inputCurrencyFrom << " RATE: " << transactionBuy.getRate() << std::endl;
+                    }
                     else
-                        std::cout << "Currency is incorect" << std::endl;
+                        std::cout << red << "Currency is incorect" << reset << std::endl;
                     break;
                 }
 
-                std::cout << "You are exchanging to : " << _inputCurrencyTo << std::endl;
-
-                std::cout << "Enter amount in: " << _inputCurrencyFrom << std::endl;
-                std::cin >> _inputAmount;
-
-                 auto buy = OperationSellBuy::BUY;
-                 Exchanger transactionBuy(buy, _inputCurrencyFrom, _inputAmount, _inputCurrencyTo);
-                 transactionBuy.calculationPrint();
+                // transactionBuy.calculationPrint();
                 
           } else    
             std::cout << "Sorry, access to this operation is denied!" << std::endl;
@@ -117,11 +128,11 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
         case 3: // BALANCE
             if (loggedUser->getCanBalance()) //zmienić 
             {
-                //tutaj kod od Marty
-              
+                KantorDisplay_balanceTable tabBalance;
+                tabBalance.dislayBalanceTable(balance);
             }
             else  
-            std::cout << "Sorry, access to this option denied!" << std::endl;
+            std::cout << red << "Sorry, access to this operation is denied!" << reset << std::endl;
             break;
 
         case 4: //REPORTS
@@ -129,12 +140,14 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
             {
                 int reportNumber;
                 Table reportsTable;
-
-                std::cout << "Select number to enter report of your choice: " << std::endl;
+                std::string _operationName = "Select number to enter report of your choice: ";
+               
+                displayOperationName(_operationName);
+                //std::cout <<  _operationName << std::endl;
                 reportsTable.add_row({ "1.", "For users logger report" });
                 reportsTable.add_row({ "2.", "For  daily transactions report" });
                 reportsTable.add_row({ "3.", "For currency transactions report" });
-                reportsTable.add_row({ "4.", "For ...do not remember.. " });
+                //reportsTable.add_row({ "4.", "For ...do not remember.. " });
                //reportsTable.add_row({ "0.", "Exit" });
 
                 std::cout << reportsTable << std::endl;
@@ -146,7 +159,7 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
            
             }
             else  
-                std::cout << "Sorry, access to this option denied!" << std::endl;
+            std::cout << red << "Sorry, access to this operation is denied!" << reset << std::endl;
             break;
 
         case 0: 
@@ -208,10 +221,13 @@ void Menu_Operations::WriteLine(unsigned int width)
 
 int Menu_Operations::menu(std::string title, std::vector<std::string>& tMenu, int& id)
 {
+    const std::string blue("\033[0;37;44m");
+    const std::string reset("\033[0m");
+
 A: // znacznik miejsca skoku
     gotoxy(1, 1); // ustawienie karetki klawiatury w linii 1 i kolumnie 1
     WriteLine(title.size()); // rysuj� lini� ====== o d�ugo�ci r�wnej d�ugo�ci tekstu tytu�y menu
-    std::cout << title << std::endl; // wypisuj� menu
+    std::cout << blue << title << reset<< std::endl; // wypisuj� menu
     WriteLine(title.size()); // i znowu linia =======
     for (int i = 0; i < tMenu.size(); i++) { // dla wszystkich pozycji menu
         WriteMenuPos(tMenu[i], i, id); // wypisuj dan� pozycj� korzystaj�c z funkcji WriteLine
@@ -243,10 +259,19 @@ A: // znacznik miejsca skoku
 
 }
 
+
+
 void Menu_Operations::displayOperationName(std::string _operationName)
 {
+    const std::string blue("\033[0;37;44m");
+    const std::string reset("\033[0m");
+   
+
     WriteLine(_operationName.size());
-    std::cout << "SELL OPERATION MODE" << std::endl;
+    std::cout << blue << _operationName << reset << std::endl;
+   // std::cout  << _operationName <<std::endl;
     WriteLine(_operationName.size());
+
+  
 }
 

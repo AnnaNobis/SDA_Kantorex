@@ -1,16 +1,17 @@
-#include "pch.h"
+ï»¿#include "pch.h"
 #include "Exchanger.h"
 
+const std::string red("\033[0;37;41m");
+const std::string reset("\033[0m");
 
-
-Exchanger::Exchanger(OperationSellBuy chooseOperation, std::string inputCurrencyFrom, float inputAmount, std::string inputCurrencyTo)
+Exchanger::Exchanger(CashBalance& b, OperationSellBuy chooseOperation, std::string inputCurrencyFrom, float inputAmount, std::string inputCurrencyTo)
 	:
 	_chooseOperation(chooseOperation),
 	_inputCurrencyFrom(inputCurrencyFrom),
 	_inputAmount(inputAmount),
 	_inputCurrencyTo(inputCurrencyTo)
 {
-
+	//balance = std::make_shared<CashBalance>();
 	if (chooseOperation == OperationSellBuy::BUY)
 	{
 		transaction = std::make_shared<Buy>();
@@ -20,51 +21,98 @@ Exchanger::Exchanger(OperationSellBuy chooseOperation, std::string inputCurrency
 		transaction = std::make_shared<Sell>();
 	}
 
-
-
 	transaction->setCurrencyFrom(_inputCurrencyFrom);
 	transaction->setCurrencyTo(_inputCurrencyTo);
 	transaction->setAmount(_inputAmount);
+	transaction->setSpread();
 	transaction->checkCurrencyFrom();
+	startTransactionGivenAmount(b);
 	//transaction->getRate();
 	//transaction->getSpread();
-	transaction->setSpread();
-
-
-
+	//transaction->setSpread();
 }
-//void Exchanger::rate()
+//void Exchanger::calculationPrint()
 //{
-//	std::cout << transaction->getRate();
-//};
-
-void Exchanger::calculationPrint()
-{
-	if (transaction->checkAmount() == true)
-	{
-		transaction->printCalculatedValue();
-	}
-
-}
+//	if (transaction->checkAmount() == true)
+//	{
+//		transaction->printCalculatedValue();
+//	}
+//}
 
 std::string Exchanger::getCurrencyForBalance()
 {
 	return transaction->getCurrency();
 }
-
-float Exchanger::getExchangedAmount()
-{
-	return transaction->calculateExchangeValue();
-}
-
 float Exchanger::getAmountForBalance()
 {
 	return transaction->getAmount();
 }
+float Exchanger::getExchangedAmount()
+{
+	return transaction->calculateExchangeValue();
+}
+float Exchanger::getRate()
+{
+	return transaction->getRate();
+}
+void Exchanger::startTransactionGivenAmount(CashBalance& b)
+{
+	//CashBalance checkBalance; //cash balance shared pointer.
 
+	if (_chooseOperation == OperationSellBuy::BUY)
+	{
+		bool check1 = b.checkCashRegister(transaction->calculateExchangeValue(), _inputCurrencyTo);
+		if (transaction->checkAmount() == true && check1 == true)
+		{
+
+			transaction->calculateExchangeValue();
+			transaction->printCalculatedValue();
+			b.updateBalance(_inputCurrencyFrom, _inputAmount, transaction->calculateExchangeValue(), _inputCurrencyTo);
+		}
+		else if (check1!=true)
+		{
+			std::cout <<red<< "Not enough money in cash register, available money: " << b.getAmountOfCurrency(_inputCurrencyTo)<<reset<<std::endl;
+		}
+			else if (transaction->checkAmount() != true)
+		{
+			std::cout << red<<"Incorrect amount " <<reset<< std::endl;
+		}
+
+	}
+	else if (_chooseOperation == OperationSellBuy::SELL)
+	{
+		bool check2 = b.checkCashRegister(transaction->calculateExchangeValue(), _inputCurrencyTo);
+		if (transaction->checkAmount() == true && check2 == true)
+		{
+			transaction->calculateExchangeValue();
+			transaction->printCalculatedValue();
+			b.updateBalance(_inputCurrencyFrom, _inputAmount, transaction->calculateExchangeValue(), _inputCurrencyTo);
+		}
+		else if (check2 != true)
+		{
+
+
+			std::cout <<red<< "Not enough money in cash register, available money: " << b.getAmountOfCurrency(_inputCurrencyTo) << reset<<std::endl;
+		}
+		else if (transaction->checkAmount() != true)
+		{
+			std::cout << red<< "Incorrect amount "<<reset << std::endl;
+		}
+	}
+
+}
+//void Exchanger::startTransactionAmountDesired()
+//{
+//	//CashBalance checkBalance;
+//	if (/*checkBalance.checkCashRegister() == true &&*/ transaction->checkAmount() == true)
+//	{
+//		transaction->calculateExchangeValueWantedAmount(_inputAmount);
+//		transaction->printCalculatedValue();
+//	};
+//}
 //void Exchanger::print(int i)
 //{
-//	switch (i) 
+//	switch (i)
 //	{
 //	case 1:
 //		std::cout << "Podaj Walute do wymiany "<<std::endl;
@@ -74,17 +122,17 @@ float Exchanger::getAmountForBalance()
 //		break;
 //
 //	case 3:
-//		std::cout << "Podaj Walute docelow¹" << std::endl;
+//		std::cout << "Podaj Walute docelowÂ¹" << std::endl;
 //		break;
 //	
 //	case 4:
 //		std::cout << "Czy chcesz ustawic marze? : " << std::endl;
 //		break;		
 //	case 5:
-//		std::cout << "Podaj wysokoœæ mar¿y : " << std::endl;
+//		std::cout << "Podaj wysokoÅ“Ã¦ marÂ¿y : " << std::endl;
 //		break;	
 //	case 6:
-//		std::cout << "Mar¿a wynosi : " << std::endl;
+//		std::cout << "MarÂ¿a wynosi : " << std::endl;
 //		break;
 //
 //	}
@@ -102,7 +150,6 @@ float Exchanger::getAmountForBalance()
 //
 //	return _spread;
 //}
-
 //void Exchanger::startExchangerDisplay()
 //{
 //	print(1);

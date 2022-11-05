@@ -1,6 +1,14 @@
 ﻿#pragma once
 #include "../include_libraries/tabulate.hpp"
-//#include "../Kantorex_login/Kantorex.hpp"
+#include "IKantorDisplay.h"
+#include "../Kantorex_login/LogInManager.hpp"
+#include <iostream>
+#include "../ExhangerStaticLib/ITransaction.h"
+#include "../Kantorex_login/LogInManager.hpp"
+#include "../Kantorex_login/ILoggedUser.hpp"
+#include "../Kantorex_login/Administrator.hpp"
+#include "../ExhangerStaticLib/Exchanger.h"
+#include "Menu_Operations.h"
 
 using namespace tabulate;
 

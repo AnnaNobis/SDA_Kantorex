@@ -145,6 +145,7 @@
     <ClInclude Include="KantorDisplay_CurrencyTable.h" />
     <ClInclude Include="KantorDisplay_login.h" />
     <ClInclude Include="KantorDisplay_switchForReports.h" />
+    <ClInclude Include="Manager_start.h" />
     <ClInclude Include="Menu_Operations.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
@@ -154,6 +155,7 @@
     <ClCompile Include="KantorDisplay_CurrencyTable.cpp" />
     <ClCompile Include="KantorDisplay_login.cpp" />
     <ClCompile Include="KantorDisplay_switchForReports.cpp" />
+    <ClCompile Include="Manager_start.cpp" />
     <ClCompile Include="Menu_Operations.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

@@ -7,6 +7,6 @@
 class KantorDisplay_login : public IKantorDisplay 
 {
 public:
-	//std::shared_ptr<ILoggedUser> displayLogin();
+	std::shared_ptr<ILoggedUser> displayLogin();
 };
 
