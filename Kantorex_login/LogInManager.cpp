@@ -22,7 +22,7 @@ void LogInManager::checkUser()
 			std::cout << "Authorization" << std::endl;
 			displayLoggedUserInfo();
 			_role = (_authorization.getCheckedUser()).getAppRole_enum();
-			//TODO usunac u julii
+			
 			LoggedUsersWriter logger;
 			logger.write(_authorization.getCheckedUser().getUserFirstname(), _authorization.getCheckedUser().getUserLastname(), true);			
 		} 
@@ -31,9 +31,6 @@ void LogInManager::checkUser()
 			std::cout << "Invalid password" << std::endl;
 			std::cout << std::endl;
 			_role = ApplicationRole::UNKNOWN;
-			//_role = (_authorization.getCheckedUser()).getAppRole_enum();
-			//_role = ApplicationRole::GUEST;// na razie, do przemyślenia
-
 		}
 	}
 	else
@@ -41,8 +38,6 @@ void LogInManager::checkUser()
 		std::cout << "Invalid login" << std::endl;
 		std::cout << std::endl;
 		_role = ApplicationRole::UNKNOWN;
-		//_role = (_authorization.getCheckedUser()).getAppRole_enum();
-		//_role = ApplicationRole::GUEST;// na razie, do przemyślenia
 	}
 }
 

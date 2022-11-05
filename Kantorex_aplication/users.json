@@ -1,26 +1,26 @@
 [
     {
         "appRole": "cashier",
-        "firstname": "Maja",
-        "id": "2",
-        "lastname": "Kaleta",
-        "login": "cashier",
-        "password": "1234"
+        "firstname": "Rfof",
+        "id": "6",
+        "lastname": "Pfqjyf",
+        "login": "hfxmnjw",
+        "password": "6789"
     },
     {
         "appRole": "administrator",
-        "firstname": "Lili",
-        "id": "3",
-        "lastname": "Sobieski",
-        "login": "admin",
-        "password": "8888"
+        "firstname": "Qnqn",
+        "id": "7",
+        "lastname": "Xtgnjxpn",
+        "login": "firns",
+        "password": "3333"
     },
     {
         "appRole": "guest",
-        "firstname": "Tom",
-        "id": "4",
-        "lastname": "Tomski",
-        "login": "guest",
-        "password": "9999"
+        "firstname": "Ytr",
+        "id": "8",
+        "lastname": "Ytrxpn",
+        "login": "lzjxy",
+        "password": "4444"
     }
 ]

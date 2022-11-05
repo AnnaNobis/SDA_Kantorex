@@ -1,6 +1,15 @@
 #include "pch.h"
 #include "ReadJSONfile.hpp"
 
+void from_json(const json& j, User& data)
+{
+	data.setUserId(j.at("id"));
+	data.setUserFirstname(j.at("firstname"));
+	data.setUserLastname(j.at("lastname"));
+	data.setLogin(j.at("login"));
+	data.setPassword(j.at("password"));
+	data.stringToEnum(j.at("appRole"));
+}
 
 std::vector<User> ReadJSONfile::read()
 {
@@ -11,8 +20,6 @@ std::vector<User> ReadJSONfile::read()
 	}
 	json data;
 	data = json::parse(j);
-	//json data;
-	//j >> data;
 	std::string id = "";
 	std::string name;
 	std::string surname;
@@ -20,7 +27,8 @@ std::vector<User> ReadJSONfile::read()
 	std::string password;
 	std::string appRole;
 	std::vector<User> listaU;
-	for (auto& elem : data) 
+	Encryption decodeStr;
+	for (auto& elem : data)
 	{
 		id = elem["id"];
 		name = elem["firstname"];
@@ -30,8 +38,8 @@ std::vector<User> ReadJSONfile::read()
 		appRole = elem["appRole"];
 
 
-		listaU.emplace_back(name, surname, login, password, User::stringToEnum(appRole));
-		
+		listaU.emplace_back(decodeStr.decode(id), decodeStr.decode(name), decodeStr.decode(surname), decodeStr.decode(login), decodeStr.decode(password), User::stringToEnum(appRole));
+
 	}
 	j.close();
 	return listaU;
