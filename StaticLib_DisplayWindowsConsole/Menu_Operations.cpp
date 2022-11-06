@@ -128,7 +128,7 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
                 // transactionBuy.calculationPrint();
                 
           } else    
-            std::cout << "Sorry, access to this operation is denied!" << std::endl;
+            std::cout << red << "Sorry, access to this operation is denied!"<<reset << std::endl;
             break;
 
         case 3: // BALANCE
@@ -141,8 +141,9 @@ void Menu_Operations::displayMenuOperations(std::shared_ptr<ILoggedUser> loggedU
 
             }
             else  
-            std::cout << red << "Sorry, access to this operation is denied!" << reset << std::endl;
-            break;
+                std::cout << red << "Sorry, access to this operation is denied!" << reset << std::endl;
+
+           break;
 
         case 4: //REPORTS
             if (loggedUser->getCanReport()) 

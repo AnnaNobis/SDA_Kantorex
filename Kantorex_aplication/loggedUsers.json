@@ -1137,7 +1137,6 @@
         "name": "Maja",
         "surname": "Kaleta",
         "dateAndTime": "Fri Nov  4 19:10:27 2022\n",
-        "dateAndTime": "Fri Nov  4 04:24:25 2022\n",
         "isLogged": false
     },
     {
@@ -1453,14 +1452,6 @@
         "isLogged": true
     },
     {
-        "name": "Maja",
-        "surname": "Kaleta",
-        "dateAndTime": "Sat Nov  5 22:58:56 2022\n",
-        "isLogged": true
-        "dateAndTime": "Fri Nov  4 04:38:43 2022\n",
-        "isLogged": false
-    },
-    {
         "name": "Lili",
         "surname": "Sobieski",
         "dateAndTime": "Fri Nov  4 04:40:16 2022\n",
@@ -1475,31 +1466,193 @@
     {
         "name": "Maja",
         "surname": "Kaleta",
-        "dateAndTime": "Sat Nov  5 23:00:44 2022\n",
-        "dateAndTime": "Fri Nov  4 04:40:50 2022\n",
-        "isLogged": true
-    },
-    {
-        "name": "Maja",
-        "surname": "Kaleta", 
-        "dateAndTime": "Sat Nov  5 23:03:08 2022\n",
-        "dateAndTime": "Fri Nov  4 05:42:45 2022\n",
+        "dateAndTime": "Sun Nov  6 11:47:33 2022\n",
         "isLogged": true
     },
     {
         "name": "Maja",
         "surname": "Kaleta",
-        "dateAndTime": "Sat Nov  5 23:04:55 2022\n",
-        "dateAndTime": "Sat Nov  5 12:06:20 2022\n",
+        "dateAndTime": "Sun Nov  6 11:48:51 2022\n",
         "isLogged": true
     },
     {
         "name": "Maja",
         "surname": "Kaleta",
-        "dateAndTime": "Sat Nov  5 23:05:35 2022\n",
+        "dateAndTime": "Sun Nov  6 11:50:49 2022\n",
         "isLogged": true
-        "dateAndTime": "Sat Nov  5 12:11:43 2022\n",
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Sun Nov  6 11:51:31 2022\n",
         "isLogged": false
-
+    },
+    {
+        "name": "Lili",
+        "surname": "Sobieski",
+        "dateAndTime": "Sun Nov  6 11:51:52 2022\n",
+        "isLogged": true
+    },
+    {
+        "name": "Lili",
+        "surname": "Sobieski",
+        "dateAndTime": "Sun Nov  6 11:54:16 2022\n",
+        "isLogged": false
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Sun Nov  6 11:54:30 2022\n",
+        "isLogged": true
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Sun Nov  6 12:32:26 2022\n",
+        "isLogged": true
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Sun Nov  6 12:34:17 2022\n",
+        "isLogged": false
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Sun Nov  6 14:02:16 2022\n",
+        "isLogged": true
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Sun Nov  6 14:08:26 2022\n",
+        "isLogged": false
+    },
+    {
+        "name": "Lili",
+        "surname": "Sobieski",
+        "dateAndTime": "Sun Nov  6 14:08:39 2022\n",
+        "isLogged": true
+    },
+    {
+        "name": "Lili",
+        "surname": "Sobieski",
+        "dateAndTime": "Sun Nov  6 14:10:06 2022\n",
+        "isLogged": false
+    },
+    {
+        "name": "Lili",
+        "surname": "Sobieski",
+        "dateAndTime": "Sun Nov  6 14:10:42 2022\n",
+        "isLogged": true
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Sun Nov  6 15:32:40 2022\n",
+        "isLogged": true
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Sun Nov  6 15:55:30 2022\n",
+        "isLogged": true
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Sun Nov  6 16:20:16 2022\n",
+        "isLogged": true
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Sun Nov  6 16:22:44 2022\n",
+        "isLogged": false
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Sun Nov  6 16:24:15 2022\n",
+        "isLogged": true
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Sun Nov  6 16:25:57 2022\n",
+        "isLogged": false
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Sun Nov  6 16:30:44 2022\n",
+        "isLogged": true
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Sun Nov  6 16:31:55 2022\n",
+        "isLogged": true
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Sun Nov  6 16:33:50 2022\n",
+        "isLogged": true
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Sun Nov  6 16:35:32 2022\n",
+        "isLogged": false
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Sun Nov  6 16:45:55 2022\n",
+        "isLogged": true
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Sun Nov  6 16:47:46 2022\n",
+        "isLogged": false
+    },
+    {
+        "name": "Lili",
+        "surname": "Sobieski",
+        "dateAndTime": "Sun Nov  6 16:51:44 2022\n",
+        "isLogged": true
+    },
+    {
+        "name": "Lili",
+        "surname": "Sobieski",
+        "dateAndTime": "Sun Nov  6 16:55:25 2022\n",
+        "isLogged": true
+    },
+    {
+        "name": "Lili",
+        "surname": "Sobieski",
+        "dateAndTime": "Sun Nov  6 16:57:22 2022\n",
+        "isLogged": false
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Sun Nov  6 18:49:05 2022\n",
+        "isLogged": true
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Sun Nov  6 18:49:20 2022\n",
+        "isLogged": true
+    },
+    {
+        "name": "Maja",
+        "surname": "Kaleta",
+        "dateAndTime": "Sun Nov  6 18:52:01 2022\n",
+        "isLogged": true
     }
 ]

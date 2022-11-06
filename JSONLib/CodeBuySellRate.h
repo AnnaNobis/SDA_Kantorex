@@ -3,7 +3,6 @@
 
 class CodeBuySellRate
 {
-
 public:
 	std::string _code;
 	std::string _rateBuy;

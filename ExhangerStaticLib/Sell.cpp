@@ -40,7 +40,8 @@ float Sell::calculateExchangeValue()
 }
 void Sell::printCalculatedValue()
 {
-	std::cout << "Exchanged gross amount: " << calculateExchangeValue() << "  in currency:  " << _currencyTo << std::endl;
+	std::cout << "Exchanged gross amount: " << calculateExchangeValue() << "  " << _currencyTo << std::endl;
+
 }
 void Sell::setCurrencyFrom(std::string currencyFrom)
 {
