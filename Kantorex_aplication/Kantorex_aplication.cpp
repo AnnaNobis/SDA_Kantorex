@@ -8,16 +8,9 @@ using namespace tabulate;
 
 int main()
 {
-KlaudiaNNN
-	ReadSellAndBuyTable tab;
-	tab.read();
-
 	Manager_start start;
 	start.startProgram();
 }
-
-
-
 
 
 	//int attempts = 0;
@@ -54,16 +47,6 @@ KlaudiaNNN
 	//newReport.ReadLoggReportAll();
 	//std::cout << std::endl << std::endl << std::endl << std::endl << std::endl;
 	//newReport.ReadLoggReportSurname("Sobieski");
-
-	Manager_start start;
-	start.startProgram();
-
-}
-
-
-
-
-
 
 
 

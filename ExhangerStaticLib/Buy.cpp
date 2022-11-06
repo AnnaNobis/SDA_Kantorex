@@ -41,7 +41,7 @@ float Buy::calculateExchangeValue()
 }
 void Buy::printCalculatedValue()
 {
-	std::cout << "Exchanged gross amount:  " << calculateExchangeValue() << _currencyTo << std::endl;
+	std::cout << "Exchanged gross amount:  " << calculateExchangeValue() <<" " << _currencyTo << std::endl;
 
 }
 void Buy::setCurrencyFrom(std::string  currencyFrom)
