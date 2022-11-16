@@ -41,7 +41,7 @@ void LoggedPrinter::ReadLoggReportSurname(std::string requestedSurname)
 
 	tmp_data.resize(std::distance(tmp_data.begin(), it));
 
-	std::cout << std::endl << "################Logged user report for: " << requestedSurname << " ################" << std::endl;
+	//std::cout << std::endl << "################Logged user report for: " << requestedSurname << " ################" << std::endl;
 
 	std::for_each(tmp_data.begin(), tmp_data.end(), [](LoginData l) {
 		std::string loggStatus;

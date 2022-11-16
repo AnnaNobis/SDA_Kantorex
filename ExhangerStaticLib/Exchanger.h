@@ -7,6 +7,8 @@
 #include <algorithm>
 #include <iostream>
 #include "../CashBalanceStaticLib/CashBalance.h"
+#include "../Report_Static_Library/ReportData.hpp"
+#include "../JSONLib/ReportWriter.h"
 
 enum class OperationSellBuy { SELL, BUY };
 class Exchanger

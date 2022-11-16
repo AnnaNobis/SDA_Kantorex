@@ -68,6 +68,8 @@ void Exchanger::startTransactionGivenAmount(CashBalance& b)
 			transaction->calculateExchangeValue();
 			transaction->printCalculatedValue();
 			b.updateBalance(_inputCurrencyFrom, _inputAmount, transaction->calculateExchangeValue(), _inputCurrencyTo);
+			ReportData data(_inputCurrencyFrom, static_cast<double>(_inputAmount), _inputCurrencyTo, transaction->calculateExchangeValue());
+			ReportWriter::writeReport(data);
 		}
 		else if (check1!=true)
 		{
@@ -87,6 +89,8 @@ void Exchanger::startTransactionGivenAmount(CashBalance& b)
 			transaction->calculateExchangeValue();
 			transaction->printCalculatedValue();
 			b.updateBalance(_inputCurrencyFrom, _inputAmount, transaction->calculateExchangeValue(), _inputCurrencyTo);
+			ReportData data(_inputCurrencyFrom, static_cast<double>(_inputAmount), _inputCurrencyTo, transaction->calculateExchangeValue());
+			ReportWriter::writeReport(data);
 		}
 		else if (check2 != true)
 		{
