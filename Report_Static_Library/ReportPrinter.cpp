@@ -44,7 +44,6 @@ std::vector<ReportData> ReportPrinter::ReadCurrencyReport(std::string currency)
 
 	auto it = std::copy_if(dailyData.begin(), dailyData.end(), tmp_data.begin(), [&](ReportData r)
 		{
-
 			return r._currencyFrom == currency || r._currencyTo == currency;
 		});
 

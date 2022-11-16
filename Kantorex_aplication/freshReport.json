@@ -173,18 +173,15 @@
     {
         "transactionNumber": "20",
         "date": "25.10.2022",
-
         "time": "17:45:51",
         "currency_from": "PLN",
         "amount_from": 100.0,
         "currency_to": "USD",
         "amount_to": 19.174100875854492
-
     },
     {
         "transactionNumber": "21",
         "date": "25.10.2022",
-
         "time": "17:46:29",
         "currency_from": "PLN",
         "amount_from": 100.0,
@@ -226,6 +223,23 @@
         "amount_from": 100.0,
         "currency_to": "USD",
         "amount_to": 19.174100875854492
-
+    },
+    {
+        "transactionNumber": "26",
+        "date": "10.11.2022",
+        "time": "12:43:07",
+        "currency_from": "PLN",
+        "amount_from": 102.0,
+        "currency_to": "EUR",
+        "amount_to": 20.0
+    },
+    {
+        "transactionNumber": "27",
+        "date": "10.11.2022",
+        "time": "12:43:41",
+        "currency_from": "USD",
+        "amount_from": 123.0,
+        "currency_to": "PLN",
+        "amount_to": 627.0
     }
 ]
